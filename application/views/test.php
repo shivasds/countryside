@@ -1,2 +1,2 @@
 <?php
-echo "This is just a test file"
+echo "This is just a test file";
