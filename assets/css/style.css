@@ -313,7 +313,8 @@ span.name-caret {
 }
 
 .down{
-	padding: 26px 0 30px;
+	/*check  padding: 26px 0 30px; */
+	padding: 26px 0px 20px;
     text-align: center;
       background: #fff;
 }
@@ -2460,7 +2461,8 @@ ul.dropdown-menu.dropdown-menu-right {
 }
 .flottop6
 {
-  top:-575px !important;
+  top:-565px !important;
+ 
 }
 .flottop8
 {
@@ -5827,6 +5829,10 @@ footer  p a:hover ,.footer p a:hover{
 	.error-top h3 {
 		font-size: 7em;
 	}
+
+	#menu li .open{
+		height: 80px;	
+	}
 	#menu li a {
 		padding: 8px 20px;
 		font-size: 0.85em;
@@ -5868,6 +5874,11 @@ footer  p a:hover ,.footer p a:hover{
 	#menu li a {
 		padding: 12px 20px;
 		font-size: 0.85em;
+	}
+	/* check */
+	.flottop6
+	{
+	top: -322px !important;
 	}
 	.sidebar-menu {
 		position: fixed;
