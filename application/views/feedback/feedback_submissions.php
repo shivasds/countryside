@@ -92,7 +92,7 @@
 }
     </style>
 
-    <form name="save_seller_form" id="save_seller_form" action="<?=base_url('admin/manage_answers'); ?>" method="POST" enctype="multipart/form-data">
+    <!--<form name="save_seller_form" id="save_seller_form" action="<?=base_url('admin/manage_answers'); ?>" method="POST" enctype="multipart/form-data">
         <div class="col-sm-5 form-group">
             <label for="emp_code">Search:</label>
             <input type="text" class="form-control" id="answer" onblur="code_check(this.value)" name="answer" placeholder="Please enter Lead Id" required="required">
@@ -102,7 +102,7 @@
         <div class="col-sm-5 form-group">
         <button type="submit" id="add_answer" style="margin-top: 26px; !important" class="btn btn-success btn-block">Search</button>
     </div>
-    </form>
+    </form>-->
 </div>
 
 <div class="container">
@@ -115,7 +115,19 @@
             </tr>
         </thead> 
         <tbody>
-        
+        <?php
+      //  print_r($feedbacks);die;
+        foreach ($feedbacks as $f) {
+            ?>
+            <tr>
+                <td><?=$f['lead_id'];?></td>
+                <td><a href="">View</a></td>
+                <td><a href="">Print</a></td>
+            </tr>
+
+            <?php
+        }
+        ?>
             
         </tbody>
     </table>
