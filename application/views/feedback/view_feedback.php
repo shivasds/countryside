@@ -333,7 +333,8 @@ p.footer a:hover {
 	<div class="main">
 		<form >
 			<h5>Lead_id</h5>
-				<input type="text" value="<?=$feedbacks[0]['lead_id'];?>"   readonly="">
+			<h6><?=$feedbacks[0]['lead_id'];?></h6> 
+			<br>
 				<?php
 				$i=1;
 				foreach($feedbacks as $f)
@@ -352,7 +353,7 @@ p.footer a:hover {
  
 		</form>
 	</div>
-	<p class="footer">&copy; 2016 Feedback Widget. All Rights Reserved | Design by <a href="http://secondsdigital.com"> seconds digital solutions</a></p>
+	<p class="footer">&copy; <?=date('Y');?> Countryside Groups. All Rights Reserved | Design by <a href="http://secondsdigital.com"> seconds digital solutions</a></p>
 </div>
 
 </body>
