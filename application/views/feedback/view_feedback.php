@@ -166,17 +166,22 @@ p.footer a:hover {
     height: 100px;
     font-family: 'Lato', sans-serif !important;
 }
-
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;  
+  text-align: center;
+}
 
 /*-- responsive media queries --*/
 @media (max-width: 1440px){
 	.main {
-		width: 29%;
+		width: 49%;
 	}	
 }
 @media (max-width: 1366px){
 	.main {
-		width: 31%;
+		width: 40%;
 	}	
 }
 @media (max-width: 1280px){
@@ -324,6 +329,12 @@ p.footer a:hover {
 		padding: 12px 0 8px;
 	}
 }
+	table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 23px;
+	}
 </style>
 </head>
 <body> 
@@ -332,7 +343,22 @@ p.footer a:hover {
 	<h1>View Feedback</h1> 
 	<div class="main">
 		<form >
-			<h5>Lead_id</h5>
+		<table>
+  <tr>
+    <th><h5>Lead_id</h5></th>
+    <th><h5>Username</h5></th>
+	<th><h5>Employee Name</h5></th>
+	<th><h5>Project Name</h5></th>
+  </tr>
+  <tr>
+    <td><h6><?=$feedbacks[0]['lead_id'];?></h6> </td>
+    <td><h6><?=$feedbacks[0]['name'];?></h6> </td>
+	<td><h6><?=$feedbacks[0]['username'];?></h6> </td>
+	<td><h6><?=$feedbacks[0]['projectname'];?></h6> </td>
+  </tr>
+ 
+</table>
+			<!-- <h5>Lead_id</h5>
 			<h6><?=$feedbacks[0]['lead_id'];?></h6> 
 			<br>
 			<h5>Username</h5>
@@ -343,7 +369,7 @@ p.footer a:hover {
 			<br>
 			<h5>Project Name</h5>
 			<h6><?=$feedbacks[0]['projectname'];?></h6> 
-			<br>
+			<br> -->
 				<?php
 				$i=1;
 				foreach($feedbacks as $f)
