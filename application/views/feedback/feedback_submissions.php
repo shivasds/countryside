@@ -122,7 +122,7 @@
             <tr>
                 <td><?=$f['lead_id'];?></td>
                 <td><a href="<?=base_url('admin/view_feedback/'.$f['lead_id']);?>?id=<?=$f['fs_id']?>" target="_blank">View</a></td>
-                <td><a href="#" onclick="feedback('<?=$f['lead_id'];?>');">Print</a></td>
+                <td><a href="#" onclick="feedback('<?=$f['lead_id'];?>','<?=$f['fs_id']?>');">Print</a></td>
             </tr>
 
 
@@ -130,15 +130,15 @@
         }
         ?>
         <script type="text/javascript">
-            function feedback(lead_id){ 
-            //alert(lead_id);
+            function feedback(lead_id,id){ 
+          //  alert(id);
             if(lead_id!=''){
                 $.ajax({
                     type:"POST",
-                    url: "<?=base_url('admin/view_feedback/');?>",
+                    url: "<?=base_url('admin/view_feedback/');?>?id="+id,
                     data:{lead_id:lead_id},
                     success:function(data){
-                        alert(data);
+ print(data);
                     }
                 });
                // location.reload();
