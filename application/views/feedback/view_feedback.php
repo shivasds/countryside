@@ -1,4 +1,4 @@
- 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -330,6 +330,7 @@ p.footer a:hover {
 <div class="content">
 	<h1><img src='/assets/img/logo.png'></h1>
 	<h1>View Feedback</h1>
+	<?=print_r($feedbacks);?>
 	<div class="main">
 		<form >
 			<h5>Lead_id</h5>
