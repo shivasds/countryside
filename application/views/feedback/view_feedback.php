@@ -261,7 +261,7 @@ td, th {
 }
 @media (max-width: 568px){
 	.main {
-		width: 67%;
+		width: 74%;
 	}	
 }
 @media (max-width: 480px){
