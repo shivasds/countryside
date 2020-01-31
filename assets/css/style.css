@@ -5495,6 +5495,9 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:1440px){
+	.container {
+		width: 1300px;
+     }
 	.left-content {
 		float: right;
 		width: 84%;
@@ -5562,6 +5565,10 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:1366px){
+	.container {
+		width: 1124px;
+	 }
+	 
 	.candile-inner svg {
 		height: 350px!important;
 		width: 1023px!important;
@@ -5645,6 +5652,9 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:1280px){
+	.container {
+		width: 1200px;
+     }
 	.profile_details_left {
 		float: right;
 		width: 32%;
@@ -5715,7 +5725,9 @@ footer  p a:hover ,.footer p a:hover{
 		top: 13%;
 	}
 }
+
 @media (max-width:1024px){
+	
 	.profile_details_left {
 		float: right;
 		width: 47%;
