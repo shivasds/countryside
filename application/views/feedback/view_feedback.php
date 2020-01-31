@@ -350,7 +350,7 @@ p.footer a:hover {
 				{	
 				?>
                 <h5><?=$i.'. '.$f['question'];?></h5><br>
-            <h6><?='&nbsp&nbsp&nbsp'.$f['question'];?></h6>
+            <h6><?='&nbsp&nbsp&nbsp'.$f['a'];?></h6>
                 <br>
                 <?php
                 $i++;

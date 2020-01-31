@@ -116,12 +116,12 @@
         </thead> 
         <tbody>
         <?php
-      //  print_r($feedbacks);die;
+      // print_r($feedbacks);die;
         foreach ($feedbacks as $f) {
             ?>
             <tr>
                 <td><?=$f['lead_id'];?></td>
-                <td><a href="<?=base_url('admin/view_feedback/'.$f['lead_id']);?>?id=<?=$f['id']?>" target="_blank">View</a></td>
+                <td><a href="<?=base_url('admin/view_feedback/'.$f['lead_id']);?>?id=<?=$f['fs_id']?>" target="_blank">View</a></td>
                 <td><a href="#" onclick="feedback('<?=$f['lead_id'];?>');">Print</a></td>
             </tr>
 
