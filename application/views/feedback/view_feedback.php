@@ -112,7 +112,8 @@ p.footer a:hover {
     margin-bottom: 8px;
 	font-size:19px;
     font-family: 'Josefin Slab', serif;
-    font-weight: 600;
+    /*font-weight: 600;*/
+    font-weight: bold;
 }
 .main h5 span{
 	font-size:15px;	
@@ -285,6 +286,7 @@ p.footer a:hover {
 		font-size: 35px;
 	}
 	.main h5 {
+		font-weight: bold !important;
 		line-height: 1.5em;
 	}
 	.main {
@@ -324,21 +326,27 @@ p.footer a:hover {
 }
 </style>
 </head>
-<body>
+<body> 
 <div class="content">
 	<h1><img src='/assets/img/logo.png'></h1>
 	<h1>View Feedback</h1>
 	<div class="main">
 		<form >
 			<h5>Lead_id</h5>
-				<input type="text" value="" name="id"placeholder="Please enter your lead id"   required="">
-			
-                <h5>Question 1:</h5><br>
-            <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h6>
+				<input type="text" value="<?=$feedbacks[0]['lead_id'];?>"   readonly="">
+				<?php
+				$i=1;
+				foreach($feedbacks as $f)
+				{	
+				?>
+                <h5><?=$i.'. '.$f['question'];?></h5><br>
+            <h6><?='&nbsp&nbsp&nbsp'.$f['question'];?></h6>
                 <br>
-                <h5>Question 2:</h5><br>
-                <h6>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h6>
-                <br><br>
+                <?php
+                $i++;
+	            }
+	            ?>
+
 		
 			
  
