@@ -138,7 +138,7 @@
                     url: "<?=base_url('admin/view_feedback/');?>?id="+id,
                     data:{lead_id:lead_id},
                     success:function(data){
- print(data);
+                    console.log(data);
                     }
                 });
                // location.reload();
