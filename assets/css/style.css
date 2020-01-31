@@ -12,6 +12,14 @@ body a{
 	-ms-transition:0.5s all;
 	background:#011D4A!mportant;
 }
+/* chnage to make admin menu scrollable */
+.scrollable-menu {
+    height: auto;
+    max-height: 240px;
+	overflow-x: hidden;
+	top: -132px !important;
+}
+
 a:focus, a:active, a:hover ,a.dropdown-toggle{
     outline: none;
     -webkit-transition: all 0.3s;
@@ -172,7 +180,8 @@ a:hover { transition: all 200ms ease-in-out; }
 
 #menu li ul {
   opacity: 0;
-  height: 0px;
+  /* change to make ul scrollable
+  height: 0px; */
 }
 
 #menu li a {
@@ -297,7 +306,9 @@ li#menu-academico{
 	margin: 0 10px;
 }
 span.name-caret {
-    margin: 10px 0px 3px 0px;
+	/* testing */
+	/* margin: 10px 0px 3px 0px; */
+	margin: 5px 0px -3px 0px;
     font-size: 1.4em;
     color: #00C6D7;
     display: block;
@@ -314,7 +325,7 @@ span.name-caret {
 
 .down{
 	/*check  padding: 26px 0 30px; */
-	padding: 26px 0px 20px;
+	padding: 21px 0px 13px;
     text-align: center;
       background: #fff;
 }
@@ -326,8 +337,16 @@ span.name-caret {
 .down p {
     font-size: 0.9em;
     color: #777;
-    padding: 5px 8px;
+	/* padding: 5px 8px; */
+	/* checking */
+	padding: 3px 8px;
 }
+.down a img {
+	height: 140px;
+	width: 140px;
+}
+
+
 .down ul {
  padding:0;
  margin:0;

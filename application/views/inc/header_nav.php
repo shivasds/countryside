@@ -26,7 +26,7 @@ $i=1;
                     <a href="<?= $baseLink;?>" <?= $aAttr; ?> ><i class="<?php  echo $pModule['class']?>"></i> <span><?= $pModule['module'].((count($childModules)>0) ? '<span class="caret"></span>' :'') ?></span></a>
                     <?php
                     if(count($childModules)>0){
-                        echo '<ul class="dropdown-menu flottop'.$i.'">';
+                        echo '<ul class="dropdown-menu scrollable-menu">';
                         foreach ($childModules as $cModule) {
                             $baseLink = ($this->session->userdata('user_type') == 'admin') ? base_url('admin/'.$cModule['permalink']) : base_url($cModule['permalink']);
                             //if(in_array($cModule['id'], $permissionArry))
