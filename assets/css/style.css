@@ -5716,6 +5716,10 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:1024px){
+	.container {
+		width: 1102px;
+	}
+	
 	.profile_details_left {
 		float: right;
 		width: 47%;
