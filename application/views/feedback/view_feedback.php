@@ -329,12 +329,20 @@ p.footer a:hover {
 <body> 
 <div class="content">
 	<h1><img src='/assets/img/logo.png'></h1>
-	<h1>View Feedback</h1>
-	<?=print_r($feedbacks);?>
+	<h1>View Feedback</h1> 
 	<div class="main">
 		<form >
 			<h5>Lead_id</h5>
 			<h6><?=$feedbacks[0]['lead_id'];?></h6> 
+			<br>
+			<h5>Username</h5>
+			<h6><?=$feedbacks[0]['name'];?></h6> 
+			<br>
+			<h5>Employee Name</h5>
+			<h6><?=$feedbacks[0]['username'];?></h6> 
+			<br>
+			<h5>Project Name</h5>
+			<h6><?=$feedbacks[0]['projectname'];?></h6> 
 			<br>
 				<?php
 				$i=1;
@@ -348,10 +356,6 @@ p.footer a:hover {
                 $i++;
 	            }
 	            ?>
-
-		
-			
- 
 		</form>
 	</div>
 	<p class="footer">&copy; <?=date('Y');?> Countryside Groups. All Rights Reserved | Design by <a href="http://secondsdigital.com"> seconds digital solutions</a></p>

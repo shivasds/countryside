@@ -59,18 +59,17 @@ class Feedback_model extends My_model {
     }
     public function all_submitted_feedbacks($l_id='')
     {
-        $this->db->select('fs.*,c.*,q.question as question,a.answers as a')
-        ->from('feedback_submit fs') 
-        ->join('callback c','c.leadid=fs.lead_id','left')
+        $this->db->select('fs.*,c.*,p.name as projectname, q.question as question,a.answers as a,concat(u.first_name," ",u.last_name) as username')
+        ->from('feedback_submit fs')
         ->join('feedback_questions q','q.q_id=fs.q_id','left')
-        ->join('feedback_anaswers a','a.a_id=fs.a_id','left')
-        ->where('c.leadid',$l_id);      
-         
-
+        ->join('callback c','c.leadid=fs.lead_id','right')
+        ->join('user u','u.id =c.user_id','left')
+        ->join('project p','p.id=c.project_id','left')
+        ->join('feedback_anaswers a','a.a_id=fs.a_id','left');
+        if($l_id)
+            $this->db->where('fs.lead_id',$l_id); 
         $query=$this->db->get();
-       // print_r($this->db->last_query());die;
         return $query->result();
-
 
     }
     public function save_feedback($data='')
