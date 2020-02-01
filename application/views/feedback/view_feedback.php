@@ -336,9 +336,25 @@ td, th {
 	margin-bottom: 23px;
 	}
 </style>
+<style type="text/css">
+    @media print {
+  body * {
+    visibility: hidden;
+  }
+  #formdata, #formdata * {
+    visibility: visible;
+  }
+  #formdata {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .element::-webkit-scrollbar { width: 0 !important }
+}
+</style>
 </head>
 <body> 
-<div class="content">
+<div class="content formdata">
 	<h1><img src='/assets/img/logo.png'></h1>
 	<h1>View Feedback</h1> 
 	<div class="main">
