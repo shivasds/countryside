@@ -90,22 +90,27 @@
   background-color: #f8f8f8;
   resize: none;
 }
-img.ribbon {
+    img.ribbon{
       position: fixed;
       z-index: 1;
       top: 0;
       right: 0;
       border: 0;
-      cursor: pointer; }
+      cursor: pointer;
+     }
 
-      .starrr {
-  display: inline-block; }
-  .starrr a {
+  .starrr {
+   display: inline-block; 
+   }
+
+   .starrr a {
     font-size: 16px;
     padding: 0 1px;
     cursor: pointer;
     color: #FFD119;
-    text-decoration: none; }
+    text-decoration: none; 
+    }
+    
     </style>
 
     <form name="save_seller_form" id="save_seller_form" action=" " method="POST" enctype="multipart/form-data">

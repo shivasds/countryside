@@ -272,72 +272,74 @@
                     </select>
                 </div>
                 <div id="abc" hidden class="row">
-                    <div class="col-sm-6 form-group">
-                        <label for="client_name">Client name:</label>
-                        <input type="text" class="form-control" id="c_client_name" name="client_name" placeholder="Client name">
-                    </div>
-                    <div class="col-sm-6 form-group">
-                        <label for="email">Client Email Id:</label>
-                        <input type="email" class="form-control" id="c_client_email" name="client_email" placeholder="Client Email Id">
-                    </div>
-                    <div class="col-sm-6 form-group">
-                        <label for="email">Site visit date:</label>
-                        <input type="date" class="form-control" id="c_client_visit" name="email2" placeholder="Site visit date" onchange="update_client_note();">
-                    </div>
-                    <div class="col-sm-6 form-group">
-                        <label for="email">Site Assign by:</label>
-                        <input type="text" class="form-control" onblur="le()" id="c_assign_by" name="assign_by" placeholder="Site Assign by" onchange="update_client_note();">
-                    </div>
-                    <div class="col-sm-6 form-group">
-                        <label for="email">Relation ship Manager:</label>
-                        <input type="text" class="form-control" id="c_relationShipManager" name="c_relationShipManager" placeholder="Relation ship Manager" onchange="update_client_note();">
-                    </div>
-                    <div class="col-sm-6 form-group">
-                        <label for="email">Subject:</label>
-                        <input type="text" class="form-control" id="c_subject" name="email2" value="Thank you For the Site Visit" placeholder="Subject">
-                    </div>
-                    <div class="col-sm-12 form-group">
-                        <label for="comment">Mail Box:</label>
-                        <textarea class="form-control" name="notesClient" id="c_notesClient" rows="18" id="comment">
-
-Greetings From Countryside Group.
-
-With reference to your site visit on  assisted by Mr. abhishek from Countryside Group, we thank you for giving us an opportunity to serve you in searching your dream home.  At FBP it is our endeavour to help you with all the possible Property options which will suit your requirement. Mr.  from FBP will be at your service. He/she will be there to assist you in searching your dream home.
-  
-1. Home search - Assisting and helping you find your dream home suiting your requirements by giving you info on market trends, legalities, site visit assistance etc.
-
-2. Home loan Assistance - We will take away your pain of running around the banks to get your loan approved by giving doorstep service of bankers of your choice at your place.
-
-3. Property Purchase Assistance - Ensuring that your home buying becomes a pleasant experience our Relationship Manager will be there throughout the process Of documentation.
-
-4. Post sales Service – This is what differentiates us from others. We will be there for all possible help and guidance till you move into your home.
-
-5. Interior Services - We are tied With best interior designers in the city who give the best designs and execute them at a competitive price.
-
-6. Rental Services - Need to rent your house Or searching for good house on rent do not worry try Countryside Group rental services. Our professional and need based approach will ensure that you get right home/tenant without much hassles.
-
-For any escalations/ complaints please write to info@countrysidegroup.co.in
-
-Regards
-
-Team Countryside Group Services Pvt Ltd
-
-
-                        </textarea>
-                    </div>
-                    <div class="col-sm-12 form-group" >
-                        <div class="alert alert-success" id="mail_success" style="display:none">
-                            <strong>Success!</strong> Email sent successfully.
+                        <div class="col-sm-6 form-group">
+                            <label for="client_name">Client name:</label>
+                            <input type="text" class="form-control" id="c_client_name" name="client_name" placeholder="Client name">
                         </div>
-                        <button type="button" style="float: right;" class="btn btn-success" onclick="sendMail()" >Send</button>
-                    </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="email">Client Email Id:</label>
+                            <input type="email" class="form-control" id="c_client_email" name="client_email" placeholder="Client Email Id">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="email">Site visit date:</label>
+                            <input type="date" class="form-control" id="c_client_visit" name="email2" placeholder="Site visit date" onchange="update_client_note();">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="email">Site Assign by:</label>
+                            <input type="text" class="form-control" onblur="le()" id="c_assign_by" name="assign_by" placeholder="Site Assign by" onchange="update_client_note();">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="email">Relation ship Manager:</label>
+                            <input type="text" class="form-control" id="c_relationShipManager" name="c_relationShipManager" placeholder="Relation ship Manager" onchange="update_client_note();">
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="email">Subject:</label>
+                            <input type="text" class="form-control" id="c_subject" name="email2" value="Thank you For the Site Visit" placeholder="Subject">
+                        </div>
+                        <div class="col-sm-12 form-group">
+                            <label for="comment">Mail Box:</label>
+                            <textarea class="form-control" name="notesClient" id="c_notesClient" rows="18" id="comment">
+
+                            Greetings From Countryside Group.
+
+                            With reference to your site visit on  assisted by Mr. abhishek from Countryside Group, we thank you for giving us an opportunity to serve you in searching your dream home.  At FBP it is our endeavour to help you with all the possible Property options which will suit your requirement. Mr.  from FBP will be at your service. He/she will be there to assist you in searching your dream home.
+                            
+                            1. Home search - Assisting and helping you find your dream home suiting your requirements by giving you info on market trends, legalities, site visit assistance etc.
+
+                            2. Home loan Assistance - We will take away your pain of running around the banks to get your loan approved by giving doorstep service of bankers of your choice at your place.
+
+                            3. Property Purchase Assistance - Ensuring that your home buying becomes a pleasant experience our Relationship Manager will be there throughout the process Of documentation.
+
+                            4. Post sales Service – This is what differentiates us from others. We will be there for all possible help and guidance till you move into your home.
+
+                            5. Interior Services - We are tied With best interior designers in the city who give the best designs and execute them at a competitive price.
+
+                            6. Rental Services - Need to rent your house Or searching for good house on rent do not worry try Countryside Group rental services. Our professional and need based approach will ensure that you get right home/tenant without much hassles.
+
+                            For any escalations/ complaints please write to info@countrysidegroup.co.in
+
+                            Regards
+
+                            Team Countryside Group Services Pvt Ltd
+
+
+                            </textarea>
+                        </div>
+                        <div class="col-sm-12 form-group" >
+                            <div class="alert alert-success" id="mail_success" style="display:none">
+                                <strong>Success!</strong> Email sent successfully.
+                            </div>
+                            <button type="button" style="float: right;" class="btn btn-success" onclick="sendMail()" >Send</button>
+                        </div>
                 </div>
+                
                 <div id="dead" class="row" hidden>
                     <div class="col-sm-12 form-group">
                         <label for="comment">Reason of dead:</label>
                         <textarea class="form-control" name="notes" id="notes" rows="3" id="reasonOfDead"></textarea>
                     </div>
                 </div>
+
                 <div id="close" class="row" >
                     <div class="col-sm-6 form-group">
                         <label for="email">Advisor one:</label>
@@ -490,98 +492,101 @@ Team Countryside Group Services Pvt Ltd
                         <label for="email">Project Type:</label>
                         <input type="text" class="form-control" id="c_projectType" name="email2" placeholder="Project Type">
                     </div>
+
                     <div class="col-sm-6 form-group">
                         <label for="email">Approve:</label>
                         <input type="checkbox" class="form-control" id="c_approve" name="email2" placeholder="Project Type" style="display: block !important">
                     </div>
                 </div>
-                <div class="col-sm-6 form-group">
-                    <label for="comment">Preview Callbacks:</label>
-                    <textarea class="form-control" name="notes" id="previous_callback1" rows="3" id="comment" readonly></textarea>
-                </div>
-                <div class="col-sm-6 form-group">
-                    <label for="comment">Current Callbacks:</label>
-                    <textarea class="form-control" name="notes" rows="3" id="current_callback1" name="current_callback1" onblur="curr(this.value)"></textarea>
-                </div>
-                <div class="col-md-6 form-group">
-                    <input type="checkbox" name="fancy-checkbox-success" onclick="reassignDate()"  id="fancy-checkbox-success" autocomplete="off" />
-                    <div class="btn-group">
-                        <label for="fancy-checkbox-success" class="btn btn-success">
-                            <span class="glyphicon glyphicon-ok"></span>
-                            <span> </span>
-                        </label>
-                        <label for="fancy-checkbox-success" class="btn btn-default active">
-                           ReAssign To Another Date 
-                        </label>
+
+                <div class="row">
+                    <div class="col-sm-6 form-group">
+                        <label for="comment">Preview Callbacks:</label>
+                        <textarea class="form-control" name="notes" id="previous_callback1" rows="3" id="comment" readonly></textarea>
                     </div>
-                    <div id="reDate" hidden >
-                        <div class="col-sm-12 form-group" >
-                            <label for="leadId">Date:</label>
-                            <input type="date" class="form-control" id="reassign_date" name="email2" placeholder="Date">
-                        </div>
-                        <div class="col-sm-12 form-group" >
-                            <label for="leadId">Time:</label>
-                            <input type="time" id="reassign_time" name="daterange" value=""/>
-                        </div>
+                    <div class="col-sm-6 form-group">
+                        <label for="comment">Current Callbacks:</label>
+                        <textarea class="form-control" name="notes" rows="3" id="current_callback1" name="current_callback1" onblur="curr(this.value)"></textarea>
                     </div>
-                </div>
-                <div class="col-md-6 form-group">
-                    <input type="checkbox" name="fancy-checkbox-info" onclick="clientEmail()"  id="fancy-checkbox-info" autocomplete="off" />
-                    <div class="btn-group">
-                        <label for="fancy-checkbox-info" class="btn btn-info">
-                            <span class="glyphicon glyphicon-ok"></span>
-                            <span> </span>
-                        </label>
-                        <label for="fancy-checkbox-info" class="btn btn-default active">
-                           Client Registration Email
-                        </label>
-                    </div>
-                    <div id="clientEmail" hidden>
-                        <div class="col-sm-12 form-group">
-                            <label for="email_id">Email Id:</label>
-                            <input type="email" class="form-control" id="client_email_id" name="email_id" placeholder="Email Id">
+                    <div class="col-md-6 form-group">
+                        <input type="checkbox" name="fancy-checkbox-success" onclick="reassignDate()"  id="fancy-checkbox-success" autocomplete="off" />
+                        <div class="btn-group">
+                            <label for="fancy-checkbox-success" class="btn btn-success">
+                                <span class="glyphicon glyphicon-ok"></span>
+                                <span> </span>
+                            </label>
+                            <label for="fancy-checkbox-success" class="btn btn-default active">
+                            ReAssign To Another Date 
+                            </label>
                         </div>
-                        <div class="col-sm-12 form-group">
-                            <label for="subject">Subject:</label>
-                            <input type="text" class="form-control" id="client_email_subject" name="subject" value="Client Registration" placeholder="Subject">
-                        </div>
-                        <div class="col-sm-12 form-group">
-                            <label for="comment">Email Body:</label>
-                            <textarea class="form-control" name="notes" id="client_email_body" rows="15" id="comment">
-      
-Dear sir / madam,
-
-Greetings From Countryside Group...
-
-Kindly register the below client For __________________ project On behalf Of Countryside Group 
-
-Property & acknowledge.
-
-Client Name : ________________
-
-Contact No. : ________________
-
-E-mail ID   : ________________
-
-Thanks & Regards
-Team Countryside Group
-      
-        
-                            </textarea>
-                        </div>
-                        <div class="col-sm-12 form-group">
-                            <div class="alert alert-success" id="regmail_success" style="display:none">
-                                <strong>Success!</strong> Email sent successfully.
+                        <div id="reDate" hidden >
+                            <div class="col-sm-12 form-group" >
+                                <label for="leadId">Date:</label>
+                                <input type="date" class="form-control" id="reassign_date" name="email2" placeholder="Date">
                             </div>
-                            <button type="button" onclick="sendRegMail()" class="btn btn-success">Send</button>
+                            <div class="col-sm-12 form-group" >
+                                <label for="leadId">Time:</label>
+                                <input type="time" id="reassign_time" name="daterange" value=""/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <input type="checkbox" name="fancy-checkbox-info" onclick="clientEmail()"  id="fancy-checkbox-info" autocomplete="off" />
+                        <div class="btn-group">
+                            <label for="fancy-checkbox-info" class="btn btn-info">
+                                <span class="glyphicon glyphicon-ok"></span>
+                                <span> </span>
+                            </label>
+                            <label for="fancy-checkbox-info" class="btn btn-default active">
+                            Client Registration Email
+                            </label>
+                        </div>
+                        <div id="clientEmail" hidden>
+                            <div class="col-sm-12 form-group">
+                                <label for="email_id">Email Id:</label>
+                                <input type="email" class="form-control" id="client_email_id" name="email_id" placeholder="Email Id">
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label for="subject">Subject:</label>
+                                <input type="text" class="form-control" id="client_email_subject" name="subject" value="Client Registration" placeholder="Subject">
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <label for="comment">Email Body:</label>
+                                <textarea class="form-control" name="notes" id="client_email_body" rows="15" id="comment">
+        
+                                    Dear sir / madam,
+
+                                    Greetings From Countryside Group...
+
+                                    Kindly register the below client For __________________ project On behalf Of Countryside Group 
+
+                                    Property & acknowledge.
+
+                                    Client Name : ________________
+
+                                    Contact No. : ________________
+
+                                    E-mail ID   : ________________
+
+                                    Thanks & Regards
+                                    Team Countryside Group
+                                        
+            
+                                </textarea>
+                            </div>
+                            <div class="col-sm-12 form-group">
+                                <div class="alert alert-success" id="regmail_success" style="display:none">
+                                    <strong>Success!</strong> Email sent successfully.
+                                </div>
+                                <button type="button" onclick="sendRegMail()" class="btn btn-success">Send</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success" onclick="update_callback_details()" id="save"  disabled>Save</button>
-            </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success" onclick="update_callback_details()" id="save"  disabled>Save</button>
+                </div>
         </div>
     </div>
 </div>
