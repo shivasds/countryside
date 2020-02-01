@@ -338,23 +338,30 @@ td, th {
 </style>
 <style type="text/css">
     @media print {
-  body * {
-    visibility: hidden;
-  }
-  #formdata, #formdata * {
+ 
+  #content, #content * {
     visibility: visible;
   }
-  #formdata {
+  #content {
     position: absolute;
     left: 0;
     top: 0;
-  }
-  .element::-webkit-scrollbar { width: 0 !important }
+  } 
 }
 </style>
+<script type="text/javascript">
+	function printFunction( ) {
+		window.print();
+	}
+</script>
+<?php
+if($print)
+echo "<script>printFunction();</script>";
+
+?>
 </head>
 <body> 
-<div class="content formdata">
+<div class="content">
 	<h1><img src='/assets/img/logo.png'></h1>
 	<h1>View Feedback</h1> 
 	<div class="main">

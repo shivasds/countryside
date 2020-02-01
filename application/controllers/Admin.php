@@ -2906,6 +2906,7 @@ class Admin extends CI_Controller {
 	 {
 	 	$data['l_id'] = $l_id;
 	 	$id = $this->input->get('id'); 
+	 	$data['print'] = $this->input->get('print'); 
 		$data['feedbacks'] = $this->feedback_model->all_submitted_feedbacks($l_id,$id);
 		$data['feedbacks'] = json_decode(json_encode($data['feedbacks']),true);
 	 	$this->load->view('feedback/view_feedback',$data);
