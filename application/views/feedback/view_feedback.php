@@ -336,6 +336,29 @@ td, th {
 	margin-bottom: 23px;
 	}
 </style>
+<style type="text/css">
+    @media print {
+ 
+  #content, #content * {
+    visibility: visible;
+  }
+  #content {
+    position: absolute;
+    left: 0;
+    top: 0;
+  } 
+}
+</style>
+<script type="text/javascript">
+	function printFunction( ) {
+		window.print();
+	}
+</script>
+<?php
+if($print)
+echo "<script>printFunction();</script>";
+
+?>
 </head>
 <body> 
 <div class="content">
