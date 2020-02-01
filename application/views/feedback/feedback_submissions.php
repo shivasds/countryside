@@ -1,3 +1,4 @@
+
 <?php 
     defined('BASEPATH') OR exit('No direct script access allowed');
     $this->load->view('inc/header'); 
@@ -136,9 +137,11 @@
                 $.ajax({
                     type:"POST",
                     url: "<?=base_url('admin/view_feedback/');?>?id="+id,
+                    dataType:'html',
                     data:{lead_id:lead_id},
-                    success:function(data){
-                    console.log(data);
+                    success:function(data){ 
+                   $('#formdata').append(data);
+                   window.print();
                     }
                 });
                // location.reload();
@@ -260,8 +263,8 @@
 
 </script> 
 
- 
 
-</script>
+
+    <div id="formdata"></div>
 </body>
 </html>
