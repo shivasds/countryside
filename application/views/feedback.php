@@ -12,6 +12,7 @@
 <link href='//fonts.googleapis.com/css?family=Amaranth:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Josefin+Slab:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
 <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
 article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
@@ -521,6 +522,23 @@ span.starRating {
 		padding: 12px 0 8px;
 	}
 }
+
+img.ribbon {
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      border: 0;
+      cursor: pointer; }
+
+      .starrr {
+  display: inline-block; }
+  .starrr a {
+    font-size: 16px;
+    padding: 0 1px;
+    cursor: pointer;
+    color: #FFD119;
+    text-decoration: none; }
 </style>
 </head>
 <body>
@@ -582,6 +600,23 @@ span.starRating {
 	</div>
 	<p class="footer">&copy; 2016 Feedback Widget. All Rights Reserved | Design by <a href="http://secondsdigital.com"> seconds digital solutions</a></p>
 </div>
+<script>
+ var $s2input = $('#star2_input');
+    $('#star2').starrr({
+      max: 10,
+      rating: $s2input.val(),
+      change: function(e, value){
+        $s2input.val(value).trigger('input');
+      }
+    });
+  </script>
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  </script>
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/starrr.js"></script>
 </body>
 </html>
