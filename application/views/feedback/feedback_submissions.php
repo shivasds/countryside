@@ -136,12 +136,17 @@
             if(lead_id!=''){
                 $.ajax({
                     type:"POST",
-                    url: "<?=base_url('admin/view_feedback/');?>?id="+id,
+                    url: "<?=base_url('admin/print_feedback/');?>?id="+id,
                     dataType:'html',
                     data:{lead_id:lead_id},
                     success:function(data){ 
-                   $('#formdata').append(data);
-                   window.print();
+                 var printWindow = window.open('', '', 'height=500,width=800');
+                 printWindow.document.write(data);
+                 console.log(data);
+                 printWindow.document.close();
+               
+                //    $('#formdata').append(data);
+                   printWindow.print();
                     }
                 });
                // location.reload();
