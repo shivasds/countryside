@@ -6,8 +6,8 @@
    $user_ids =json_decode( json_encode($user_ids), true);
    $string_ids='';
    foreach ($user_ids as $id) {
-   	//print_r($id['id']);
-   	$string_ids.=$id['id'].',';
+    //print_r($id['id']);
+    $string_ids.=$id['id'].',';
    }
    //echo $string_ids;
 
@@ -35,47 +35,47 @@
 
     ?>
 <body>
-	 <div class="se-pre-con"></div>
+     <div class="se-pre-con"></div>
    <div class="page-container" style="height: 1000px;">
    <!--/content-inner-->
-	<div class="left-content">
-	   <div class="inner-content">
-		<!-- header-starts -->
-			<div class="header-section">
-						<!--menu-right-->
-						<div class="top_menu">
-						        <!--<div class="main-search">
-											<form>
-											   <input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text"/>
-												<input type="submit" value="">
-											</form>
-									<div class="close"><img src="<?php echo base_url()?>assets/images/cross.png" /></div>
-								</div>
-									<div class="srch"><button></button></div>
-									<script type="text/javascript">
-										 $('.main-search').hide();
-										$('button').click(function (){
-											$('.main-search').show();
-											$('.main-search text').focus();
-										}
-										);
-										$('.close').click(function(){
-											$('.main-search').hide();
-										});
-									</script>
-							<!--/profile_details-->
-								<div class="profile_details_left">
-								<?php $this->load->view('notification');?>
-							</div>
-							<div class="clearfix"></div>	
-							<!--//profile_details-->
-						</div>
-						<!--//menu-right-->
-					<div class="clearfix"></div>
-				</div>
-					<!-- //header-ends -->
-						<div class="outter-wp">  
-							<div class="container">    
+    <div class="left-content">
+       <div class="inner-content">
+        <!-- header-starts -->
+            <div class="header-section">
+                        <!--menu-right-->
+                        <div class="top_menu">
+                                <!--<div class="main-search">
+                                            <form>
+                                               <input type="text" value="Search" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Search';}" class="text"/>
+                                                <input type="submit" value="">
+                                            </form>
+                                    <div class="close"><img src="<?php echo base_url()?>assets/images/cross.png" /></div>
+                                </div>
+                                    <div class="srch"><button></button></div>
+                                    <script type="text/javascript">
+                                         $('.main-search').hide();
+                                        $('button').click(function (){
+                                            $('.main-search').show();
+                                            $('.main-search text').focus();
+                                        }
+                                        );
+                                        $('.close').click(function(){
+                                            $('.main-search').hide();
+                                        });
+                                    </script>
+                            <!--/profile_details-->
+                                <div class="profile_details_left">
+                                <?php $this->load->view('notification');?>
+                            </div>
+                            <div class="clearfix"></div>    
+                            <!--//profile_details-->
+                        </div>
+                        <!--//menu-right-->
+                    <div class="clearfix"></div>
+                </div>
+                    <!-- //header-ends -->
+                        <div class="outter-wp">  
+                            <div class="container">    
     <div class="page-header">
         <h1><?php echo $heading; ?></h1>
     </div>
@@ -217,15 +217,15 @@
             </tr>
         </thead> 
         <tbody>
-        	<?php
-        	$all_questions = json_decode(json_encode($all_questions),true);
+            <?php
+            $all_questions = json_decode(json_encode($all_questions),true);
          //   print_r($all_answers);die;
-        	$i=1;
+            $i=1;
             $q_a =json_decode( json_encode($q_a), true);
 
-        	foreach ($q_a as $q) {
-        	?>
-        	<tr>
+            foreach ($q_a as $q) {
+            ?>
+            <tr>
                 <td><?=$i?></td>
                 <td><?=$q['question']?></td>
                 <td><?=$q['a1']?></td>
@@ -250,53 +250,53 @@
         <ul class="pagination pull-right"><?php echo $links; ?></ul>
     </div>-->
 </div>
-									</div>
+                                    </div>
 <!--/tabs-->
-										<div class="tab-main">
-											 <!--/tabs-inner-->
-												
-												</div>
-											  <!--//tabs-inner-->
+                                        <div class="tab-main">
+                                             <!--/tabs-inner-->
+                                                
+                                                </div>
+                                              <!--//tabs-inner-->
 
-									 <!--footer section start-->
-										<footer>
-										   <p>&copy 2020 Countryside Group . All Rights Reserved | Design by <a href="https://secondsdigital.com/" target="_blank">Seconds Digital Solutions.</a></p>
-										</footer>
-									<!--footer section end-->
-								</div>
-							</div>
-				<!--//content-inner-->
-			<!--/sidebar-menu-->
-				<div class="sidebar-menu">
-					<header class="logo">
-					<a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="#"> <span id="logo"> <!--<h1>CSG</h1>--></span> 
-					<!--<img id="logo" src="" alt="Logo"/>--> 
-				  </a> 
-				</header>
-			<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
-			<!--/down-->
-							<div class="down">	
-									  <?php $this->load->view('profile_pic');?>
-									  <a href="#"><span class=" name-caret"><?php echo $this->session->userdata('user_name'); ?></span></a>
-									   <p><?php echo $this->session->userdata('user_type'); ?></p>
-									<?php if($this->session->userdata('user_type')=='user')
+                                     <!--footer section start-->
+                                        <footer>
+                                           <p>&copy 2020 Countryside Group . All Rights Reserved | Design by <a href="https://secondsdigital.com/" target="_blank">Seconds Digital Solutions.</a></p>
+                                        </footer>
+                                    <!--footer section end-->
+                                </div>
+                            </div>
+                <!--//content-inner-->
+            <!--/sidebar-menu-->
+                <div class="sidebar-menu">
+                    <header class="logo">
+                    <a href="#" class="sidebar-icon"> <span class="fa fa-bars"></span> </a> <a href="#"> <span id="logo"> <!--<h1>CSG</h1>--></span> 
+                    <!--<img id="logo" src="" alt="Logo"/>--> 
+                  </a> 
+                </header>
+            <div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
+            <!--/down-->
+                            <div class="down">  
+                                      <?php $this->load->view('profile_pic');?>
+                                      <a href="#"><span class=" name-caret"><?php echo $this->session->userdata('user_name'); ?></span></a>
+                                       <p><?php echo $this->session->userdata('user_type'); ?></p>
+                                    <?php if($this->session->userdata('user_type')=='user')
                                        {?>
                                       <a href="#"><span class="name-caret">RM:</span> <?php echo $this->session->userdata('manager_name'); ?></a><br>
                                         <?php } ?>
-									<ul>
-									<li><a class="tooltips" href="<?= base_url('dashboard/profile'); ?>"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
-										<li><a class="tooltips" href="#"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
-										<li><a class="tooltips" href="<?php echo base_url()?>login/logout"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
-										</ul>
-									</div>
-							   <!--//down-->
+                                    <ul>
+                                    <li><a class="tooltips" href="<?= base_url('dashboard/profile'); ?>"><span>Profile</span><i class="lnr lnr-user"></i></a></li>
+                                        <li><a class="tooltips" href="#"><span>Settings</span><i class="lnr lnr-cog"></i></a></li>
+                                        <li><a class="tooltips" href="<?php echo base_url()?>login/logout"><span>Log out</span><i class="lnr lnr-power-switch"></i></a></li>
+                                        </ul>
+                                    </div>
+                               <!--//down-->
                            <?php $this->load->view('inc/header_nav'); ?>
                            <div style="height: 100%"></div>
-							  </div>
-							  <div class="clearfix"></div>		
-							</div>
-							<script>
-							var toggle = true;
+                              </div>
+                              <div class="clearfix"></div>      
+                            </div>
+                            <script>
+                            var toggle = true;
                                 function change_state(id){
                                 $(".se-pre-con").show();
                                 $.ajax({
@@ -317,24 +317,24 @@
                                     }
                                 });
                             }
-										
-							$(".sidebar-icon").click(function() {                
-							  if (toggle)
-							  {
-								$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
-								$("#menu span").css({"position":"absolute"});
-							  }
-							  else
-							  {
-								$(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
-								setTimeout(function() {
-								  $("#menu span").css({"position":"relative"});
-								}, 400);
-							  }
-											
-											toggle = !toggle;
-										});
-							</script>
+                                        
+                            $(".sidebar-icon").click(function() {                
+                              if (toggle)
+                              {
+                                $(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
+                                $("#menu span").css({"position":"absolute"});
+                              }
+                              else
+                              {
+                                $(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
+                                setTimeout(function() {
+                                  $("#menu span").css({"position":"relative"});
+                                }, 400);
+                              }
+                                            
+                                            toggle = !toggle;
+                                        });
+                            </script>
 <!--js -->
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/TweenLite.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/CSSPlugin.min.js"></script>
@@ -346,15 +346,13 @@
 <!-- Bootstrap Core JavaScript -->
 <script>
   $('#star1').starrr({
-      change: function(e, value){ 
-        $s2input.val(value).trigger('input');
-        alert($s2input.val()); 
+      change: function(e, value){
         if (value) {
           $('.your-choice-was').show();
           $('.choice').text(value);
         } else {
           $('.your-choice-was').hide();
-        } 
+        }
       }
     });
 
