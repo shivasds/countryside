@@ -10,6 +10,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="<?php echo base_url()?>assets/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
 <link href="<?php echo base_url()?>assets/css/style.css" rel='stylesheet' type='text/css' />
 <link href="<?php echo base_url()?>assets/css/font-awesome.css" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+  color: orange;
+}
+</style>
 <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="<?php echo base_url()?>assets/css/icon-font.min.css" type='text/css' />    
 <link href="<?php echo base_url()?>assets/css/fabochart.css" rel='stylesheet' type='text/css' />
@@ -47,6 +53,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="https://rawgit.com/KidSysco/jquery-ui-month-picker/v3.0.0/demo/MonthPicker.min.js"></script>
+
 <script type="text/javascript">
     $(function(){
         $('.datepicker').each(function(){
