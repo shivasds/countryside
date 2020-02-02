@@ -20,6 +20,26 @@
         font-size: 60px;
         color: #f1c836;
     }
+    img.ribbon{
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      border: 0;
+      cursor: pointer;
+     }
+
+  .starrr {
+   display: inline-block; 
+   }
+
+   .starrr a {
+    font-size: 16px;
+    padding: 0 1px;
+    cursor: pointer;
+    color: #FFD119;
+    text-decoration: none; 
+    }
     </style>
     <div class="container"> 
         <div class="row"> 
@@ -74,52 +94,35 @@
 					<div class="clearfix"></div>
 				</div>
 					<!-- //header-ends -->
-						<div class="outter-wp">  
-							<div class="container">    
+			<div class="outter-wp">  
+		<div class="container">    
     <div class="page-header">
         <h1><?php echo $heading; ?></h1>
     </div>
     <style type="text/css">
         textarea {
-  width: 100%;
-  height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  resize: none;
-}
-img.ribbon{
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      right: 0;
-      border: 0;
-      cursor: pointer;
-     }
-
-  .starrr {
-   display: inline-block; 
-   }
-
-   .starrr a {
-    font-size: 16px;
-    padding: 0 1px;
-    cursor: pointer;
-    color: #FFD119;
-    text-decoration: none; 
-    }
+            width: 100%;
+            height: 150px;
+            padding: 12px 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            resize: none;
+            }
+  
     </style>
 
     <form name="save_seller_form" id="save_seller_form" action="<?=base_url('admin/manage_questions'); ?>" method="POST" enctype="multipart/form-data">
-        <div class="col-sm-12 form-group">
+      <div class="row"> 
+    <div class="col-sm-10 col-md-10 form-group">
             <label for="emp_code">Question:</label>
             <input type="text" class="form-control" id="question" onblur="code_check(this.value)" name="question" placeholder="Please enter question" required="required">
         </div>
  
 
         <button type="submit" id="add_question" class="btn btn-success btn-block">Submit</button>
+        </div>
     </form>
 </div>
 
@@ -246,12 +249,11 @@ img.ribbon{
 										});
 							</script>
 <!--js -->
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/starrr.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/TweenLite.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/CSSPlugin.min.js"></script>
 <script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js"></script>
 <script src="<?php echo base_url()?>assets/js/scripts.js"></script>
-<script type="text/javascript" src="<?php echo base_url()?>assets/js/starrr.js"></script>
-<!--<script src="<?php echo base_url()?>assets/js/scripts.js"></script>-->
 
 <!-- Bootstrap Core JavaScript -->
 <script>

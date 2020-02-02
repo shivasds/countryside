@@ -21,6 +21,27 @@
         font-size: 60px;
         color: #f1c836;
     }
+    img.ribbon{
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      border: 0;
+      cursor: pointer;
+     }
+
+  .starrr {
+   display: inline-block; 
+   
+   }
+
+   .starrr a {
+    font-size: 16px;
+    padding: 0 1px;
+    cursor: pointer;
+    color: #FFD119;
+    text-decoration: none; 
+    }
     </style>
     <div class="container"> 
         <div class="row"> 
@@ -82,15 +103,16 @@
     </div>
     <style type="text/css">
         textarea {
-  width: 100%;
-  height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  resize: none;
-}
+        width: 100%;
+        height: 150px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        resize: none;
+        }
+
     </style>
 
     <!--<form name="save_seller_form" id="save_seller_form" action="<?=base_url('admin/manage_answers'); ?>" method="POST" enctype="multipart/form-data">
@@ -232,6 +254,7 @@
                                         });
                             </script>
 <!--js -->
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/starrr.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/TweenLite.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/CSSPlugin.min.js"></script>
 <script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js"></script>
@@ -240,6 +263,19 @@
 
 <!-- Bootstrap Core JavaScript -->
   
+<script>
+  $('#star1').starrr({
+      change: function(e, value){
+        if (value) {
+          $('.your-choice-was').show();
+          $('.choice').text(value);
+          console.log("m in feedback submission")
+        } else {
+          $('.your-choice-was').hide();
+        }
+      }
+    });
+    </script>
    <script>
     $(document).ready(function() {
         $('#example').DataTable();
