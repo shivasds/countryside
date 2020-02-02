@@ -319,7 +319,7 @@
                                 });
                             }
 										
-                            $(".sidebar-icon").click(function() {                
+							$(".sidebar-icon").click(function() {                
 							  if (toggle)
 							  {
 								$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
@@ -342,6 +342,7 @@
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/CSSPlugin.min.js"></script>
 <script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js"></script>
 <script src="<?php echo base_url()?>assets/js/scripts.js"></script>
+<!--<script src="<?php echo base_url()?>assets/js/scripts.js"></script>-->
 
 <!-- Bootstrap Core JavaScript -->
 <script>
