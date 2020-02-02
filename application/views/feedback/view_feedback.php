@@ -406,9 +406,9 @@ echo "<script>printFunction();</script>";
                 <br>
                 <?php
                 $i++;
-	            }
-	            ?>
-<<<<<<< HEAD
+	            } 
+	            ?>  
+	            ?> 
 	            <div class="container">
 				  <span id="rateMe4"  class="feedback"></span>
 				</div>
@@ -417,12 +417,13 @@ echo "<script>printFunction();</script>";
 			$(document).ready(function() {
 			  $('#rateMe4').mdbRate();
 			});
-		</script>
-	</div>
-=======
+		</script> 
+	</div> 
 	</form>
-</div>
->>>>>>> 93811e20bcbba8994dd99c6f6814720ae5b54649
+</div>  
+	</div> 
+	</form>
+</div> 
 	<p class="footer">&copy; <?=date('Y');?> Countryside Groups. All Rights Reserved | Design by <a href="http://secondsdigital.com"> seconds digital solutions</a></p>
 </div>
 	
