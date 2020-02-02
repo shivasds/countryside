@@ -377,51 +377,51 @@
 
 
 
-            <div class="col-md-4">
+            <div class="col-sm-4 col-md-4 col-lg-6">
               <!-- USERS LIST -->
               <div class="box box-danger">
-                <div class="box-header with-border">
-                  <h3 class="box-title"><?=$strTitle;?></h3>
-                  <?php //print_r($vendorslist);echo $vendorslist[0]['id']."this is vendorslist";
-$vendors='';
-foreach ($vendorslist as $Vendor) {
- $vendors.=strval($Vendor['id'].",");
-}
-$vendors = rtrim($vendors, ", ");
-          
-          //echo $vendors;?>
-                  <div class="box-tools pull-right">
-                    <span class="label label-danger"><?=count($vendorslist);?> <?=$strsubTitle;?></span>
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                    </button>
-                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
-                    </button>
+                  <div class="box-header with-border">
+                    <h3 class="box-title"><?=$strTitle;?></h3>
+                    <?php //print_r($vendorslist);echo $vendorslist[0]['id']."this is vendorslist";
+                    $vendors='';
+                    foreach ($vendorslist as $Vendor) {
+                    $vendors.=strval($Vendor['id'].",");
+                    }
+                    $vendors = rtrim($vendors, ", ");
+                              
+                    //echo $vendors;?>
+                    <div class="box-tools pull-right">
+                      <span class="label label-danger"><?=count($vendorslist);?> <?=$strsubTitle;?></span>
+                      <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                      </button>
+                      <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <!-- /.box-header -->
+                  <!-- /.box-header -->
                 <div class="box-body no-padding">
                   <ul class="users-list clearfix">
                   
                     <?php if(!empty($vendorslist)){
                     
-            foreach($vendorslist as $v):
-              $this->load->model('user_model');
-              $user=$this->user_model->get_user_details($v);
- 
-            ?>
+                    foreach($vendorslist as $v):
+                      $this->load->model('user_model');
+                      $user=$this->user_model->get_user_details($v);
+        
+                    ?>
                        <li class="selectVendor"  id="<?=$user[0]['first_name'];?>" title="<?=$user[0]['first_name'];?>">
                           <img onclick="ScrollDown();" src="<?=base_url('uploads/').$user[0]['profile_pic'];?>" alt="<?=$user[0]['first_name'];?>" title="<?=$user[0]['first_name']?>">
                           <a class="users-list-name" href="#"><?=$user[0]['first_name'];?></a>
                           <!--<span class="users-list-date">Yesterday</span>-->
                         </li>
-                    <?php
-                     endforeach;?>
-                    
-                   <?php }else{?>
-                    <li>
-                       <a class="users-list-name" href="#">No Vendor's Find...</a>
-                     </li>
-                    <?php } ?>
+                        <?php
+                        endforeach;?>
+                        
+                        <?php }else{?>
+                        <li>
+                          <a class="users-list-name" href="#">No Vendor's Find...</a>
+                        </li>
+                      <?php } ?>
                     
                     
                   </ul>

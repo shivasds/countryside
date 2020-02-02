@@ -111,203 +111,211 @@
         <h1><?php echo $heading; ?></h1>
     </div>
     <form method="POST" id="search_form">
-        <div class="col-md-3 form-group">
-            <label for="emp_code">Department:</label>
-            <select  class="form-control"  id="dept" name="dept" >
-                <option value="">Select</option>
-                <?php $all_department=$this->common_model->all_active_departments();
-                foreach($all_department as $department){ ?>
-                    <option value="<?php echo $department->id; ?>" <?php if(($this->session->userdata("department"))==$department->id) echo 'selected' ?>><?php echo $department->name; ?></option>
-                <?php }?>             
-            </select>
-        </div>
-        <div class="col-md-3 form-group">
-            <label for="emp_code">Project:</label>
-            <select  class="form-control"  id="project" name="project" >
-                <option value="">Select</option>
-                <?php $projects= $this->common_model->all_active_projects(); 
-                foreach( $projects as $project){ ?>
-                    <option value="<?php echo $project->id ?>" <?php if(($this->session->userdata("project"))==$project->id) echo 'selected' ?>><?php echo $project->name ?></option>
-                <?php }?>              
-            </select>
-        </div>
-        <div class="col-md-3 form-group">
-            <label for="assign">Lead Source:</label>
-            <select  class="form-control"  id="lead_source" name="lead_source" >
-                <option value="">Select</option>
-                <?php $lead_source= $this->common_model->all_active_lead_sources(); 
-                foreach( $lead_source as $source){ ?>
-                    <option value="<?php echo $source->id ?>" <?php if(($this->session->userdata("lead_source"))==$source->id) echo 'selected' ?>><?php echo $source->name ?></option>
-                <?php } ?>             
-            </select>
-        </div>
-        <div class="col-md-3 form-group">
-            <label for="assign">User Name:</label>
-            <select  class="form-control"  id="user_name" name="user_name" >
-                <option value="">Select</option>
-                <?php $all_user= $this->user_model->all_users("type in (1,2,3,4,5,6) AND emp_code !='admin' and active=1"); 
-                foreach( $all_user as $user){ 
-                    switch ($user->type) {
-                        case '1':
-                            $role = "User";
-                            break;
+        <div class="row">
+                <div class="col-md-3 form-group">
+                    <label for="emp_code">Department:</label>
+                    <select  class="form-control"  id="dept" name="dept" >
+                        <option value="">Select</option>
+                        <?php $all_department=$this->common_model->all_active_departments();
+                        foreach($all_department as $department){ ?>
+                            <option value="<?php echo $department->id; ?>" <?php if(($this->session->userdata("department"))==$department->id) echo 'selected' ?>><?php echo $department->name; ?></option>
+                        <?php }?>             
+                    </select>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="emp_code">Project:</label>
+                    <select  class="form-control"  id="project" name="project" >
+                        <option value="">Select</option>
+                        <?php $projects= $this->common_model->all_active_projects(); 
+                        foreach( $projects as $project){ ?>
+                            <option value="<?php echo $project->id ?>" <?php if(($this->session->userdata("project"))==$project->id) echo 'selected' ?>><?php echo $project->name ?></option>
+                        <?php }?>              
+                    </select>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="assign">Lead Source:</label>
+                    <select  class="form-control"  id="lead_source" name="lead_source" >
+                        <option value="">Select</option>
+                        <?php $lead_source= $this->common_model->all_active_lead_sources(); 
+                        foreach( $lead_source as $source){ ?>
+                            <option value="<?php echo $source->id ?>" <?php if(($this->session->userdata("lead_source"))==$source->id) echo 'selected' ?>><?php echo $source->name ?></option>
+                        <?php } ?>             
+                    </select>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="assign">User Name:</label>
+                    <select  class="form-control"  id="user_name" name="user_name" >
+                        <option value="">Select</option>
+                        <?php $all_user= $this->user_model->all_users("type in (1,2,3,4,5,6) AND emp_code !='admin' and active=1"); 
+                        foreach( $all_user as $user){ 
+                            switch ($user->type) {
+                                case '1':
+                                    $role = "User";
+                                    break;
 
-                        case '2':
-                            $role = "Manager";
-                            break;
+                                case '2':
+                                    $role = "Manager";
+                                    break;
 
-                        case '3':
-                            $role = "VP";
-                            break;
-                        
-                        case '4':
-                            $role = "Director";
-                            break;
-                         case '5':
-                            $role = "Admin";
-                            break;
-                            case '6':
-                            $role = "City Head";
-                            break;
-                    }
-                    ?>
-                    <option value="<?php echo $user->id ?>" <?php if(($this->session->userdata("search_username"))==$user->id) echo 'selected' ?>><?php echo $user->first_name." ".$user->last_name." ($role)"; ?></option>
-                <?php } ?>
-            </select>
+                                case '3':
+                                    $role = "VP";
+                                    break;
+                                
+                                case '4':
+                                    $role = "Director";
+                                    break;
+                                case '5':
+                                    $role = "Admin";
+                                    break;
+                                    case '6':
+                                    $role = "City Head";
+                                    break;
+                            }
+                            ?>
+                            <option value="<?php echo $user->id ?>" <?php if(($this->session->userdata("search_username"))==$user->id) echo 'selected' ?>><?php echo $user->first_name." ".$user->last_name." ($role)"; ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="assign">Sub Broker:</label>
+                    <select  class="form-control"  id="sub_broker" name="sub_broker" >
+                        <option value="">Select</option>
+                        <?php $brokers= $this->common_model->all_active_brokers(); 
+                        foreach( $brokers as $broker){ ?>
+                            <option value="<?php echo $broker->id; ?>" <?php if(($this->session->userdata("sub_broker"))==$broker->id) echo 'selected' ?>><?php echo $broker->name ?></option>
+                        <?php } ?>              
+                    </select>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="assign">Status:</label>
+                    <select  class="form-control"  id="status" name="status" >
+                        <option value="">Select</option>
+                        <?php $statuses= $this->common_model->all_active_statuses(); 
+                        foreach( $statuses as $status){ ?>
+                            <option value="<?php echo $status->id; ?>" <?php if(($this->session->userdata("status"))==$status->id) echo 'selected' ?>><?php echo $status->name ?></option>
+                        <?php } ?>
+                    </select>
+                </div>
+                <div class="col-md-3 form-group">
+                    <label for="assign">City:</label>
+                    <select  class="form-control"  id="city" name="city" >
+                        <option value="">Select</option>
+                        <?php $cities= $this->common_model->all_active_cities(); 
+                        foreach( $cities as $city){ ?>
+                            <option value="<?php echo $city->id; ?>" <?php if(($this->session->userdata("city"))==$city->id) echo 'selected' ?>><?php echo $city->name ;?></option>
+                        <?php } ?>               
+                    </select>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Search:</label>
+                        <input type="text" class="form-control" name="srxhtxt" id="srxhtxt" placeholder="Enter search text" value="<?= ($this->session->userdata('SRCHTXT')) ? $this->session->userdata('SRCHTXT') : '' ?>" />
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Due Date</label>
+                        <select  class="form-control" name="searchDate" id="searchDate">
+                            <option value="">--Select--</option>
+                            <option value="today" <?= ($this->session->userdata('SRCHDT')== "today")? 'selected':''; ?>>Due date</option>
+                            <option value="yesterday" <?= ($this->session->userdata('SRCHDT')== "yesterday")? 'selected':''; ?>>Overdue </option>
+                            <option value="tomorrow" <?= ($this->session->userdata('SRCHDT')== "tomorrow")? 'selected':''; ?>>Upcoming calls</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+
+                <div class="col-sm-6">
+                    <button class="btn btn-info btn-block" id="admin-reset"onclick="reset_data()" >Reset</button>
+                </div>
+                <div class="col-sm-6">
+                    <button type="submit" id="admin-search" class="btn btn-success btn-block">Search</button>
+                </div>
         </div>
-        <div class="col-md-3 form-group">
-            <label for="assign">Sub Broker:</label>
-            <select  class="form-control"  id="sub_broker" name="sub_broker" >
-                <option value="">Select</option>
-                <?php $brokers= $this->common_model->all_active_brokers(); 
-                foreach( $brokers as $broker){ ?>
-                    <option value="<?php echo $broker->id; ?>" <?php if(($this->session->userdata("sub_broker"))==$broker->id) echo 'selected' ?>><?php echo $broker->name ?></option>
-                <?php } ?>              
-            </select>
-        </div>
-        <div class="col-md-3 form-group">
-            <label for="assign">Status:</label>
-            <select  class="form-control"  id="status" name="status" >
-                <option value="">Select</option>
-                <?php $statuses= $this->common_model->all_active_statuses(); 
-                foreach( $statuses as $status){ ?>
-                    <option value="<?php echo $status->id; ?>" <?php if(($this->session->userdata("status"))==$status->id) echo 'selected' ?>><?php echo $status->name ?></option>
-                <?php } ?>
-            </select>
-        </div>
-        <div class="col-md-3 form-group">
-            <label for="assign">City:</label>
-            <select  class="form-control"  id="city" name="city" >
-                <option value="">Select</option>
-                <?php $cities= $this->common_model->all_active_cities(); 
-                foreach( $cities as $city){ ?>
-                    <option value="<?php echo $city->id; ?>" <?php if(($this->session->userdata("city"))==$city->id) echo 'selected' ?>><?php echo $city->name ;?></option>
-                <?php } ?>               
-            </select>
-        </div>
-        <div class="col-sm-3">
-            <div class="form-group">
-                <label>Search:</label>
-                <input type="text" class="form-control" name="srxhtxt" id="srxhtxt" placeholder="Enter search text" value="<?= ($this->session->userdata('SRCHTXT')) ? $this->session->userdata('SRCHTXT') : '' ?>" />
-            </div>
-        </div>
-        <div class="col-sm-3">
-            <div class="form-group">
-                <label>Due Date</label>
-                <select  class="form-control" name="searchDate" id="searchDate">
-                    <option value="">--Select--</option>
-                    <option value="today" <?= ($this->session->userdata('SRCHDT')== "today")? 'selected':''; ?>>Due date</option>
-                    <option value="yesterday" <?= ($this->session->userdata('SRCHDT')== "yesterday")? 'selected':''; ?>>Overdue </option>
-                    <option value="tomorrow" <?= ($this->session->userdata('SRCHDT')== "tomorrow")? 'selected':''; ?>>Upcoming calls</option>
-                </select>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="col-sm-6">
-            <button class="btn btn-info btn-block" id="admin-reset"onclick="reset_data()" >Reset</button>
-        </div>
-        <div class="col-sm-6">
-            <button type="submit" id="admin-search" class="btn btn-success btn-block">Search</button>
-        </div>
+        
         <div class="col-sm-6">
             <?php $row['page']= $this->uri->segment(3);?>
             <a class="btn btn-default" href="<?php echo site_url()?>excel/<?php echo  $row['page'];?>">Download Excel File</a>
             <!--<a class="btn btn-default " href='<?php// echo site_url("admin/createXLS/").($this->uri->segment(3));?>'>View & Download</a>-->
         </div>
     </form>
-    <div style="width:100%; height:100%; overflow: scroll;padding-right: 20px;padding-left: 20px">
 
-<table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%" >
-    <thead>
-        <tr id="tableheading">
-            <th>No</th>
-            <th>Contact Name</th> 
-            <th>Contact No</th>
-            <th>Email</th>
-            <th>Project</th>
-            <th>Lead Source</th>
-            <th>Lead Id</th> 
-            <th>Advisor</th> 
-            <th>Sub-Source</th>
-            <th>Due date</th>
-            <th>Status</th>
-            <th>Date Added</th>
-            <th>Last Update</th>
-            <th>Action</th>
-        </tr>
-    </thead> 
-    <tbody id="main_body">
-        <?php $i= 1;
-        if(count($result)>0){
-        foreach ($result as $data) {
-            $duedate = explode(" ", $data->due_date);
-            $duedate = $duedate[0]; ?>
-            <tr id="row<?php echo $i ?>" <?php if(strtotime($duedate)<strtotime('today')){?> class="highlight_past" <?php }elseif(strtotime($duedate) == strtotime('today')) {?> class="highlight_now" <?php }elseif(strtotime($duedate)>strtotime('today')){ ?> class="highlight_future" <?php } ?>>
-                <td><?php echo $i; ?></td>
-                <td><?php echo $data->name; ?></td>
-                <td><?php echo $data->contact_no1 ?></td>
-                <td><?php echo $data->email1; ?></td>
-                <td><?php echo $data->project_name; ?></td>
-                <td><?php echo $data->lead_source_name; ?></td>
-                <td><?php echo $data->leadid; ?></td>
-                <td><?php echo $data->user_name; ?></td>
-                <td><?php echo $data->broker_name; ?></td>
-                <td class="due_date"><?php echo $data->due_date; ?></td>
-                <td><?php echo $data->status_name; ?></td>
-                <td><?php echo $data->date_added; ?></td>
-                <td><?php echo $data->last_update; ?></td>
-                <td>
-                    <table>
-                        <tr id="background">
-                            <td>
-                                <a onclick="edit('<?php echo $data->id; ?>')" data-toggle="modal" data-target="#modal_edit">
-                                    <i class="fa fa-home fa-2x"  title="Detail" style="color:#ff1122; font-size:21px;padding-right:7px;" aria-hidden="true"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a onclick="abc('<?php echo $data->id; ?>')" data-toggle="modal" data-target="#modal_notes">
-                                    <i class="fa fa-keyboard-o fa-2x" title="Notes" style="color:#ff1122; font-size:21px;padding-right:7px;" aria-hidden="true"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a onclick="soft_delete('<?php echo $data->id; ?>','<?php echo $i; ?>')" data-toggle="modal">
-                                    <i title="Delete" class="fa fa-trash-o fa-2x" style="color:#ff1122; font-size:21px;padding-right:7px; color:#225511;"  aria-hidden="true"></i>
-                                </a>
-                            </td>
+    <div style="width:90%; height:100%; overflow: auto;padding-right: 20px;padding-left: 20px">
+        
+                <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="90%" >
+                    <thead>
+                        <tr id="tableheading">
+                            <th>No</th>
+                            <th>Contact Name</th> 
+                            <th>Contact No</th>
+                            <th>Email</th>
+                            <th>Project</th>
+                            <th>Lead Source</th>
+                            <th>Lead Id</th> 
+                            <th>Advisor</th> 
+                            <th>Sub-Source</th>
+                            <th>Due date</th>
+                            <th>Status</th>
+                            <th>Date Added</th>
+                            <th>Last Update</th>
+                            <th>Action</th>
                         </tr>
-                    </table>
-                </td>
-            </tr>
-        <?php $i++; } }?>
-    </tbody>
-</table>
-</div>
-</div>
+                    </thead> 
+                    <tbody id="main_body">
+                        <?php $i= 1;
+                        if(count($result)>0){
+                        foreach ($result as $data) {
+                            $duedate = explode(" ", $data->due_date);
+                            $duedate = $duedate[0]; ?>
+                            <tr id="row<?php echo $i ?>" <?php if(strtotime($duedate)<strtotime('today')){?> class="highlight_past" <?php }elseif(strtotime($duedate) == strtotime('today')) {?> class="highlight_now" <?php }elseif(strtotime($duedate)>strtotime('today')){ ?> class="highlight_future" <?php } ?>>
+                                <td><?php echo $i; ?></td>
+                                <td><?php echo $data->name; ?></td>
+                                <td><?php echo $data->contact_no1 ?></td>
+                                <td><?php echo $data->email1; ?></td>
+                                <td><?php echo $data->project_name; ?></td>
+                                <td><?php echo $data->lead_source_name; ?></td>
+                                <td><?php echo $data->leadid; ?></td>
+                                <td><?php echo $data->user_name; ?></td>
+                                <td><?php echo $data->broker_name; ?></td>
+                                <td class="due_date"><?php echo $data->due_date; ?></td>
+                                <td><?php echo $data->status_name; ?></td>
+                                <td><?php echo $data->date_added; ?></td>
+                                <td><?php echo $data->last_update; ?></td>
+                                <td>
+                                    <table>
+                                        <tr id="background">
+                                            <td>
+                                                <a onclick="edit('<?php echo $data->id; ?>')" data-toggle="modal" data-target="#modal_edit">
+                                                    <i class="fa fa-home fa-2x"  title="Detail" style="color:#ff1122; font-size:21px;padding-right:7px;" aria-hidden="true"></i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a onclick="abc('<?php echo $data->id; ?>')" data-toggle="modal" data-target="#modal_notes">
+                                                    <i class="fa fa-keyboard-o fa-2x" title="Notes" style="color:#ff1122; font-size:21px;padding-right:7px;" aria-hidden="true"></i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a onclick="soft_delete('<?php echo $data->id; ?>','<?php echo $i; ?>')" data-toggle="modal">
+                                                    <i title="Delete" class="fa fa-trash-o fa-2x" style="color:#ff1122; font-size:21px;padding-right:7px; color:#225511;"  aria-hidden="true"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        <?php $i++; } }?>
+                    </tbody>
+                </table>
+        
+    </div>
 
-<div style="margin-top: 20px">
+    <div style="margin-top: 20px">
     <span class="pull-left"><p>Showing <?php echo ($this->uri->segment(3)) ? $this->uri->segment(3)+1 : 1; ?> to <?= ($this->uri->segment(3)+count($result)); ?> of <?= $totalRecords; ?> entries</p></span>
     <ul class="pagination pull-right"><?php echo $links; ?></ul>
 </div>
+</div>
+
+
 <div class="modal fade" id="modal_notes" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -489,26 +497,26 @@
                         <label for="comment">Mail Box:</label>
                         <textarea class="form-control" name="notesClient" id="c_notesClient" rows="18" id="comment">
 
-Greetings From Countryside Group.
+                            Greetings From Countryside Group.
 
-With reference to your site visit on  assisted by Mr. abhishek from Countryside Group, we thank you for giving us an opportunity to serve you in searching your dream home.  At FBP it is our endeavour to help you with all the possible Property options which will suit your requirement. Mr.  from FBP will be at your service. He/she will be there to assist you in searching your dream home.
-  
-1. Home search - Assisting and helping you find your dream home suiting your requirements by giving you info on market trends, legalities, site visit assistance etc.
+                            With reference to your site visit on  assisted by Mr. abhishek from Countryside Group, we thank you for giving us an opportunity to serve you in searching your dream home.  At FBP it is our endeavour to help you with all the possible Property options which will suit your requirement. Mr.  from FBP will be at your service. He/she will be there to assist you in searching your dream home.
+                            
+                            1. Home search - Assisting and helping you find your dream home suiting your requirements by giving you info on market trends, legalities, site visit assistance etc.
 
-2. Home loan Assistance - We will take away your pain of running around the banks to get your loan approved by giving doorstep service of bankers of your choice at your place.
+                            2. Home loan Assistance - We will take away your pain of running around the banks to get your loan approved by giving doorstep service of bankers of your choice at your place.
 
-3. Property Purchase Assistance - Ensuring that your home buying becomes a pleasant experience our Relationship Manager will be there throughout the process Of documentation.
+                            3. Property Purchase Assistance - Ensuring that your home buying becomes a pleasant experience our Relationship Manager will be there throughout the process Of documentation.
 
-4. Post sales Service – This is what differentiates us from others. We will be there for all possible help and guidance till you move into your home.
+                            4. Post sales Service – This is what differentiates us from others. We will be there for all possible help and guidance till you move into your home.
 
-5. Interior Services - We are tied With best interior designers in the city who give the best designs and execute them at a competitive price.
+                            5. Interior Services - We are tied With best interior designers in the city who give the best designs and execute them at a competitive price.
 
 
-For any escalations/ complaints please write to info@countrysidegroup.co.in
+                            For any escalations/ complaints please write to info@countrysidegroup.co.in
 
-Regards
+                            Regards
 
-Team Countryside Group Services Pvt Ltd
+                            Team Countryside Group Services Pvt Ltd
 
 
                         </textarea>
@@ -723,22 +731,22 @@ Team Countryside Group Services Pvt Ltd
                             <label for="comment">Email Body:</label>
                             <textarea class="form-control" name="notes" id="client_email_body" rows="15" id="comment">
       
-Dear sir / madam,
+                                Dear sir / madam,
 
-Greetings From Countryside Group...
+                                Greetings From Countryside Group...
 
-Kindly register the below client For __________________ project On behalf Of Countryside Group 
+                                Kindly register the below client For __________________ project On behalf Of Countryside Group 
 
-Property & acknowledge.
+                                Property & acknowledge.
 
-Client Name : ________________
+                                Client Name : ________________
 
-Contact No. : ________________
+                                Contact No. : ________________
 
-E-mail ID   : ________________
+                                E-mail ID   : ________________
 
-Thanks & Regards
-Team Countryside Group
+                                Thanks & Regards
+                                Team Countryside Group
       
         
                             </textarea>

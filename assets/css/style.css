@@ -5199,10 +5199,10 @@ div.both_ribbon::after{
             border:29px solid #00C6D7;
             border-right-color:transparent;
             /*transform*/
--webkit-transform:rotate(-10deg);
-   -moz-transform:rotate(-10deg);
-    -ms-transform:rotate(-10deg);
-     -o-transform:rotate(-10deg);
+        -webkit-transform:rotate(-10deg);
+       -moz-transform:rotate(-10deg);
+        -ms-transform:rotate(-10deg);
+       -o-transform:rotate(-10deg);
         transform:rotate(-10deg);
             position:absolute;
             top:-24px;
@@ -5481,6 +5481,10 @@ footer  p a:hover ,.footer p a:hover{
 }
 /*---responsive-----*/
 @media (max-width:1600px){
+	.container{
+		width: 1332px;
+		margin-left: 10px;
+	}
 	.left-content {
 		float: right;
 		width: 86%;
@@ -5494,9 +5498,19 @@ footer  p a:hover ,.footer p a:hover{
 		width: 96%;
 	}
 }
+@media (max-width:1540px){
+	.container {
+		width: 1224px;
+     }
+}
+@media (max-width:1110px){
+	.container {
+		width: 904px;
+     }
+}
 @media (max-width:1440px){
 	.container {
-		width: 1300px;
+		width: 1124px;
      }
 	.left-content {
 		float: right;
@@ -5566,9 +5580,12 @@ footer  p a:hover ,.footer p a:hover{
 }
 @media (max-width:1366px){
 	.container {
-		width: 1124px;
+		width: 1147px;
+		
 	 }
-	 
+	 .h1, h1 {
+		font-size: 30px;
+	}
 	.candile-inner svg {
 		height: 350px!important;
 		width: 1023px!important;
@@ -5653,7 +5670,8 @@ footer  p a:hover ,.footer p a:hover{
 }
 @media (max-width:1280px){
 	.container {
-		width: 1200px;
+		width: 866px;
+        margin-left: 7px;
      }
 	.profile_details_left {
 		float: right;
@@ -5727,7 +5745,9 @@ footer  p a:hover ,.footer p a:hover{
 }
 
 @media (max-width:1024px){
-	
+	.container{
+		width:787px;
+	}
 	.profile_details_left {
 		float: right;
 		width: 47%;
@@ -5903,6 +5923,10 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:991px){
+	.container{
+		width: 696px;
+        margin-left: 10px;
+	}
 	#menu li a {
 		padding: 12px 20px;
 		font-size: 0.85em;
@@ -6048,6 +6072,9 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:800px){
+	.container{
+		width:595px;
+	}
 	.page-container {
 		min-width:800px;
 		position: relative;
@@ -6135,6 +6162,11 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:768px){
+	.container{
+		width: 570px;
+		margin-left: 10px;
+		margin-right: 15px;
+	}
 	.page-container {
 		min-width:775px;
 		position: relative;
@@ -6238,6 +6270,21 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:736px){
+	.h1, h1 {
+		font-size: 18px;}
+
+	.container{
+		width:500px;
+	}
+
+	label {
+		display: inline-block;
+		max-width: 100%;
+		margin-bottom: 5px;
+		font-weight: 400;
+		font-size: 15px;
+		color: #777;
+	}
 	.page-container {
 		min-width:736px;
 		position: relative;
@@ -6351,6 +6398,9 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:667px){
+	.container{
+		width:600px;
+	}
 	.widget {
 		width: 43.5%;
 		padding: 0px;
@@ -6364,6 +6414,9 @@ footer  p a:hover ,.footer p a:hover{
 	
 }
 @media (max-width:640px){
+	.container{
+		width:520px;
+	}
 	.page-container {
 		min-width:650px;
 		position: relative;
@@ -6737,6 +6790,9 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:600px){
+	.container{
+		width:550px;
+	}
 	footer p {
 		color: #fff;
 		font-size: 0.8em;
@@ -6850,6 +6906,9 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width: 568px){
+	.container{
+		width:400px;
+	}
 	.page-container {
 		min-width:568px;
 		position: relative;
@@ -6966,6 +7025,9 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:480px){
+	.container{
+		width:400px;
+	}
 	.page-container {
 		min-width:480px;
 		position: relative;
@@ -7217,6 +7279,9 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:414px){
+	.container{
+		width: 336px;
+	}
 	.page-container {
 		min-width:414px;
 		position: relative;
@@ -7512,6 +7577,9 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:384px){
+	.container{
+		width:309px;
+	}
 	.profile_details_left {
 		float: right;
 		width: 65%;
@@ -7682,6 +7750,9 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:375px){
+	.container{
+		width:300px;
+	}
 	ul.dropdown-menu.two {
 		padding: 0;
 		min-width: 234px;
@@ -8084,6 +8155,9 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:320px){
+	.container{
+		width:250px;
+	}
 	footer p {
 		font-size: 0.8em;
 		padding-right: 68px;

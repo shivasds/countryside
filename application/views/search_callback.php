@@ -102,7 +102,9 @@
 	#history_table td {
 		border: 1px solid #aaa;
 		padding: 5px
-	}
+    }
+    
+    
 </style>
 
 <div class="container">
@@ -110,23 +112,25 @@
 		<h1><?php echo $heading; ?></h1>
 	</div>
 	<form method="POST">
-	<div class="col-md-4 form-group">
-		<label for="emp_code">Search type:</label>
-		<select  class="form-control"  id="search_type" name="type" required="required" >
-			<option value="name" <?php if($this->session->userdata("type")=="name") echo 'selected' ?>>Name</option>
-			<option value="contact" <?php if(($this->session->userdata("type"))=="contact") echo 'selected' ?>>Contact No</option>
-			<option value="email" <?php if(($this->session->userdata("type"))=="email") echo 'selected' ?>>Email Id</option>
-			<option value="project" <?php if(($this->session->userdata("type"))=="project") echo 'selected' ?>>Project</option>
-		</select>
-		<label></label>
-	</div>
-	<div class="col-sm-4 form-group">
-		<label for="email">Enter Search key:</label>
-		<input type="text" class="form-control" id="search_term" name="query" placeholder="Search key" value="<?php echo $this->session->userdata("query"); ?>" required>
-	</div>
-	<div class="col-sm-4 form-group">
-		<button type="submit" id="search" style="margin-top:25px;" class="btn btn-success btn-block">Search</button>
-	</div>
+        <div class="row">
+            <div class="col-sm-4 col-md-4 form-group">
+                <label for="emp_code">Search type:</label>
+                <select  class="form-control"  id="search_type" name="type" required="required" >
+                    <option value="name" <?php if($this->session->userdata("type")=="name") echo 'selected' ?>>Name</option>
+                    <option value="contact" <?php if(($this->session->userdata("type"))=="contact") echo 'selected' ?>>Contact No</option>
+                    <option value="email" <?php if(($this->session->userdata("type"))=="email") echo 'selected' ?>>Email Id</option>
+                    <option value="project" <?php if(($this->session->userdata("type"))=="project") echo 'selected' ?>>Project</option>
+                </select>
+                <label></label>
+            </div>
+            <div class="col-sm-4 col-md-4 form-group">
+                <label for="email">Enter Search key:</label>
+                <input type="text" class="form-control" id="search_term" name="query" placeholder="Search key" value="<?php echo $this->session->userdata("query"); ?>" required>
+            </div>
+            <div class="col-sm-4 col-md-4 form-group">
+                <button type="submit" id="search" style="margin-top:25px;" class="btn btn-success btn-block">Search</button>
+            </div>
+        </div>
 	</form>
 </div>
 

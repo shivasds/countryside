@@ -123,25 +123,26 @@
                 <h4 class="modal-title">Edit User</h4>
                 <div class="modal-body">
                     <input type="hidden" id="hid" name="hid">
-                    
-                    <div class="col-sm-6 form-group">
-                        <label for="emp_code">Employee Code:</label>
-                        <input type="text" class="form-control" id="m_emp_code" name="emp_code" placeholder="Employee Code" disabled="disabled">
-                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label for="emp_code">Employee Code:</label>
+                            <input type="text" class="form-control" id="m_emp_code" name="emp_code" placeholder="Employee Code" disabled="disabled">
+                        </div>
 
-                    <div class="col-sm-6 form-group">
-                        <label for="emp_code">First name:</label>
-                        <input type="text" class="form-control" id="m_first_name" name="m_first_name" placeholder="First name">
-                    </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="emp_code">First name:</label>
+                            <input type="text" class="form-control" id="m_first_name" name="m_first_name" placeholder="First name">
+                        </div>
 
-                    <div class="col-sm-6 form-group">
-                        <label for="emp_code">Last name:</label>
-                        <input type="text" class="form-control" id="m_last_name" name="m_last_name" placeholder="Last name">
-                    </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="emp_code">Last name:</label>
+                            <input type="text" class="form-control" id="m_last_name" name="m_last_name" placeholder="Last name">
+                        </div>
 
-                    <div class="col-sm-6 form-group">
-                        <label for="emp_code">Email-id:</label>
-                        <input type="text" class="form-control" id="m_email" name="m_email_id" placeholder="Email id">
+                        <div class="col-sm-6 form-group">
+                            <label for="emp_code">Email-id:</label>
+                            <input type="text" class="form-control" id="m_email" name="m_email_id" placeholder="Email id">
+                        </div> 
                     </div>                    
                 </div>
             </div>

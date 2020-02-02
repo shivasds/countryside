@@ -52,33 +52,35 @@
         <h1><?php echo $heading; ?></h1>
     </div>
     <form name="generate_slab_form" id="generate_slab_form" method="POST" enctype="multipart/form-data">
-        <div class="col-sm-6 form-group">
-            <label for="from_date">From:</label>
-            <input type="date" class="form-control" id="from_date" name="from_date" placeholder="Selct From Date" required>
-        </div>
+       <div class="row">
+            <div class="col-sm-6 form-group">
+                <label for="from_date">From:</label>
+                <input type="date" class="form-control" id="from_date" name="from_date" placeholder="Selct From Date" required>
+            </div>
 
-        <div class="col-sm-6 form-group">
-            <label for="to_date">To:</label>
-            <input type="date" class="form-control" id="to_date" name="to_date" placeholder="Selct To Date" required>
-        </div>
+            <div class="col-sm-6 form-group">
+                <label for="to_date">To:</label>
+                <input type="date" class="form-control" id="to_date" name="to_date" placeholder="Selct To Date" required>
+            </div>
 
-        <div class="col-sm-6 form-group">
-            <label for="amount">Amount:</label>
-            <input type="number" class="form-control" id="amount" name="amount[]" required>
-            <!-- <output name="rangeOutput" id="rangeOutput">5000</output> -->
-        </div>
+            <div class="col-sm-6 form-group">
+                <label for="amount">Amount:</label>
+                <input type="number" class="form-control" id="amount" name="amount[]" required>
+                <!-- <output name="rangeOutput" id="rangeOutput">5000</output> -->
+            </div>
 
-        <div class="col-sm-6 form-group" >
-            <label for="percentage">Percentage:</label>
-            <input type="number" min="0" max="100" step="0.01" class="form-control" id="percentage" name="percentage[]" placeholder="Enter Percentage" required>
-        </div>
-        <div class="col-sm-12 form-group" style="text-align: center;" id="add_more" >
-            <span >Add More</span>
-        </div>
+            <div class="col-sm-6 form-group" >
+                <label for="percentage">Percentage:</label>
+                <input type="number" min="0" max="100" step="0.01" class="form-control" id="percentage" name="percentage[]" placeholder="Enter Percentage" required>
+            </div>
+            <div class="col-sm-12 form-group" style="text-align: center;" id="add_more" >
+                <span >Add More</span>
+            </div>
 
-        <div class="col-sm-12 form-group">
-            <button type="submit" style="margin-top:25px;" id="save_slab" class="btn btn-success btn-block">Save Incentive Slab</button>
-        </div>
+            <div class="col-sm-12 form-group">
+                <button type="submit" style="margin-top:25px;" id="save_slab" class="btn btn-success btn-block">Save Incentive Slab</button>
+            </div>
+       </div>
     </form>
     <div class="clearfix"></div>
     <?php if($success) { ?>
@@ -154,17 +156,19 @@
             <div class="modal-body">
                 <form method="POST" >
                     <input type="hidden" name="id" id="interval_id">
-                    <div class="col-sm-6 form-group">
-                        <label for="from_date">From:</label>
-                        <input type="date" class="form-control" id="e_from_date" name="from_date" placeholder="Selct From Date" required>
-                    </div>
-                    <div class="col-sm-6 form-group">
-                        <label for="from_date">To:</label>
-                        <input type="date" class="form-control" id="e_to_date" name="to_date" placeholder="Selct From Date" required>
-                    </div>
-                    <div class="col-sm-8 form-group">
-                        <button type="submit" style="margin-right: 0px;" class="btn btn-success btn-block">Save Incentive Slab</button>
-                    </div>
+                     <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label for="from_date">From:</label>
+                            <input type="date" class="form-control" id="e_from_date" name="from_date" placeholder="Selct From Date" required>
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label for="from_date">To:</label>
+                            <input type="date" class="form-control" id="e_to_date" name="to_date" placeholder="Selct From Date" required>
+                        </div>
+                        <div class="col-sm-8 form-group">
+                            <button type="submit" style="margin-right: 0px;" class="btn btn-success btn-block">Save Incentive Slab</button>
+                        </div>
+                     </div>
                 </form>
             </div>
             <div class="modal-footer">

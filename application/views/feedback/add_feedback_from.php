@@ -90,6 +90,27 @@
   background-color: #f8f8f8;
   resize: none;
 }
+    img.ribbon{
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      border: 0;
+      cursor: pointer;
+     }
+
+  .starrr {
+   display: inline-block; 
+   }
+
+   .starrr a {
+    font-size: 16px;
+    padding: 0 1px;
+    cursor: pointer;
+    color: #FFD119;
+    text-decoration: none; 
+    }
+    
     </style>
 
     <form name="save_seller_form" id="save_seller_form" action=" " method="POST" enctype="multipart/form-data">
@@ -108,6 +129,8 @@
         </div>
         <div class="col-md-4 form-group">
             <label for="emp_code">Select Option1:</label>
+            <div class='starrr' id='star2'></div>
+    
             <select  class="form-control"  id="option1" name="option1" required="required" >
                 <option value="">Select</option>
                 <?php
@@ -313,10 +336,28 @@
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/TweenLite.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/CSSPlugin.min.js"></script>
 <script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/starrr.js"></script>
 <script src="<?php echo base_url()?>assets/js/scripts.js"></script>
 <!--<script src="<?php echo base_url()?>assets/js/scripts.js"></script>-->
 
 <!-- Bootstrap Core JavaScript -->
+<script>
+ var $s2input = $('#star2_input');
+    $('#star2').starrr({
+      max: 10,
+      rating: $s2input.val(),
+      change: function(e, value){
+        $s2input.val(value).trigger('input');
+      }
+    });
+  </script>
+  <script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  </script>
   
    <script>
     $(document).ready(function() {

@@ -1,3 +1,9 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.checked {
+  color: orange;
+}
+</style>
 <?php 
     defined('BASEPATH') OR exit('No direct script access allowed');
     $this->load->view('inc/header'); 
