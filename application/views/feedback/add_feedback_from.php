@@ -348,6 +348,7 @@
       rating: $s2input.val(),
       change: function(e, value){
         $s2input.val(value).trigger('input');
+        alert($s2input.val());
       }
     });
   </script>
