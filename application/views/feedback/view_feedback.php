@@ -406,7 +406,8 @@ echo "<script>printFunction();</script>";
                 <br>
                 <?php
                 $i++;
-	            }
+	            } 
+	            ?>  
 	            ?> 
 	            <div class="container">
 				  <span id="rateMe4"  class="feedback"></span>
@@ -416,7 +417,10 @@ echo "<script>printFunction();</script>";
 			$(document).ready(function() {
 			  $('#rateMe4').mdbRate();
 			});
-		</script>
+		</script> 
+	</div> 
+	</form>
+</div>  
 	</div> 
 	</form>
 </div> 
