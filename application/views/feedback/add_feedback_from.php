@@ -346,18 +346,15 @@
 <!-- Bootstrap Core JavaScript -->
 <script>
   $('#star1').starrr({
-      change: function(e, value){
-<<<<<<< HEAD
+      change: function(e, value){ 
         $s2input.val(value).trigger('input');
-        alert($s2input.val());
-=======
+        alert($s2input.val()); 
         if (value) {
           $('.your-choice-was').show();
           $('.choice').text(value);
         } else {
           $('.your-choice-was').hide();
-        }
->>>>>>> 752f4978a41969cfdb36fbbaeba1bf6094d67e45
+        } 
       }
     });
 
