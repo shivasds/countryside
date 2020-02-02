@@ -600,15 +600,19 @@ img.ribbon {
 	</div>
 	<p class="footer">&copy; 2016 Feedback Widget. All Rights Reserved | Design by <a href="http://secondsdigital.com"> seconds digital solutions</a></p>
 </div>
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/starrr.js"></script>
 <script>
- var $s2input = $('#star2_input');
-    $('#star2').starrr({
-      max: 10,
-      rating: $s2input.val(),
+  $('#star1').starrr({
       change: function(e, value){
-        $s2input.val(value).trigger('input');
+        if (value) {
+          $('.your-choice-was').show();
+          $('.choice').text(value);
+        } else {
+          $('.your-choice-was').hide();
+        }
       }
     });
+
   </script>
   <script type="text/javascript">
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
