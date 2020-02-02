@@ -51,12 +51,14 @@
     <div class="page-header">
         <h1><?php echo $heading; ?></h1>
     </div>
-    <div class="col-sm-6 form-group">
-        <label for="lead_source">Enter Lead Source Name:</label>
-        <input type="text" class="form-control" onblur="check_lead_source(this.value)" id="lead_source"  name="lead_source" placeholder="Enter Lead Source">
-    </div>
-    <div class="col-sm-6 form-group">
-        <button type="submit" id="add_lead_source" style="margin-top:25px;" class="btn btn-success btn-block" onclick="add()">Add Lead Source</button>
+    <div class="row">
+        <div class="col-sm-6 form-group">
+            <label for="lead_source">Enter Lead Source Name:</label>
+            <input type="text" class="form-control" onblur="check_lead_source(this.value)" id="lead_source"  name="lead_source" placeholder="Enter Lead Source">
+        </div>
+        <div class="col-sm-6 form-group">
+            <button type="submit" id="add_lead_source" style="margin-top:25px;" class="btn btn-success btn-block" onclick="add()">Add Lead Source</button>
+        </div>
     </div>
     <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%">
         <thead>

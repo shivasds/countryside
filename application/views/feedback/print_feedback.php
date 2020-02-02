@@ -2,19 +2,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>View Feedback</title>
+<!-- <title>View Feedback</title> -->
 <!-- for-mobile-apps -->
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 <meta name="keywords" content="" />
 <!-- //for-mobile-apps -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.checked {
-  color: orange;
-}
-</style>
+<link href='//fonts.googleapis.com/css?family=Amaranth:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Josefin+Slab:400,100,100italic,300,300italic,400italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
 <style>
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
 article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
@@ -39,12 +36,12 @@ nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
 img{max-width:100%;}
 /*end reset*/
 
-body{
+/* body{
 padding:0;
 margin:0;
 background:#4cc2c4;
 font-family: 'Open Sans', sans-serif !important;
-}
+} */
 
 h1,h2,h3,h4,h5,h6{
 	margin:0;
@@ -339,34 +336,11 @@ td, th {
 	margin-bottom: 23px;
 	}
 </style>
-<style type="text/css">
-    @media print {
- 
-  #content, #content * {
-    visibility: visible;
-  }
-  #content {
-    position: absolute;
-    left: 0;
-    top: 0;
-  } 
-}
-</style>
-<script type="text/javascript">
-	function printFunction( ) {
-		window.print();
-	}
-</script>
-<?php
-if($print)
-echo "<script>printFunction();</script>";
-
-?>
 </head>
 <body> 
 <div class="content">
-	<h1><img src='/assets/img/logo.png'></h1>
-	<h1>View Feedback</h1> 
+	<!-- <h1><img src='/assets/img/logo.png'></h1> -->
+	<h1>Print Feedback</h1> 
 	<div class="main">
   <form id="printFeedback" >
 		<table>
@@ -384,18 +358,7 @@ echo "<script>printFunction();</script>";
 		</tr>
 		
 		</table>
-			<!-- <h5>Lead_id</h5>
-			<h6><?=$feedbacks[0]['lead_id'];?></h6> 
-			<br>
-			<h5>Username</h5>
-			<h6><?=$feedbacks[0]['name'];?></h6> 
-			<br>
-			<h5>Employee Name</h5>
-			<h6><?=$feedbacks[0]['username'];?></h6> 
-			<br>
-			<h5>Project Name</h5>
-			<h6><?=$feedbacks[0]['projectname'];?></h6> 
-			<br> -->
+		
 				<?php
 				$i=1;
 				foreach($feedbacks as $f)
@@ -408,23 +371,9 @@ echo "<script>printFunction();</script>";
                 $i++;
 	            }
 	            ?>
-<<<<<<< HEAD
-	            <div class="container">
-				  <span id="rateMe4"  class="feedback"></span>
-				</div>
-		</form>
-		<script type="text/javascript">
-			$(document).ready(function() {
-			  $('#rateMe4').mdbRate();
-			});
-		</script>
-	</div>
-=======
 	</form>
 </div>
->>>>>>> 93811e20bcbba8994dd99c6f6814720ae5b54649
-	<p class="footer">&copy; <?=date('Y');?> Countryside Groups. All Rights Reserved | Design by <a href="http://secondsdigital.com"> seconds digital solutions</a></p>
 </div>
-	
+
 </body>
 </html>

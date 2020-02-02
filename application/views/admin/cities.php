@@ -51,22 +51,24 @@
     <div class="page-header">
         <h1><?php echo $heading; ?></h1>
     </div>
-    <div class="col-sm-3 form-group">
-        <label for="city">Enter City Name:</label>
-        <input type="text" class="form-control" onblur="check_city(this.value)" id="city"  name="city" placeholder="Enter City">
-    </div>
-    <div class="col-sm-3 form-group">
-    	<label for="state">State:</label>
-    	<select id="state" class="form-control" required="required">
-    		<option value="">Select</option>
-    		<?php $allstates = $this->common_model->all_active_states(); 
-    		foreach ($allstates as $state) { ?>
-    		 	<option value="<?php echo $state->id; ?>"><?php echo $state->name; ?></option>
-    		<?php } ?>
-    	</select>
-    </div>
-    <div class="col-sm-3 form-group">
-        <button type="submit" id="add_city" style="margin-top:25px;" class="btn btn-success btn-block" onclick="add()" disabled>Add City</button>
+    <div class="row">
+        <div class="col-sm-3 col-md-4 form-group">
+            <label for="city">Enter City Name:</label>
+            <input type="text" class="form-control" onblur="check_city(this.value)" id="city"  name="city" placeholder="Enter City">
+        </div>
+        <div class="col-sm-3 col-md-4 form-group">
+            <label for="state">State:</label>
+            <select id="state" class="form-control" required="required">
+                <option value="">Select</option>
+                <?php $allstates = $this->common_model->all_active_states(); 
+                foreach ($allstates as $state) { ?>
+                    <option value="<?php echo $state->id; ?>"><?php echo $state->name; ?></option>
+                <?php } ?>
+            </select>
+        </div>
+        <div class="col-sm-3 col-md-4 form-group">
+            <button type="submit" id="add_city" style="margin-top:25px;" class="btn btn-success btn-block" onclick="add()" disabled>Add City</button>
+        </div>
     </div>
     <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%">
         <thead>

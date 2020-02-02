@@ -149,41 +149,46 @@
 	{
 	?>
 	<form method="POST" id="search_form" autocomplete="off">
-       <div class="col-md-2 form-group">
-            <label for="emp_code">Project:</label>
-            <select  class="form-control"  id="project" name="project" >
-                <option value="">Select</option>
-                <?php $projects= $this->common_model->all_active_projects(); 
-                foreach( $projects as $project){ ?>
-                    <option value="<?php echo $project->name ?>" <?php //if(($this->session->userdata("project"))==$project->name) echo 'selected' ?>><?php echo $project->name ?></option>
-                <?php }?>              
-            </select>
-        </div>
-        <div class="col-sm-2">
-            <div class="form-group">
-                <label>Search:</label>
-                <input type="text" class="form-control" name="srxhtxt" id="srxhtxt" placeholder="name / Email / Contact Number / Project" value="<?= ($this->session->userdata('SRCHTXT')) ? $this->session->userdata('SRCHTXT') : '' ?>" />
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="form-group">
-                <label>From Date:</label>
-                <input type="text" class="form-control" name="fromDate" id="from" placeholder="From Date" value=""  />
-            </div>
-        </div>
-        <div class="col-sm-2">
-            <div class="form-group">
-                <label>To Date:</label>
-                <input type="text" class="form-control" name="toDate" id="to" placeholder="To Date" value="" />
-            </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="col-sm-6">
-            <button class="btn btn-info btn-block" id="admin-reset"onclick="reset_data()" >Reset</button>
-        </div>
-        <div class="col-sm-6">
-            <button type="submit" id="admin-search" class="btn btn-success btn-block">Search</button>
-        </div>
+		<div class="row">
+			<div class="col-md-3 form-group">
+					<label for="emp_code">Project:</label>
+					<select  class="form-control"  id="project" name="project" >
+						<option value="">Select</option>
+						<?php $projects= $this->common_model->all_active_projects(); 
+						foreach( $projects as $project){ ?>
+							<option value="<?php echo $project->name ?>" <?php //if(($this->session->userdata("project"))==$project->name) echo 'selected' ?>><?php echo $project->name ?></option>
+						<?php }?>              
+					</select>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label>Search:</label>
+					<input type="text" class="form-control" name="srxhtxt" id="srxhtxt" placeholder="name / Email / Contact Number / Project" value="<?= ($this->session->userdata('SRCHTXT')) ? $this->session->userdata('SRCHTXT') : '' ?>" />
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label>From Date:</label>
+					<input type="text" class="form-control" name="fromDate" id="from" placeholder="From Date" value=""  />
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="form-group">
+					<label>To Date:</label>
+					<input type="text" class="form-control" name="toDate" id="to" placeholder="To Date" value="" />
+				</div>
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+		<div class="row">
+			<div class="col-sm-6">
+				<button class="btn btn-info btn-block" id="admin-reset"onclick="reset_data()" >Reset</button>
+			</div>
+			<div class="col-sm-6">
+				<button type="submit" id="admin-search" class="btn btn-success btn-block">Search</button>
+			</div>
+		</div>
     </form>
     <br>
 	<table  class="table table-striped table-bordered dt-responsive" cellspacing="0" >
@@ -200,11 +205,11 @@
 		
 	</table>
 	<!--
-<?php
-$search = $search ? $search :'';
-if($search['count']!=0)
-{?>
-<table  class="table table-striped table-bordered dt-responsive" cellspacing="0" width="50">
+	<?php
+	$search = $search ? $search :'';
+	if($search['count']!=0)
+	{?>
+    <table  class="table table-striped table-bordered dt-responsive" cellspacing="0" width="50">
 		<tr>
 			<th>From Date</th>
 			<th>To Date :</th>
@@ -218,11 +223,11 @@ if($search['count']!=0)
 		
 	</table>
 
-<?php } ?>-->
+     <?php } ?>-->
 	
 	<form method="POST" class="main-from" action="<?php echo base_url()?>admin/save_online_leads">
-		
-		<table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%">
+	  <div style="overflow:auto;height: 27rem;overflow-y: scroll;"">
+		<table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="50%">
 			<thead>
 				<tr>
 					<th>Select</th>
@@ -268,13 +273,15 @@ if($search['count']!=0)
 				<?php } ?>
 			</tbody>
 		</table>
-
+		</div>
+	</form>
 
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3">
-				<div class="page-header text-center">
-					<h1>Default Callback Assignment</h1>
-				</div>
+					<div class="page-header text-center">
+						<h1>Default Callback Assignment</h1>
+					</div>
+
 					<div class="form-group">
 						<label for="email" class="control-label col-sm-3">Dept*</label>
 						<div class="col-sm-9">
@@ -286,6 +293,7 @@ if($search['count']!=0)
 							</select>
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label for="email" class="control-label col-sm-3">Callback type*</label>
 						<div class="col-sm-9">
@@ -297,6 +305,7 @@ if($search['count']!=0)
 							</select>
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label for="email" class="control-label col-sm-3">Assigned to*</label>
 						<div class="col-sm-9">
@@ -325,6 +334,7 @@ if($search['count']!=0)
 							</select>
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label for="email" class="control-label col-sm-3">Broker*</label>
 						<div class="col-sm-9">
@@ -336,6 +346,7 @@ if($search['count']!=0)
 							</select>
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label for="email" class="control-label col-sm-3">Status*</label>
 						<div class="col-sm-9">
@@ -347,26 +358,31 @@ if($search['count']!=0)
 							</select>
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label for="email" class="control-label col-sm-3">Due Date*</label>
 						<div class="col-sm-9">
 							<input type="date" id="dt" class="form-control" name="due_date" required />
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label for="email" class="control-label col-sm-3">Due Time*</label>
 						<div class="col-sm-9">
 							<input type="time" id="dt" class="form-control" name="due_time" value="00:00"/>
 						</div>
 					</div>
+
 					<div class="form-group">
-						<div class="col-sm-9 col-sm-offset-3">
+						<div class="col-sm-offset-3">&nbsp;</div>
+						<div class="col-sm-9">
 							<button type="submit" class="btn btn-success btn-block">Save Data</button>
 						</div>
 					</div>
 			</div>
 		</div>
-	</form>
+	<!-- </div>
+	</form> -->
 
 	</iframe>
 	<?php

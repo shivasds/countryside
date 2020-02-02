@@ -79,24 +79,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     {
         white-space: nowrap;
     }
-            textarea {
-  width: 100%;
-  height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  resize: none;
-}
-label.m-list {
-    width: 200px; 
-     font-size: 12px; 
-    margin: 0; 
-}
-label.pm-list {
-    font-size: 15px;
-}
+    textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+    }
+
+    label.m-list {
+        width: 200px; 
+        font-size: 12px; 
+        margin: 0; 
+    }
+    
+    label.pm-list {
+        font-size: 15px;
+    }
 </style>
  
 </head> 

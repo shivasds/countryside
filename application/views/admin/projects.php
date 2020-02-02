@@ -51,23 +51,26 @@
     <div class="page-header">
         <h1><?php echo $heading; ?></h1>
     </div>
-    <div class="col-sm-3 form-group">
-        <label for="project">Enter Project Name:</label>
-        <input type="text" class="form-control" onblur="check_project(this.value)" id="project"  name="project" placeholder="Enter Project">
+    <div class="row">
+        <div class="col-sm-3 form-group">
+            <label for="project">Enter Project Name:</label>
+            <input type="text" class="form-control" onblur="check_project(this.value)" id="project"  name="project" placeholder="Enter Project">
+        </div>
+        <div class="col-sm-3 form-group">
+            <label for="builder">Builder:</label>
+            <select id="builder" class="form-control" required="required">
+                <option value="">Select</option>
+                <?php $allbuilders = $this->common_model->all_active_builders(); 
+                foreach ($allbuilders as $builder) { ?>
+                    <option value="<?php echo $builder->id; ?>"><?php echo $builder->name; ?></option>
+                <?php } ?>
+            </select>
+        </div>
+        <div class="col-sm-6 form-group">
+            <button type="submit" id="add_project" style="margin-top:25px;" class="btn btn-success btn-block" onclick="add()">Add Project</button>
+        </div>
     </div>
-    <div class="col-sm-3 form-group">
-        <label for="builder">Builder:</label>
-        <select id="builder" class="form-control" required="required">
-            <option value="">Select</option>
-            <?php $allbuilders = $this->common_model->all_active_builders(); 
-            foreach ($allbuilders as $builder) { ?>
-                <option value="<?php echo $builder->id; ?>"><?php echo $builder->name; ?></option>
-            <?php } ?>
-        </select>
-    </div>
-    <div class="col-sm-6 form-group">
-        <button type="submit" id="add_project" style="margin-top:25px;" class="btn btn-success btn-block" onclick="add()">Add Project</button>
-    </div>
+    
     <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%">
         <thead>
             <tr>
