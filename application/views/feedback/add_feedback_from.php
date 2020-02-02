@@ -129,7 +129,10 @@
         </div>
         <div class="col-md-4 form-group">
             <label for="emp_code">Select Option1:</label>
-            <div class='starrr' id='star2'></div>
+            <div class='starrr' id='star1'></div>
+            <span class='your-choice-was' style='display: none;'>
+             Your rating was <span class='choice'></span>.</span>
+             <br>
     
             <select  class="form-control"  id="option1" name="option1" required="required" >
                 <option value="">Select</option>
@@ -342,15 +345,22 @@
 
 <!-- Bootstrap Core JavaScript -->
 <script>
- var $s2input = $('#star2_input');
-    $('#star2').starrr({
-      max: 10,
-      rating: $s2input.val(),
+  $('#star1').starrr({
       change: function(e, value){
+<<<<<<< HEAD
         $s2input.val(value).trigger('input');
         alert($s2input.val());
+=======
+        if (value) {
+          $('.your-choice-was').show();
+          $('.choice').text(value);
+        } else {
+          $('.your-choice-was').hide();
+        }
+>>>>>>> 752f4978a41969cfdb36fbbaeba1bf6094d67e45
       }
     });
+
   </script>
   <script type="text/javascript">
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
