@@ -26,6 +26,26 @@
         font-size: 60px;
         color: #f1c836;
     }
+    img.ribbon{
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      border: 0;
+      cursor: pointer;
+     }
+
+  .starrr {
+   display: inline-block; 
+   }
+
+   .starrr a {
+    font-size: 16px;
+    padding: 0 1px;
+    cursor: pointer;
+    color: #FFD119;
+    text-decoration: none; 
+    }
     </style>
     <div class="container"> 
         <div class="row"> 
@@ -211,6 +231,7 @@
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/CSSPlugin.min.js"></script>
 <script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js"></script>
 <script src="<?php echo base_url()?>assets/js/scripts.js"></script>
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/starrr.js"></script>
 <!--<script src="<?php echo base_url()?>assets/js/scripts.js"></script>-->
 
 <!-- Bootstrap Core JavaScript -->
@@ -403,5 +424,18 @@
     }
 
 </script>
+<script>
+  $('#star1').starrr({
+      change: function(e, value){
+        if (value) {
+          $('.your-choice-was').show();
+          $('.choice').text(value);
+        } else {
+          $('.your-choice-was').hide();
+        }
+      }
+    });
+
+  </script>
 </body>
 </html>
