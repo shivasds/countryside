@@ -715,7 +715,7 @@ li.dropdown.note i{
 .notification_desc{
 	float:left;
 	width:80%;
-	margin-left:5%;
+	/*margin-left:5%;*/
 }
 .notification_desc p{
 	color:#757575;
