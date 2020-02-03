@@ -49,23 +49,25 @@
 						
 <div class="container">
 	<div class="page-header">
-	  <h1><?php echo $heading; ?></h1>
+    <h1 style=" margin-left: 12px;"><?php echo $heading; ?></h1>
 	</div>
 
-	<form action="<?php echo base_url()?>admin/generate_report">
-		<div class="col-sm-6 form-group">
+    <form action="<?php echo base_url()?>admin/generate_report">
+    <div class="col-xs-12 col-md-12">
+    <div class="row">
+		<div class="col-xs-6 col-md-6 form-group">
 			<label for="emp_code">From:</label>
             <input type="text" class="form-control datepicker" id="fromDate" name="fromDate" placeholder="Date" required="required" autocomplete="off">
             <!-- <input type="date" class="form-control" id="fromDate" name="fromDate" placeholder="Date" required="required"> -->
             <input type="time" class="form-control" id="fromTime" name="fromTime" placeholder="Time" value="00:00" required="required">
 		</div>
-		<div class="col-sm-6 form-group">
+		<div class="col-xs-6 col-md-6 form-group">
 			<label for="emp_code">To:</label>
             <input type="text" class="form-control datepicker" id="" name="toDate" placeholder="Date" required="required" autocomplete="off">
             <!-- <input type="date" class="form-control" id="toDate" name="toDate" placeholder="Date" required="required"> -->
             <input type="time" class="form-control" id="toTime" name="toTime" placeholder="Time" value="23:59" required="required">
 		</div>
-		<div class="col-sm-6 form-group radio-btn">
+		<div class="col-xs-6 col-md-6 form-group radio-btn">
 			<!-- <label for="emp_code">To:</label> -->
             <label for = "lead_report" class="col-xs-5">Lead Report:</label>
             <div class="col-xs-6">
@@ -120,11 +122,13 @@
                 <input type="radio" class="form-control" id="callback_report" value="dailyCallback" name="reportType" >
             </div>  
 		</div>
-		<div class="col-sm-6 form-group">
+		<div class="col-xs-6 col-md-6 form-group">
             <button type="reset" id="save" class="btn btn-danger btn-block">Cancel</button>
         </div>
-        <div class="col-sm-6 form-group">
+        <div class="col-xs-6 col-md-6 form-group">
             <button type="submit" id="Generate" class="btn btn-success btn-block">Generate</button>
+        </div>
+        </div>
         </div>
 	</form>
 </div>

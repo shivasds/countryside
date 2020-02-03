@@ -531,14 +531,16 @@ img.ribbon {
       border: 0;
       cursor: pointer; }
 
-      .starrr {
-  display: inline-block; }
+   .starrr {
+    display: inline-block; }
+
   .starrr a {
     font-size: 16px;
     padding: 0 1px;
     cursor: pointer;
     color: #FFD119;
     text-decoration: none; }
+	
 </style>
 </head>
 <body>
@@ -601,11 +603,13 @@ img.ribbon {
 	<p class="footer">&copy; 2016 Feedback Widget. All Rights Reserved | Design by <a href="http://secondsdigital.com"> seconds digital solutions</a></p>
 </div>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/starrr.js"></script>
+<script src="<?php echo base_url()?>assets/js/scripts.js"></script>
 <script>
   $('#star1').starrr({
       change: function(e, value){
         if (value) {
           $('.your-choice-was').show();
+		  console.log("m in feeddack" +value)
           $('.choice').text(value);
         } else {
           $('.your-choice-was').hide();
@@ -614,13 +618,6 @@ img.ribbon {
     });
 
   </script>
-  <script type="text/javascript">
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  </script>
-<script type="text/javascript" src="<?php echo base_url()?>assets/js/starrr.js"></script>
+  
 </body>
 </html>

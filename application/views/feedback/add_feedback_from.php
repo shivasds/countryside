@@ -20,6 +20,26 @@
         font-size: 60px;
         color: #f1c836;
     }
+    img.ribbon{
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      border: 0;
+      cursor: pointer;
+     }
+
+  .starrr {
+   display: inline-block; 
+   }
+
+   .starrr a {
+    font-size: 16px;
+    padding: 0 1px;
+    cursor: pointer;
+    color: #FFD119;
+    text-decoration: none; 
+    }
     </style>
     <div class="container"> 
         <div class="row"> 
@@ -90,26 +110,7 @@
   background-color: #f8f8f8;
   resize: none;
 }
-    img.ribbon{
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      right: 0;
-      border: 0;
-      cursor: pointer;
-     }
-
-  .starrr {
-   display: inline-block; 
-   }
-
-   .starrr a {
-    font-size: 16px;
-    padding: 0 1px;
-    cursor: pointer;
-    color: #FFD119;
-    text-decoration: none; 
-    }
+  
     
     </style>
 
@@ -201,8 +202,8 @@
     </form>
 </div>
 
-<div class="container">
-    <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%">
+<div class="container" >
+    <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="90%">
         <thead>
             <tr>
                 <th>No</th>
@@ -336,25 +337,24 @@
 										});
 							</script>
 <!--js -->
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/starrr.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/TweenLite.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/CSSPlugin.min.js"></script>
 <script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js"></script>
-<script type="text/javascript" src="<?php echo base_url()?>assets/js/starrr.js"></script>
 <script src="<?php echo base_url()?>assets/js/scripts.js"></script>
 <!--<script src="<?php echo base_url()?>assets/js/scripts.js"></script>-->
 
 <!-- Bootstrap Core JavaScript -->
 <script>
   $('#star1').starrr({
-      change: function(e, value){ 
-        $s2input.val(value).trigger('input');
-        alert($s2input.val()); 
+      change: function(e, value){
         if (value) {
           $('.your-choice-was').show();
           $('.choice').text(value);
+          console.log("add_feedback_from");
         } else {
           $('.your-choice-was').hide();
-        } 
+        }
       }
     });
 

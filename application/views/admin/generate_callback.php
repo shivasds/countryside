@@ -67,11 +67,12 @@
 						
 <div class="container">
     <div class="page-header">
-        <h1><?php echo $heading; ?></h1>
+        <h1 style=" margin-left: 20px;"><?php echo $heading; ?></h1>
     </div>
     <form  action="<?php echo base_url()?>admin/generate_callback" method="POST" enctype="multipart/form-data">
-        <div class="row">
-            <div class="col-sm-4 col-md-3 form-group">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+    <div class="row">
+            <div class="col-xs-6 col-sm-4 col-md-3 form-group">
                 <label for="emp_code">Dept:</label>
                 <select  class="form-control"  id="dept" name="dept" required >
                     <option value="">Select</option>
@@ -82,22 +83,22 @@
                 </select>
             </div>
 
-            <div class="col-sm-4 col-md-3 form-group">
+            <div class="col-xs-6 col-sm-4 col-md-3 form-group">
                 <label for="name">Name:</label>
                 <input type="text" class="form-control" id="name" name="name" placeholder="Name" required="required">
             </div>
 
-            <div class="col-sm-4 col-md-3 form-group">
+            <div class="col-xs-6 col-sm-4 col-md-3 form-group">
                 <label for="contact_no1">Contact No:</label>
                 <input type="number" class="form-control" id="contact_no1" name="contact_no1" placeholder="Contact No">
             </div>
 
-            <div class="col-sm-4 col-md-3 form-group">
+            <div class="col-xs-6 col-sm-4 col-md-3 form-group">
                 <label for="name">Contact No 2:</label>
                 <input type="number" class="form-control" id="contact_no2" name="contact_no2" placeholder="Contact No">
             </div>
             
-            <div class="col-sm-4 col-md-3 form-group">
+            <div class="col-xs-6 col-sm-4 col-md-3 form-group">
                 <label for="assign">Call back type:</label>
                 <select  class="form-control"  id="callback_type" name="callback_type" required="required" >
                     <option value="">Select </option>
@@ -108,17 +109,17 @@
                 </select>
             </div>
 
-            <div class="col-sm-4 col-md-3 form-group">
+            <div class="col-xs-6 col-sm-4 col-md-3 form-group">
                 <label for="email">Email:</label>
                 <input type="email" class="form-control" id="email1" name="email1" placeholder="Email">
             </div>
 
-            <div class="col-sm-4 col-md-3 form-group">
+            <div class="col-xs-6 col-sm-4 col-md-3 form-group">
                 <label for="email">Email2:</label>
                 <input type="email" class="form-control" id="email2" name="email2" placeholder="email">
             </div>
 
-            <div class="col-sm-4 col-md-3 form-group">
+            <div class="col-xs-6 col-sm-4 col-md-3 form-group">
                 <label for="emp_code">Project:</label>
                 <select  class="form-control"  id="project" name="project" required="required" >
                     <option value="">Select</option>
@@ -129,7 +130,7 @@
                 </select>
             </div>
 
-            <div class="col-sm-4 col-md-3 form-group">
+            <div class="col-xs-6 col-sm-4 col-md-3 form-group">
                 <label for="assign">Lead Source:</label>
                 <select  class="form-control"  id="lead_source" name="lead_source" required="required" >
                     <option value="">Select</option>
@@ -140,12 +141,12 @@
                 </select>
             </div>
 
-            <div class="col-sm-4 col-md-3 form-group">
+            <div class="col-xs-6 col-sm-4 col-md-3 form-group">
                 <label for="leadId">Lead Id:</label>
                 <input type="text" class="form-control" id="leadId" name="leadId" placeholder="Lead Id">
             </div>
 
-            <div class="col-sm-4 col-md-3 form-group">
+            <div class="col-xs-6 col-sm-4 col-md-3 form-group">
                 <label for="assign">User Name:</label>
                 <select  class="form-control"  id="user_name" name="user_name" required="required" >
                      <option value="">Select</option>
@@ -174,7 +175,7 @@
                 </select>
             </div>
       
-            <div class="col-sm-4 col-md-3 form-group">
+            <div class="col-xs-6 col-sm-4 col-md-3 form-group">
                 <label for="assign">Manage Sub Broker:</label>
                 <select  class="form-control"  id="sub_broker" name="sub_broker" required="required" >
                     <option value="">Select</option>
@@ -185,7 +186,7 @@
                 </select>
             </div>
       
-            <div class="col-sm-4 col-md-3 form-group">
+            <div class="col-xs-6 col-sm-4 col-md-3 form-group">
                 <label for="assign">Status:</label>
                 <select  class="form-control"  id="status" name="status" required="required" >
                     <option value="">Select</option>
@@ -196,36 +197,38 @@
                 </select>
             </div>
 
-            <div class="col-sm-4 col-md-3 form-group">
+            <div class="col-xs-6 col-sm-4 col-md-3 form-group">
                 <label for="leadId">Due date:</label>
                 <input type="date" class="form-control" id="due_date" name="due_date" placeholder="Date" required="required">
             </div>
       
-            <div class="col-sm-4 col-md-3 form-group">
+            <div class="col-xs-6 col-sm-4 col-md-3 form-group">
                 <label for="comment">Notes:</label>
                 <textarea class="form-control" name="notes" id="notes" rows="3" id="comment"></textarea>
             </div>
       
-            <div class="col-sm-4 col-md-3" id="phone_error" style="display:none">
+            <div class="col-xs-6 col-sm-4 col-md-3" id="phone_error" style="display:none">
                 <div class="alert alert-danger" >
                     The contact number already used
                 </div>
             </div>
             
-            <div class="col-sm-4 col-md-3" id="email_error" style="display:none">
+            <div class="col-xs-6 col-sm-4 col-md-3" id="email_error" style="display:none">
                 <div class="alert alert-danger" >
                     The email already used
                 </div>
             </div>
             
-            <div class="col-sm-6 form-group">
+            <div class="col-xs-6 col-sm-6 form-group">
                 <a class="btn btn-danger btn-block" id="cancel"onclick="reset_data()">Cancel</a>
             </div>
-            <div class="col-sm-6 form-group">
+            <div class="col-xs-6 col-sm-6 form-group">
                 <button type="submit" id="save" class="btn btn-success btn-block">Save</button>
             </div>
         </div>
-    </form>
+    
+       </div>
+     </form>
 </div>
 <script type="text/javascript">
     function reset_data(){
