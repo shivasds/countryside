@@ -14,6 +14,7 @@ class FeedbackController extends CI_Controller {
         {
             $i=$this->input->post('ivalue'); 
             $bool = false;
+            $data ='';
             for($a=1;$a<$i;$a++)
             { 
                 $data = array(
@@ -22,12 +23,14 @@ class FeedbackController extends CI_Controller {
                     'lead_id' => $this->input->post('l_id')
                 );
                 $bool = $this->feedback_model->save_feedback($data);
-
+                //print_r($data);
             }
+           // die;
+            
             if($bool)
                 {
-                    echo "<script>var loc=".base_url('feedback');
-                    echo "alert('Thanks for giving feedback');location.href=loc;</script>";
+                   /* echo "<script>var loc=".base_url('feedback');
+                    echo "alert('Thanks for giving feedback');location.href=loc;</script>";*/
                 }
         }
 
@@ -47,6 +50,13 @@ class FeedbackController extends CI_Controller {
         $data = $this->feedback_model->getFromId($id,'q_id','feedback_questions');
         $data = json_decode(json_encode($data),true);
         $this->load->view('feedback/update_question',$data);
+    }
+    public function starValue($value='')
+    { 
+        //echo $value;
+         $data = $this->feedback_model->get_star_value($value); 
+         $data = json_decode(json_encode($data),true); 
+ echo $data[0]['a_id']; 
     }
  
 
