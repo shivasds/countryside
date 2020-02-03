@@ -233,7 +233,7 @@
                         
 <div class="container">
     <div class="page-header">
-        <h1><?php echo $heading; ?></h1>
+        <h1 style=" margin-left: 12px;"><?php echo $heading; ?></h1>
     </div>
     <form name="save_seller_form" id="save_seller_form" method="POST" enctype="multipart/form-data">
         <div class="col-sm-3 form-group">

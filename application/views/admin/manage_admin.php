@@ -49,25 +49,27 @@
 
 <div class="container">
     <div class="page-header">
-        <h1><?php echo $heading; ?></h1>
+    <h1 style=" margin-left: 12px;"><?php echo $heading; ?></h1>
     </div>
     <form name="save_seller_form" id="save_seller_form" method="POST" enctype="multipart/form-data">
-        <div class="col-sm-3 form-group">
+    <div class="col-sm-12 col-md-12">
+      <div class="row">   
+     <div class="col-xs-6 col-md-3 form-group">
             <label for="director">Enter First Name:</label>
             <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter First Name" required>
         </div>
 
-        <div class="col-sm-3 form-group">
+        <div class="col-xs-6 col-md-3 form-group">
             <label for="director">Enter Last Name:</label>
             <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter Last Name" >
         </div>
 
-        <div class="col-sm-3 form-group">
+        <div class="col-xs-6 col-md-3 form-group">
             <label for="email">Enter Email:</label>
             <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required>
         </div>
 
-        <div class="col-sm-3 form-group">
+        <div class="col-xs-6 col-md-3 form-group">
             <label for="emp_code">Enter Emp code:</label>
             <input type="text" class="form-control" onblur="code_check(this.value)" id="emp_code" name="emp_code" placeholder="Enter Employee Id" required>
         </div>
@@ -75,6 +77,8 @@
         <div class="col-sm-12 form-group">
             <button type="submit" style="margin-top:25px;" id="add_admin" class="btn btn-success btn-block" disabled>Add Admin</button>
         </div>
+        </div>
+     </div>
     </form>
 
     <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%">

@@ -108,11 +108,12 @@
 <div class="container">
   
     <div class="page-header">
-        <h1><?php echo $heading; ?></h1>
+        <h1 style=" margin-left: 20px;"><?php echo $heading; ?></h1>
     </div>
     <form method="POST" id="search_form">
+     <div class="col-xs-12 col-sm-12 col-md-12" style=" margin-left: 2px;">
         <div class="row">
-                <div class="col-md-3 form-group">
+                <div class="col-xs-6 col-md-3 form-group">
                     <label for="emp_code">Department:</label>
                     <select  class="form-control"  id="dept" name="dept" >
                         <option value="">Select</option>
@@ -122,7 +123,7 @@
                         <?php }?>             
                     </select>
                 </div>
-                <div class="col-md-3 form-group">
+                <div class="col-xs-6 col-md-3 form-group">
                     <label for="emp_code">Project:</label>
                     <select  class="form-control"  id="project" name="project" >
                         <option value="">Select</option>
@@ -132,7 +133,7 @@
                         <?php }?>              
                     </select>
                 </div>
-                <div class="col-md-3 form-group">
+                <div class="col-xs-6 col-md-3 form-group">
                     <label for="assign">Lead Source:</label>
                     <select  class="form-control"  id="lead_source" name="lead_source" >
                         <option value="">Select</option>
@@ -142,7 +143,7 @@
                         <?php } ?>             
                     </select>
                 </div>
-                <div class="col-md-3 form-group">
+                <div class="col-xs-6 col-md-3 form-group">
                     <label for="assign">User Name:</label>
                     <select  class="form-control"  id="user_name" name="user_name" >
                         <option value="">Select</option>
@@ -176,7 +177,7 @@
                         <?php } ?>
                     </select>
                 </div>
-                <div class="col-md-3 form-group">
+                <div class="col-xs-6 col-md-3 form-group">
                     <label for="assign">Sub Broker:</label>
                     <select  class="form-control"  id="sub_broker" name="sub_broker" >
                         <option value="">Select</option>
@@ -186,7 +187,7 @@
                         <?php } ?>              
                     </select>
                 </div>
-                <div class="col-md-3 form-group">
+                <div class="col-xs-6 col-md-3 form-group">
                     <label for="assign">Status:</label>
                     <select  class="form-control"  id="status" name="status" >
                         <option value="">Select</option>
@@ -196,7 +197,7 @@
                         <?php } ?>
                     </select>
                 </div>
-                <div class="col-md-3 form-group">
+                <div class="col-xs-6 col-md-3 form-group">
                     <label for="assign">City:</label>
                     <select  class="form-control"  id="city" name="city" >
                         <option value="">Select</option>
@@ -206,13 +207,13 @@
                         <?php } ?>               
                     </select>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-xs-6 col-md-3">
                     <div class="form-group">
                         <label>Search:</label>
                         <input type="text" class="form-control" name="srxhtxt" id="srxhtxt" placeholder="Enter search text" value="<?= ($this->session->userdata('SRCHTXT')) ? $this->session->userdata('SRCHTXT') : '' ?>" />
                     </div>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-xs-6 col-md-3">
                     <div class="form-group">
                         <label>Due Date</label>
                         <select  class="form-control" name="searchDate" id="searchDate">
@@ -238,6 +239,7 @@
             <a class="btn btn-default" href="<?php echo site_url()?>excel/<?php echo  $row['page'];?>">Download Excel File</a>
             <!--<a class="btn btn-default " href='<?php// echo site_url("admin/createXLS/").($this->uri->segment(3));?>'>View & Download</a>-->
         </div>
+       </div>
     </form>
 
     <div style="width:90%; height:100%; overflow: auto;padding-right: 20px;padding-left: 20px">
@@ -354,7 +356,7 @@
                 <h4 class="modal-title">Call back details</h4>
             </div>
             <div class="modal-body">
-                <div class="col-md-3 form-group">
+                <div class="col-xs-6 col-md-3 form-group">
                     <input type="hidden" id="mhid">
                     <label for="emp_code">Dept:</label>
                     <select  class="form-control"  id="m_dept" name="m_dept" required >
@@ -377,7 +379,7 @@
                     <label for="name">Contact No 2:</label>
                     <input type="text" class="form-control" id="m_contact_no2" name="m_contact_no2" placeholder="Contact No">
                 </div>
-                <div class="col-md-3 form-group">
+                <div class="col-xs-6 col-md-3 form-group">
                     <label for="assign">Call back type:</label>
                     <select  class="form-control"  id="m_callback_type" name="m_callback_type" required="required" >
                         <option value="">Select </option>
@@ -395,7 +397,7 @@
                     <label for="email">Email2:</label>
                     <input type="email" class="form-control" id="m_email2" name="m_email2" placeholder="email">
                 </div>
-                <div class="col-md-3 form-group">
+                <div class="col-xs-6 col-md-3 form-group">
                     <label for="emp_code">Project:</label>
                     <select  class="form-control"  id="m_project" name="m_project" required="required" >
                         <option value="">Select</option>
@@ -405,7 +407,7 @@
                         <?php }?>               
                     </select>
                 </div>
-                <div class="col-md-3 form-group">
+                <div class="col-xs-6 col-md-3 form-group">
                     <label for="assign">Lead Source:</label>
                     <select  class="form-control"  id="m_lead_source" name="m_lead_source" required="required" >
                         <option value="">Select</option>

@@ -351,6 +351,24 @@ td, th {
     top: 0;
   } 
 }
+img.ribbon {
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      border: 0;
+      cursor: pointer; }
+
+   .starrr {
+    display: inline-block; }
+
+  .starrr a {
+    font-size: 16px;
+    padding: 0 1px;
+    cursor: pointer;
+    color: #FFD119;
+    text-decoration: none; }
+	
 </style>
 <script type="text/javascript">
 	function printFunction( ) {
@@ -440,6 +458,8 @@ echo "<script>printFunction();</script>";
 </div> 
 	<p class="footer">&copy; <?=date('Y');?> Countryside Groups. All Rights Reserved | Design by <a href="http://secondsdigital.com"> seconds digital solutions</a></p>
 </div>
-	
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/starrr.js"></script>
+
+<script src="<?php echo base_url()?>assets/js/scripts.js"></script>
 </body>
 </html>

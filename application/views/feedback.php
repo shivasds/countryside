@@ -531,15 +531,20 @@ img.ribbon {
       border: 0;
       cursor: pointer; }
 
-      .starrr {
-  display: inline-block; }
+   .starrr {
+    display: inline-block; }
+
   .starrr a {
     font-size: 16px;
     padding: 0 1px;
     cursor: pointer;
     color: #FFD119;
     text-decoration: none; }
+<<<<<<< HEAD
     
+=======
+	
+>>>>>>> 9870fa79c515b8f0ff86b7799ef79f5c70f8fc65
 </style>
 </head>
 <body>
@@ -620,11 +625,13 @@ img.ribbon {
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/starrr.js"></script>
+<script src="<?php echo base_url()?>assets/js/scripts.js"></script>
 <script>
   $('#star1').starrr({
       change: function(e, value){
         if (value) {
           $('.your-choice-was').show();
+<<<<<<< HEAD
          // alert(value);
          // var value =$('.shiva').text(value);
          // $('.shiva').val(value);
@@ -781,10 +788,21 @@ img.ribbon {
                 }
             });
         } 
+=======
+		  console.log("m in feeddack" +value)
+          $('.choice').text(value);
+        } else {
+          $('.your-choice-was').hide();
+        }
+>>>>>>> 9870fa79c515b8f0ff86b7799ef79f5c70f8fc65
       }
     });
   </script>
+<<<<<<< HEAD
 
  
+=======
+  
+>>>>>>> 9870fa79c515b8f0ff86b7799ef79f5c70f8fc65
 </body>
 </html>
