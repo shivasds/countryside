@@ -5514,8 +5514,7 @@ footer  p a:hover ,.footer p a:hover{
 /*---responsive-----*/
 @media (max-width:1600px){
 	.container{
-		width: 1332px;
-		width: 1224px;
+		width: 1300px;
 		margin-left: 10px;
 	}
 	.left-content {
@@ -5533,7 +5532,7 @@ footer  p a:hover ,.footer p a:hover{
 }
 @media (max-width:1540px){
 	.container {
-		width: 1224px;
+		width: 1286px;
 		margin-left: 18px;
      }
 }
@@ -5544,7 +5543,7 @@ footer  p a:hover ,.footer p a:hover{
 }
 @media (max-width:1440px){
 	.container {
-		width: 1124px;
+		width: 1195px;
      }
 	.left-content {
 		float: right;
@@ -5614,7 +5613,7 @@ footer  p a:hover ,.footer p a:hover{
 }
 @media (max-width:1366px){
 	.container {
-		width: 1147px;
+		width: 1107px;
 		
 	 }
 	 .h1, h1 {
@@ -5704,7 +5703,7 @@ footer  p a:hover ,.footer p a:hover{
 }
 @media (max-width:1135px){
 	.container {
-		width: 906px !important;
+		width: 906px;
        
      }
 }
@@ -5784,10 +5783,25 @@ footer  p a:hover ,.footer p a:hover{
 		top: 13%;
 	}
 }
-
+@media (max-width:1050px){
+	.container {
+		width: 696px;
+		margin-left: 10px;
+	}
+	}
+	
+	@media (max-width:1150px){
+		.container{
+			width:815px;
+		}
+		.profile_details_left {
+			float: right;
+			width: 47%;
+		}
+	}
 @media (max-width:1024px){
 	.container{
-		width:787px!important;
+		width:787px;
 	}
 	.profile_details_left {
 		float: right;
@@ -5963,24 +5977,17 @@ footer  p a:hover ,.footer p a:hover{
       font-size:10px;
 	}
 }
-@media (max-width:1150px){
-	.container{
-		width:850px!important;
-	}
-	.profile_details_left {
-		float: right;
-		width: 47%;
-	}
-}
+
+
 @media (max-width:930px){
 	.container {
-		width: 706px !important;
+		width: 706px;
        
      }
 }
 @media (max-width:991px){
 	.container{
-		width: 696px !important;;
+		width: 696px;
         margin-left: 10px;
 	}
 	#menu li a {
@@ -6129,7 +6136,7 @@ footer  p a:hover ,.footer p a:hover{
 }
 @media (max-width:800px){
 	.container{
-		width:595px!important;
+		width:595px;
 	}
 	label {
 		font-size: 12px;
@@ -6230,7 +6237,7 @@ footer  p a:hover ,.footer p a:hover{
 }
 @media (max-width:768px){
 	.container{
-		width: 570px!important;
+		width: 570px;
 		
 	}
 	.page-container {
@@ -6340,7 +6347,7 @@ footer  p a:hover ,.footer p a:hover{
 		font-size: 18px;}
 
 	.container{
-		width:500px!important;
+		width:500px;
 		
 	}
 
@@ -6466,7 +6473,7 @@ footer  p a:hover ,.footer p a:hover{
 }
 @media (max-width:667px){
 	.container{
-		width:600px;
+		width:491px;
 	}
 	.widget {
 		width: 43.5%;
@@ -6974,7 +6981,8 @@ footer  p a:hover ,.footer p a:hover{
 }
 @media (max-width: 568px){
 	.container{
-		width:400px;
+		width: 514px;
+        margin-left: 20px;
 	}
 	.page-container {
 		min-width:568px;
