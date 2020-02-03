@@ -129,7 +129,7 @@
         </div>
         <div class="col-md-4 form-group">
             <label for="emp_code">Select Option1:</label>
-            <div class='starrr' id='star1'></div>
+            <!--<div class='starrr' id='star1'></div> -->
             <span class='your-choice-was' style='display: none;'>
              Your rating was <span class='choice'></span>.</span>
              <br>
@@ -141,13 +141,13 @@
                  $all_answers = json_decode(json_encode($all_answers),true);
                  //print_r($all_questions);echo "dfgsdf";die;
                 foreach($all_answers as $q){ ?>
-                    <option value="<?php echo $q['a_id']; ?>"><?php echo $q['answers']; ?></option>
+                    <option value="<?php echo $q['a_id']; ?>"><?php if($q['answers']==5) {echo $q['answers']."  Stars";}else{echo $q['answers'];} ?></option>
                 <?php }?>
             </select>
         </div>
         <div class="col-md-4 form-group">
             <label for="emp_code">Select Option2:</label>
-            <select  class="form-control"  id="option2" name="option2" required="required" >
+            <select  class="form-control"  id="option2" name="option2"  >
                 <option value="">Select</option>
                 <?php 
                 foreach($all_answers as $q){ ?>
@@ -228,7 +228,7 @@
             <tr>
                 <td><?=$i?></td>
                 <td><?=$q['question']?></td>
-                <td><?=$q['a1']?></td>
+                <td><?php if($q['a1']==5) {echo $q['a1']."  Stars";}else{echo $q['a1'];}?></td>
                 <td><?=$q['a2']?></td> 
                 <td><?=$q['a3']?></td>
                 <td><?=$q['a4']?></td>

@@ -402,13 +402,12 @@ echo "<script>printFunction();</script>";
 				{	
 				?>
                 <h5><?=$i.'. '.$f['question'];?></h5><br>
-            <h6><?='&nbsp&nbsp&nbsp'.$f['a'];?></h6>
+            <h6><?php if($f['a']==1){echo $f['a']." Star" ;}elseif( $f['a'] ==2 || $f['a'] ==3 || $f['a'] ==4 || $f['a']==5){echo $f['a']." Stars" ;} else{echo $f['a'];};?></h6>
                 <br>
                 <?php
                 $i++;
 	            } 
-	            ?>  
-	            ?> 
+	            ?>   
 	            <div class="container">
 				  <span id="rateMe4"  class="feedback"></span>
 				</div>
@@ -423,6 +422,21 @@ echo "<script>printFunction();</script>";
 </div>  
 	</div> 
 	</form>
+
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/starrr.js"></script>
+<script>
+  $('#star1').starrr({
+      change: function(e, value){
+        if (value) {
+          $('.your-choice-was').show();
+          $('.choice').text(value);
+        } else {
+          $('.your-choice-was').hide();
+        }
+      }
+    });
+
+  </script> 
 </div> 
 	<p class="footer">&copy; <?=date('Y');?> Countryside Groups. All Rights Reserved | Design by <a href="http://secondsdigital.com"> seconds digital solutions</a></p>
 </div>
