@@ -29,8 +29,8 @@ class FeedbackController extends CI_Controller {
             
             if($bool)
                 {
-                    echo "<script>var loc=".base_url('feedback');
-                    echo "alert('Thanks for giving feedback');location.href=loc;</script>";
+                   /* echo "<script>var loc=".base_url('feedback');
+                    echo "alert('Thanks for giving feedback');location.href=loc;</script>";*/
                 }
         }
 

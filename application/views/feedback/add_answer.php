@@ -117,9 +117,10 @@
                 <label for="emp_code">Answer:</label>
                 <input type="text" class="form-control" id="answer" onblur="code_check(this.value)" name="answer" placeholder="Please enter answer" required="required">
             </div>
+              <button type="submit" id="add_answer" class="btn btn-success btn-block">Submit</button>
+        </form>
     
-
-<<<<<<< HEAD
+ 
 <div class="container">
     <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%">
         <thead>
@@ -159,44 +160,10 @@
 												
 												</div>
 											  <!--//tabs-inner-->
-=======
-            <button type="submit" id="add_answer" class="btn btn-success btn-block">Submit</button>
-        </form>
-    </div>
->>>>>>> 9870fa79c515b8f0ff86b7799ef79f5c70f8fc65
-
-    <div class="container">
-        <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Answer</th> 
-                </tr>
-            </thead> 
-            <tbody>
-                <?php
-                $all_answers = json_decode(json_encode($all_answers),true);
-            //   print_r($all_answers);die;
-                $i=1;
-                foreach ($all_answers as $q) {
-                ?>
-                <tr>
-                    <th><?=$i?></th>
-                    <th><?=$q['answers']?></th> 
-                </tr>
-                <?php
-                $i++;
-            }
-            ?>
-                
-            </tbody>
-        </table>
-        <!--
-        <div style="margin-top: 20px">
-            <span class="pull-left"><p>Showing <?php echo ($this->uri->segment(3)) ? $this->uri->segment(3)+1 : 1; ?> to <?= ($this->uri->segment(3)+count($all_user)); ?> of <?= $totalRecords; ?> entries</p></span>
-            <ul class="pagination pull-right"><?php echo $links; ?></ul>
-        </div>-->
-    </div>
+ 
+          
+    </div> 
+ 
                                         </div>
     <!--/tabs-->
                                             <div class="tab-main">
