@@ -136,7 +136,7 @@
 
 <?php 
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){ if ($result) { ?>
-    <div  style="width:100%; height:100%; overflow: scroll;padding-right: 20px;padding-left: 20px">
+    <div class="container">
 <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%" >
     <thead>
         <tr>

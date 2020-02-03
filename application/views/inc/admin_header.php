@@ -9,50 +9,49 @@
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
  <!-- Bootstrap Core CSS -->
-<link href="<?php echo base_url()?>assets/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-<!-- Custom CSS -->
-<link href="<?php echo base_url()?>assets/css/style.css" rel='stylesheet' type='text/css' />
-<!-- Graph CSS -->
-<link href="<?php echo base_url()?>assets/css/font-awesome.css" rel="stylesheet"> 
-<!-- jQuery -->
-<link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'>
-<!-- lined-icons -->
-<link rel="stylesheet" href="<?php echo base_url()?>assets/css/icon-font.min.css" type='text/css' />
-<!-- //lined-icons -->
-<link href="<?php echo base_url()?>assets/css/fabochart.css" rel='stylesheet' type='text/css' />
-<link href="<?php echo base_url()?>assets/css/dropdown.css" rel='stylesheet' type='text/css' />
-<!--<link href="<?php echo base_url()?>assets/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
-
-
-
-
-<script src="<?php echo base_url()?>assets/js/amcharts.js"></script>    
-<script src="<?php echo base_url()?>assets/js/serial.js"></script>  
-<script src="<?php echo base_url()?>assets/js/light.js"></script>   
-<script src="<?php echo base_url()?>assets/js/radar.js"></script>  --> 
-
-<!--clock init--
-<script src="<?php echo base_url()?>assets/js/css3clock.js"></script>
-<!--Easy Pie Chart-->
-<!--skycons-icons-->
-<script src="<?php echo base_url()?>assets/js/skycons.js"></script>
-
-<script src="<?php echo base_url()?>assets/js/jquery-1.10.2.min.js"></script>
-<script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
-
-<!--//skycons-icons-->
- <link rel="stylesheet" href="https://rawgit.com/KidSysco/jquery-ui-month-picker/v3.0.0/demo/MonthPicker.min.css"/>
-        
- 
-        <!-- Include Date Range Picker -->
-        <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
+        <link href="<?php echo base_url()?>assets/css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+        <link href="<?php echo base_url()?>assets/css/style.css" rel='stylesheet' type='text/css' />
+        <link href="<?php echo base_url()?>assets/css/font-awesome.css" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+        .checked {
+        color: orange;
+        }
+        </style>
+        <link href='//fonts.googleapis.com/css?family=Roboto:700,500,300,100italic,100,400' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="<?php echo base_url()?>assets/css/icon-font.min.css" type='text/css' />    
+        <link href="<?php echo base_url()?>assets/css/fabochart.css" rel='stylesheet' type='text/css' />
+        <link href="<?php echo base_url()?>assets/css/dropdown.css" rel='stylesheet' type='text/css' />
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+
+        <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+        <link rel="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="https://rawgit.com/KidSysco/jquery-ui-month-picker/v3.0.0/demo/MonthPicker.min.css"/>  
+        
+        <link rel="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.css">
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script type="text/javascript" src="<?php echo base_url()?>assets/js/dygraph-combined.js"></script>
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script> 
+         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script> 
+        <script src="<?php echo base_url()?>assets/js/css3clock.js"></script>
+        <script src="<?php echo base_url()?>assets/js/skycons.js"></script>
+        <script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
+
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" type="text/javascript"></script>-->
+        <script type="text/javascript" src="//cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"> 
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.css">
+
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <script src="https://rawgit.com/KidSysco/jquery-ui-month-picker/v3.0.0/demo/MonthPicker.min.js"></script>
+
         <script type="text/javascript">
             $(function(){
                 $('.datepicker').each(function(){

@@ -226,7 +226,7 @@
      <?php } ?>-->
 	
 	<form method="POST" class="main-from" action="<?php echo base_url()?>admin/save_online_leads">
-	  <div style="overflow:auto;height: 27rem;overflow-y: scroll;"">
+	  <div class="container" style="overflow:auto;height: 27rem;overflow-y: scroll;"">
 		<table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="50%">
 			<thead>
 				<tr>

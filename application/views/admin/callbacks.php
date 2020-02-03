@@ -10,6 +10,11 @@
         font-size: 60px;
         color: #f1c836;
     }
+    .table {
+    margin-bottom: 0;
+    margin-left: -20px;
+    }
+ 
     </style>
     <div class="container"> 
         <div class="row"> 
@@ -242,7 +247,7 @@
        </div>
     </form>
 
-    <div style="width:90%; height:100%; overflow: auto;padding-right: 20px;padding-left: 20px">
+    <div class="container">
         
                 <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="90%" >
                     <thead>
@@ -785,40 +790,7 @@
         $("#search_form").submit();
     }
 
-    /*$(document).ready(function() {
-        $('#example').DataTable( {
-            dom: 'Blfrtip',
-            buttons: [
-                {
-                    extend: 'csv',
-                    exportOptions: {
-                        columns: ':not(:last-child)',
-                    }
-                },
-                {
-                    extend: 'excel',
-                    exportOptions: {
-                        columns: ':not(:last-child)',
-                    }
-                }
-            ]
-        } );
-        if (!Modernizr.inputtypes.date) {
-            // If not native HTML5 support, fallback to jQuery datePicker
-            $('input[type=date]').datepicker({
-                // Consistent format with the HTML5 picker
-                    dateFormat : 'dd/mm/yy'
-                }
-            );
-        }
-        if (!Modernizr.inputtypes.time) {
-            // If not native HTML5 support, fallback to jQuery timepicker
-            $('input[type=time]').timepicker({ 'timeFormat': 'H:i' });
-        }
-        $('#c_bkngMnth, #c_estMonthofInvoice').MonthPicker({
-            Button: false
-        });
-    });*/
+   
     
     function abc(v){
         $(".se-pre-con").show();
@@ -1327,26 +1299,9 @@
 <script src="<?php echo base_url()?>assets/js/scripts.js"></script>
 
 <!-- Bootstrap Core JavaScript -->
-   
+
    <script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-        if (!Modernizr.inputtypes.date) {
-            // If not native HTML5 support, fallback to jQuery datePicker
-            $('input[type=date]').datepicker({
-                // Consistent format with the HTML5 picker
-                    dateFormat : 'dd/mm/yy'
-                }
-            );
-        }
-        if (!Modernizr.inputtypes.time) {
-            // If not native HTML5 support, fallback to jQuery timepicker
-            $('input[type=time]').timepicker({ 'timeFormat': 'H:i' });
-        }
-        $('#revenueMonth').MonthPicker({
-            Button: false
-        });
-        get_revenues();
+    
 
         $('.view_callbacks').click(function(){
             var type = $(this).data('type');

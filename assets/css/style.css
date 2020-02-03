@@ -15,10 +15,10 @@ body a{
 /* chnage to make admin menu scrollable */
 	.scrollbar1{
 		height: auto;
-		max-height: 240px;
+		max-height: 180px;
 		overflow-x: hidden;
-		background:#02BBCA!important;
-		top: -132px !important;
+		background: #02BBCA!important;
+		top: -91px !important;
 		/* border-radius: 10px */
 		
 	}
@@ -41,7 +41,7 @@ body a{
 		background-color: #02BBCA;
 		
 		background-image: -webkit-gradient(linear, 0 0, 0 100%,
-						color-stop(.5, rgba(255, 255, 255, .2)),
+						color-stop(.5, rgba(255, 255, 255, 0, .2)),
 						color-stop(.5, transparent), to(transparent));
 }
 
@@ -5515,6 +5515,7 @@ footer  p a:hover ,.footer p a:hover{
 @media (max-width:1600px){
 	.container{
 		width: 1332px;
+		width: 1224px;
 		margin-left: 10px;
 	}
 	.left-content {
@@ -5533,6 +5534,7 @@ footer  p a:hover ,.footer p a:hover{
 @media (max-width:1540px){
 	.container {
 		width: 1224px;
+		margin-left: 18px;
      }
 }
 @media (max-width:1110px){
