@@ -42,6 +42,8 @@
     color: #FFD119;
     text-decoration: none; 
     }
+
+    
     </style>
     <div class="container"> 
         <div class="row"> 
@@ -303,8 +305,6 @@
    
 
 </script> 
-
-
 
     <div id="formdata"></div>
 </body>

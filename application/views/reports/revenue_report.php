@@ -389,26 +389,7 @@
 
 </script>
 <script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-        if (!Modernizr.inputtypes.date) {
-            // If not native HTML5 support, fallback to jQuery datePicker
-            $('input[type=date]').datepicker({
-                // Consistent format with the HTML5 picker
-                    dateFormat : 'dd/mm/yy'
-                }
-            );
-        }
-        if (!Modernizr.inputtypes.time) {
-            // If not native HTML5 support, fallback to jQuery timepicker
-            $('input[type=time]').timepicker({ 'timeFormat': 'H:i' });
-        }
-        $('#revenueMonth').MonthPicker({
-            Button: false
-        });
-        get_revenues();
-
-        $('.view_callbacks').click(function(){
+      $('.view_callbacks').click(function(){
             var type = $(this).data('type');
             var data = {};
             switch (type)
