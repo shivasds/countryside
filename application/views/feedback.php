@@ -540,7 +540,11 @@ img.ribbon {
     cursor: pointer;
     color: #FFD119;
     text-decoration: none; }
+<<<<<<< HEAD
+    
+=======
 	
+>>>>>>> 9870fa79c515b8f0ff86b7799ef79f5c70f8fc65
 </style>
 </head>
 <body>
@@ -560,13 +564,28 @@ img.ribbon {
  			foreach ($q_a as $q) {
  				 
  			?>
-		<h5><?=$q['question'] ?><input type="hidden" name="question<?=$i?>" value="<?=$q['q_id']?>"></h5>
+		<h5><?=$i.'. '.$q['question'];?><input type="hidden" name="question<?=$i?>" value="<?=$q['q_id']?>"></h5>
 
 			<div class="radio-btns">
 					<div class="swit">								
-						<div class="check_box"> <div class="radio"> <label><input type="radio" name="radio<?=$i?>" value="<?=$q['a_id1']?>" checked><i></i><?=$q['a1']?></label> </div></div><br>
+						<?php 
+						if($q['a1']==5 || $q['a1'] ==10)
+							{
+								echo '<div class="check_box"> <div class="radio"> <label><input class="shiva'.$i.'"type="radio" name="radio'.$i.'" value=" " checked><i></i>';
+			 
+							}
+							else {
+							echo '<div class="check_box"> <div class="radio"> <label><input type="radio" name="radio'.$i.'" value="'.$q['a_id1'].'" checked><i></i>'.$q['a1'];
+							}?></label><?php if($q['a1']==5 || $q['a1'] ==10)
+							{
+			 echo "<div class='starrr' id='star".$i."'></div> ";
+							}?> </div></div><br>
+							<?php 
+                        if($q['a2']!='')
+                        	{?>
                         <div class="check_box"> <div class="radio"> <label><input type="radio" name="radio<?=$i?>" value="<?=$q['a_id2']?>"><i></i><?=$q['a2']?></label> </div></div><br>
                         <?php 
+                    }
                         if($q['a3']!='')
                         	{?>
 						<div class="check_box"> <div class="radio"> <label><input type="radio" name="radio<?=$i?>" value="<?=$q['a_id3']?>"><i></i><?=$q['a3']?></label> </div></div><br>
@@ -602,6 +621,9 @@ img.ribbon {
 	</div>
 	<p class="footer">&copy; 2016 Feedback Widget. All Rights Reserved | Design by <a href="http://secondsdigital.com"> seconds digital solutions</a></p>
 </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/starrr.js"></script>
 <script src="<?php echo base_url()?>assets/js/scripts.js"></script>
 <script>
@@ -609,15 +631,178 @@ img.ribbon {
       change: function(e, value){
         if (value) {
           $('.your-choice-was').show();
+<<<<<<< HEAD
+         // alert(value);
+         // var value =$('.shiva').text(value);
+         // $('.shiva').val(value);
+          $.ajax({
+                                    type:"POST",
+                                    url: "<?php echo base_url()?>FeedbackController/starValue/"+value,
+                                   data:{value:value},
+                                    success:function(data) {
+                                        $('.shiva1').val(data);
+                                    }
+                                });
+        } 
+      }
+    });
+  	  $('#star2').starrr({
+      change: function(e, value){
+        if (value) {
+          $('.your-choice-was').show();
+         // alert(value);
+         // var value =$('.shiva').text(value);
+          //$('.shiva').val(value);
+          $.ajax({
+                                    type:"POST",
+                                    url: "<?php echo base_url()?>FeedbackController/starValue/"+value,
+                                   data:{value:value},
+                                    success:function(data) {
+                                        $('.shiva2').val(data);
+                                    }
+                                });
+        } 
+      }
+    });
+  	    $('#star3').starrr({
+      change: function(e, value){
+        if (value) { 
+          $.ajax({
+                type:"POST",
+                url: "<?php echo base_url()?>FeedbackController/starValue/"+value,
+               data:{value:value},
+                success:function(data) {
+                    $('.shiva3').val(data);
+                }
+            });
+        } 
+      }
+    });
+  	     $('#star4').starrr({
+      change: function(e, value){
+        if (value) { 
+          $.ajax({
+                type:"POST",
+                url: "<?php echo base_url()?>FeedbackController/starValue/"+value,
+               data:{value:value},
+                success:function(data) {
+                    $('.shiva4').val(data);
+                }
+            });
+        } 
+      }
+    });
+  	      $('#star5').starrr({
+      change: function(e, value){
+        if (value) { 
+          $.ajax({
+                type:"POST",
+                url: "<?php echo base_url()?>FeedbackController/starValue/"+value,
+               data:{value:value},
+                success:function(data) {
+                    $('.shiva5').val(data);
+                }
+            });
+        } 
+      }
+    });
+  	       $('#star6').starrr({
+      change: function(e, value){
+        if (value) { 
+          $.ajax({
+                type:"POST",
+                url: "<?php echo base_url()?>FeedbackController/starValue/"+value,
+               data:{value:value},
+                success:function(data) {
+                    $('.shiva6').val(data);
+                }
+            });
+        } 
+      }
+    });
+  	        $('#star7').starrr({
+      change: function(e, value){
+        if (value) { 
+          $.ajax({
+                type:"POST",
+                url: "<?php echo base_url()?>FeedbackController/starValue/"+value,
+               data:{value:value},
+                success:function(data) {
+                    $('.shiva7').val(data);
+                }
+            });
+        } 
+      }
+    });
+  	         $('#star8').starrr({
+      change: function(e, value){
+        if (value) { 
+          $.ajax({
+                type:"POST",
+                url: "<?php echo base_url()?>FeedbackController/starValue/"+value,
+               data:{value:value},
+                success:function(data) {
+                    $('.shiva8').val(data);
+                }
+            });
+        } 
+      }
+    });
+  	          $('#star9').starrr({
+      change: function(e, value){
+        if (value) { 
+          $.ajax({
+                type:"POST",
+                url: "<?php echo base_url()?>FeedbackController/starValue/"+value,
+               data:{value:value},
+                success:function(data) {
+                    $('.shiva9').val(data);
+                }
+            });
+        } 
+      }
+    });
+  	           $('#star10').starrr({
+      change: function(e, value){
+        if (value) { 
+          $.ajax({
+                type:"POST",
+                url: "<?php echo base_url()?>FeedbackController/starValue/"+value,
+               data:{value:value},
+                success:function(data) {
+                    $('.shiva10').val(data);
+                }
+            });
+        } 
+      }
+    });
+  	            $('#star3').starrr({
+      change: function(e, value){
+        if (value) { 
+          $.ajax({
+                type:"POST",
+                url: "<?php echo base_url()?>FeedbackController/starValue/"+value,
+               data:{value:value},
+                success:function(data) {
+                    $('.shiva3').val(data);
+                }
+            });
+        } 
+=======
 		  console.log("m in feeddack" +value)
           $('.choice').text(value);
         } else {
           $('.your-choice-was').hide();
         }
+>>>>>>> 9870fa79c515b8f0ff86b7799ef79f5c70f8fc65
       }
     });
-
   </script>
+<<<<<<< HEAD
+
+ 
+=======
   
+>>>>>>> 9870fa79c515b8f0ff86b7799ef79f5c70f8fc65
 </body>
 </html>

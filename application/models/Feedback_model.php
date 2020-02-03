@@ -26,6 +26,7 @@ class Feedback_model extends My_model {
        public function all_answers($where=""){
         $this->db->select()
             ->from('feedback_anaswers')
+            ->where('active',1)
             ->order_by('a_id','desc');
         if($where)
             $this->db->where($where);
@@ -51,6 +52,7 @@ class Feedback_model extends My_model {
             ->join('feedback_anaswers a4','a4.a_id=f.a_id4','left')
             ->join('feedback_anaswers a5','a5.a_id=f.a_id5','left')
             ->join('feedback_anaswers a6','a6.a_id=f.a_id6','left')
+            ->limit(10)
             ->where('f.active=',1);
         if($where)
             $this->db->where($where);
@@ -66,10 +68,17 @@ class Feedback_model extends My_model {
         ->join('user u','u.id =c.user_id','left')
         ->join('project p','p.id=c.project_id','left')
         ->join('feedback_anaswers a','a.a_id=fs.a_id','left');
-        if($l_id)
-            $this->db->where('fs.lead_id',$l_id); 
-        if($id)
-            $this->db->where('fs.id',$id); 
+       /* if($l_id)
+      $this->db->group_by('fs.date_created');*/
+       // $this->db->group_by('fs.id'); 
+      if($l_id)
+            {$this->db->where('fs.lead_id',$l_id);// $this->db->group_by('fs.date_created');
+    }
+        else
+            {$this->db->group_by('fs.lead_id');}
+        
+       /*   if($id)
+            $this->db->where('fs.id',$id); */
         $query=$this->db->get();
         return $query->result();
 
@@ -109,6 +118,14 @@ class Feedback_model extends My_model {
             return $newStatus;
         }
         return false;
+    }
+    public function get_star_value($value='')
+    {
+       $this->db->select('*')
+       ->from('feedback_anaswers')
+       ->where('answers',$value);
+        $result=$this->db->get()->result();
+        return $result;
     }
  
 }
