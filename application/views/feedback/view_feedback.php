@@ -368,6 +368,10 @@ img.ribbon {
     cursor: pointer;
     color: #FFD119;
     text-decoration: none; }
+    .Currentdate{
+    	float: right;
+    margin-bottom: 20px;
+    }
 	
 </style>
 <script type="text/javascript">
@@ -387,6 +391,9 @@ echo "<script>printFunction();</script>";
 	<h1>View Feedback</h1> 
 	<div class="main">
   <form id="printFeedback" >
+  	<div class="Currentdate">
+  	<h6>Date: <?=$feedbacks[0]['date_created'];?></h6>
+  </div>
 		<table>
 		<tr>
 			<th><h5>Lead_id</h5></th>
