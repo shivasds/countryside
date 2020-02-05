@@ -1111,7 +1111,7 @@ class Dashboard extends CI_Controller {
         else
             echo 0;
     }
-    public function do_upload()
+       public function do_upload()
         {
                 $config['upload_path']          = './uploads/';
                 $config['allowed_types']        = 'gif|jpg|png';
@@ -1127,15 +1127,15 @@ class Dashboard extends CI_Controller {
                 }
                 else
                 {
-                    if($this->session->userdata('profile_pic')=='admin.jpg')
+                    if($this->session->userdata('profile_pic')=='admin.png')
                     {
-                        $this->user_model->update_profile_pic($this->session->userdata('user_id'));
+                        $data = $this->user_model->update_profile_pic($this->session->userdata('user_id'));
+                        //  echo $data;die;
                         $this->session->userdata('profile_pic',$this->session->userdata('user_id').".jpg");
 
                     }
-
-                        $data = array('upload_data' => $this->upload->data());
-                       // print_r($data);die;
+                        $this->upload->data();
+                        $data = array('upload_data' => $this->upload->data()); 
                         if($this->session->userdata('user_type')!='admin')
                         ?><script>alert('success');location.href="<?= base_url(); ?>"</script>
                         <?php     

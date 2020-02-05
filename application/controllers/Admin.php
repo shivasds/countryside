@@ -2564,7 +2564,7 @@ class Admin extends CI_Controller {
                 $config['overwrite'] = TRUE;
                 $this->load->library('upload', $config);
 
-                if ( ! $this->upload->do_upload('file'))
+                if (!$this->upload->do_upload('file'))
                 {
                         $error = array('error' => $this->upload->display_errors());
                         ?><script>alert('failed to upload');</script>
@@ -2572,8 +2572,8 @@ class Admin extends CI_Controller {
                 }
                 else
                 {
-                    if($this->session->userdata('profile_pic')=='admin.jpg')
-                    {
+                    if($this->session->userdata('profile_pic')=='admin.png')
+                    { 
                         $this->user_model->update_profile_pic($this->session->userdata('user_id'));
                         $this->session->userdata('profile_pic',$this->session->userdata('user_id').".jpg");
 

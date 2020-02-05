@@ -113,7 +113,7 @@
            
 
             
-            <div class="col-md-8" id="chatSection">
+            <div class="col-sm-8 col-md-8" id="chatSection">
               <!-- DIRECT CHAT -->
               <div class="box box-warning direct-chat direct-chat-primary">
                 <div class="box-header with-border">
@@ -171,17 +171,17 @@
 
 
 
-            <div class="col-md-4">
+            <div class="col-sm-4 col-md-4">
               <!-- USERS LIST -->
               <div class="box box-danger">
                 <div class="box-header with-border">
                   <h3 class="box-title"><?=$strTitle;?></h3>
                   <?php //print_r($vendorslist);echo $vendorslist[0]['id']."this is vendorslist";
-$vendors='';
-foreach ($vendorslist as $Vendor) {
- $vendors.=strval($Vendor['id'].",");
-}
-$vendors = rtrim($vendors, ", ");
+                    $vendors='';
+                    foreach ($vendorslist as $Vendor) {
+                     $vendors.=strval($Vendor['id'].",");
+                    }
+                    $vendors = rtrim($vendors, ", ");
           
           //echo $vendors;?>
                   <div class="box-tools pull-right">
