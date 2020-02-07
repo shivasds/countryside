@@ -2061,7 +2061,7 @@ class Admin extends CI_Controller {
 		if (empty($data['leads'])) {
 			$data['name'] = "index";
      echo "<script>alert('no leads in 99acre');</script>";
-     $this->load->view('admin/home',$data);
+     $this->load->view('admin/online_leads',$data);
 		}
 		else
 		{
