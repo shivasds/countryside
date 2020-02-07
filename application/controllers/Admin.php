@@ -2053,7 +2053,7 @@ class Admin extends CI_Controller {
 	{
 		
 		$data['lead']=$this->fetch_99acre_online_leads();
-	//	print_r($data['lead']);die;
+		//print_r($data['lead']);die;
 		$this->common_model->save_online_leads_99acres(json_decode(json_encode($data['lead']), True));
 		$data['name'] ="more";
 		$data['heading'] ="99 Acres Online Callbacks";
@@ -2199,8 +2199,8 @@ class Admin extends CI_Controller {
 		//print_r($data);die;
 		$username = $data[0]->username;
 		$password = $data[0]->password;
-		$start_date = date("Y-m-d 00:00:00", strtotime('-1 days'));
-		$end_date = date("Y-m-d H:i:s");
+		$start_date = date("Y-m-d 00:00:00", strtotime('-2 days'));
+		$end_date = date("Y-m-d 00:00:00", strtotime('-1 days'));
 		$request = "<?xml version='1.0'?><query><user_name>$username</user_name><pswd>$password</pswd><start_date>$start_date</start_date><end_date>$end_date</end_date></query>";
 		$allParams = array('xml'=>$request);
 		$leads = $this->get99AcresLeads($allParams,$url);
@@ -2209,8 +2209,8 @@ class Admin extends CI_Controller {
 		$data = simplexml_load_string($leads);
 		//print_r($data);
 		//echo $data->ErrorDetail->Message;
-	/*	$authentication='';
-		if($data->ErrorDetail->Message)
+	$authentication='';
+		/*	if($data->ErrorDetail->Message)
 		$authentication ='authentication fail';
 		$this->session->set_userdata('99acre_authenication_fail',$authentication);*/
 		$lead_data = array();
