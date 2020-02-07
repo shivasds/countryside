@@ -380,7 +380,7 @@ class User_model extends CI_Model {
     }
         public function get_all_users()
     {
-        $this->db->select('count(*) as count');
+        $this->db->select('.*,count(*) as count');
         $this->db->from('user');
         $this->db->where('active',1);
         $result= $this->db->get()->result();  

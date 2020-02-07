@@ -373,7 +373,7 @@ class Common_model extends MY_Model {
                             //  print_r($row);
                               $userscount= $row['count'];
                               {
-                                $bid=214;
+                                $bid=2;
                                   if($userscount<=0)
                                   {
                                     if(!empty($projectname))
@@ -424,7 +424,7 @@ class Common_model extends MY_Model {
                             //  print_r($row);
                               $userscount= $row['count'];
                               {
-                                $bid=213;
+                                $bid=1;
                                   if($userscount<=0 && $name!='')
                                   {
                                     if(!empty($projectname))
@@ -598,6 +598,56 @@ class Common_model extends MY_Model {
         $query=$this->db->get();
         return $query->result();
 
+        }
+        function save_commonfloor_online_leads($datalead,$numrows)
+        {
+
+            $source="Commonfloor";
+           // print_r($datalead);
+           // echo $numrows;echo $datalead[0]['contact_mobile'];
+            //die;
+            $numrows=$numrows-1;
+            $a=0;
+            while ($numrows>=$a) {
+               
+            foreach ($datalead as $data) {
+                if(!is_array($data['contact_name']))
+                {
+                    $phone =$data['contact_mobile'];
+                        $name=$data['contact_name'];
+                        $email=$data['contact_email'];
+                        $projectname=$data['project_or_locality_name'];
+                        $notes=$data['details'];
+                        $lead_date=date("Y-m-d", strtotime($data['shared_on']) );
+                        $project_id=$data['seq_id'];
+                         $query1="select count(*) as count from online_leads where phone='$phone'";
+                            $usercount=  $this->db->query($query1);
+                            if ( $usercount->num_rows() > 0 )
+                             {
+                              $row = $usercount->row_array();
+                              $userscount= $row['count'];
+                              {
+                                $bid=3;
+                                  if($userscount<=0 && $name!='')
+                                  {
+                                    if(!empty($projectname))
+                                    $this->insert_newproject($projectname,$bid);
+                                else
+                                    $this->insert_newproject('commonfloor',$bid);
+                            $query="insert into online_leads(source,name,phone,email,project,leadid,notes,lead_date,project_id) values('$source','$name','$phone','$email','$projectname','$project_id','$notes','$lead_date','$project_id')";
+                            //echo $query;
+                                $this->db->query($query);
+                                 //$this->db->last_query();die;
+                                  }
+
+                              }
+                             }   
+                    
+                }  
+                $a++;            }
+            }
+
+           
         }
 
 

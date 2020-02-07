@@ -2053,7 +2053,7 @@ class Admin extends CI_Controller {
 	{
 		
 		$data['lead']=$this->fetch_99acre_online_leads();
-		//print_r($data['lead']);die;
+	//	print_r($data['lead']);die;
 		$this->common_model->save_online_leads_99acres(json_decode(json_encode($data['lead']), True));
 		$data['name'] ="more";
 		$data['heading'] ="99 Acres Online Callbacks";
@@ -2097,9 +2097,100 @@ class Admin extends CI_Controller {
 					//print_r($leads);die;
 					return simplexml_load_string($leads);
 	}
-	public function commonfloor_leads()
+		public function commonfloor_leads()
 	{
+		$output=array(); 
+		$leadsdata_commonfloor=$this->commonfloor_leads_api();
+		function xml2array ( $xmlObject, $out = array () )
+		{
+   		 foreach ( (array) $xmlObject as $index => $node )
+       	 $out[$index] = ( is_object ( $node ) ) ? xml2array ( $node ) : $node;
+   		 return $out;
+		}
+		$output=xml2array( $leadsdata_commonfloor,$output);
+		$cdata=array();
+		$l_data=array();
+		$a=0;
+		for ($k=0; $k < count($output["cf_lead"]) ; $k++) { 
+			foreach ($output["cf_lead"] as $key => $value) {
+			$cdata[$key]= $value;
+		}
+		}
+		$cdata = json_decode(json_encode($cdata), true);
 
+		$this->common_model->save_commonfloor_online_leads($cdata,count($output["cf_lead"]));
+
+	//print_r($cdata);die;
+
+		$data['name'] ="more";
+		$data['heading'] ="Commonfloor Online Callbacks";
+		$where="";
+		$searchVal='';
+		$project='';
+		$fromdate='';
+		$todate='';
+		$lead_source='Commonfloor';
+		$data['search']=0;
+
+		if($this->input->post()){
+			$project=$this->input->post('project');
+			$searchVal = trim($this->input->post('srxhtxt'));
+			$fromdate= $this->input->post('fromDate');
+			$todate=$this->input->post('toDate');
+		if($project!==null){
+				$project=trim($project);
+				$this->session->set_userdata("project",$project);
+				if($project)
+					$where.=" (project='$project') ";
+			}
+			if($searchVal !=null ){
+				$this->session->set_userdata('SRCHTXT', $searchVal);	
+				if(($searchVal&$project & $fromdate & $todate))			
+					$where .="and  (name like '%$searchVal%' or phone like'%$searchVal%' or email like '%$searchVal%' or project like'%$searchVal%')";
+				elseif ($searchVal& $fromdate & $todate) {
+				$where .=" 	(name like '%$searchVal%' or phone like'%$searchVal%' or email like '%$searchVal%' or project like'%$searchVal%')";
+				}
+				elseif($searchVal&&$project)
+					$where .="and( name like '%$searchVal%' or phone like'%$searchVal%' or email like '%$searchVal%' or project like'%$searchVal%')";
+				elseif($searchVal)
+				{
+					$where .="( name like '%$searchVal%' or phone like'%$searchVal%' or email like '%$searchVal%' or project like'%$searchVal%')";
+				}
+
+			}
+			if($fromdate & $todate & $project)
+			{
+				//$where.="lead_date >= $fromdate and lead_date <= $todate";
+				$where.="and CAST(lead_date AS date) BETWEEN '$fromdate' and '$todate'";
+			}
+			$data['fromdate']=$fromdate;
+			$data['todate']=$todate;
+			$data['search'] = $this->common_model->search_online_leads($fromdate,$todate,$project,$searchVal,$lead_source,$where);		
+		}
+		else{
+				if($this->session->userdata('SRCHTXT')){
+				$searchVal = $this->session->userdata('SRCHTXT');
+				$where .="(name like '%$searchVal%' or phone like'%$searchVal%' or email like '%$searchVal%' or project like'%$searchVal%')";
+
+			}
+		}
+
+		$data['leads'] = $this->common_model->get_online_leads('commonfloor',$where);
+		$this->load->view('admin/online_leads',$data); 
+	}
+	public function commonfloor_leads_api()
+	{
+		$start_date=date("Ymd", strtotime('-2 days'));
+		$end_date =  date("Ymd", strtotime('tomorrow'));
+		//echo $end_date;die;
+		$url="https://www.commonfloor.com/agent/pull-leads/v1?id=50fa36218cf02&key=83lnnxpateix819gibmxbp58db0spe2e&start=".$start_date."&end=".$end_date."";
+		
+		 			$crl = curl_init($url);
+					curl_setopt ($crl, CURLOPT_POST, 1);
+					curl_setopt ($crl, CURLOPT_POSTFIELDS,3);
+					curl_setopt ($crl, CURLOPT_RETURNTRANSFER,1);
+					$leads=curl_exec ($crl);
+					return simplexml_load_string($leads);
 	}
 
 		public function fetch_99acre_online_leads(){
@@ -2108,7 +2199,7 @@ class Admin extends CI_Controller {
 		//print_r($data);die;
 		$username = $data[0]->username;
 		$password = $data[0]->password;
-		$start_date = date("Y-m-d 00:00:00", strtotime('yesterday'));
+		$start_date = date("Y-m-d 00:00:00", strtotime('-1 days'));
 		$end_date = date("Y-m-d H:i:s");
 		$request = "<?xml version='1.0'?><query><user_name>$username</user_name><pswd>$password</pswd><start_date>$start_date</start_date><end_date>$end_date</end_date></query>";
 		$allParams = array('xml'=>$request);
@@ -2162,6 +2253,7 @@ class Admin extends CI_Controller {
 	public function save_online_leads(){
 
 		$error=0;
+		$ext='';
 		if($this->input->post()){
 			$dept=$this->input->post('dept');
 			$callback_type=$this->input->post('callback_type');
@@ -2177,15 +2269,21 @@ class Admin extends CI_Controller {
 				$lead_data = $this->common_model->getFromId($key, 'id', 'online_leads');
 				if($lead_data->source=='99acres')
 				{
-				$p_id=$this->common_model->get_project_id_by_name($lead_data->project,213);
+				$p_id=$this->common_model->get_project_id_by_name($lead_data->project,1);
 				if($p_id=='')
-					$p_id['id']=772;
+					$p_id['id']=1;
 				}
-				elseif($lead_data->source=='Magicbricks')
+				elseif($lead_data->source=='Magicbrick')
 				{
-				$p_id=$this->common_model->get_project_id_by_name($lead_data->project,214);
+				$p_id=$this->common_model->get_project_id_by_name($lead_data->project,2);
 				if($p_id=='')
-					$p_id['id']=772;
+					$p_id['id']=2;
+				}
+				elseif($lead_data->source=='Commonfloor')
+				{
+				$p_id=$this->common_model->get_project_id_by_name($lead_data->project,3);
+				if($p_id=='')
+					$p_id['id']=3;
 				}
 				else
 				{
@@ -2227,14 +2325,19 @@ class Admin extends CI_Controller {
 
 				//echo json_encode($return);
 			}
-			if($data['lead_source_id']==30)
+			if($data['lead_source_id']==1)
 			{
 					$ext="acres99_leads";
 					$this->session->set_userdata('ext',$ext);
 			}
-				elseif($data['lead_source_id']==29)
+				elseif($data['lead_source_id']==2)
 				{
 					$ext="magicbricks_leads";
+					$this->session->set_userdata('ext',$ext);
+				}
+				elseif($data['lead_source_id']==3)
+				{
+					$ext="commonfloor_leads";
 					$this->session->set_userdata('ext',$ext);
 				}
 				//echo site_url()
@@ -2920,7 +3023,20 @@ class Admin extends CI_Controller {
 		$data['feedbacks'] = json_decode(json_encode($data['feedbacks']),true);
 	 	$this->load->view('feedback/print_feedback',$data);
 	 }
-	 
+	 public function delete_online_lead()
+	{
+		//echo "<script>alert('deletting macha');location.href='http://localhost:8082/admin/magicbricks_leads'</script>";
+		$lead_id =  $this->uri->segment(3);
+		$controller_name= $this->uri->segment(4);
+		$lead_id = array('id'=>$lead_id);
+		$bool = $this->common_model->updateWhere($lead_id);
+		if($bool)
+		{
+			echo "<script>location.href='".base_url().'admin/'.$controller_name."';</script>";
+		}
+
+
+	}
 
 
 }

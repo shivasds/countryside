@@ -148,7 +148,7 @@
 	else
 	{
 	?>
-	<form method="POST" id="search_form" autocomplete="off">
+	<!--<form method="POST" id="search_form" autocomplete="off">
 		<div class="row">
 			<div class="col-md-3 form-group">
 					<label for="emp_code">Project:</label>
@@ -189,7 +189,7 @@
 				<button type="submit" id="admin-search" class="btn btn-success btn-block">Search</button>
 			</div>
 		</div>
-    </form>
+    </form>-->
     <br>
 	<table  class="table table-striped table-bordered dt-responsive" cellspacing="0" >
 		<tr>
@@ -274,7 +274,7 @@
 			</tbody>
 		</table>
 		</div>
-	</form>
+	
 
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3">
@@ -381,8 +381,8 @@
 					</div>
 			</div>
 		</div>
-	<!-- </div>
-	</form> -->
+	<!-- </div>-->
+	</form> 
 
 	</iframe>
 	<?php
@@ -508,154 +508,13 @@
 							</script>
 <!--js --
 <link rel="stylesheet" href="<?php echo base_url()?>assets/css/vroom.css">
-<script type="text/javascript" src="<?php echo base_url()?>assets/js/vroom.js"></script>-->
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/vroom.js"></script> 
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/TweenLite.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/CSSPlugin.min.js"></script>
-<script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js"></script>
+<script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js"></script>-->-->-->
 <script src="<?php echo base_url()?>assets/js/scripts.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-   
-   <script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-        if (!Modernizr.inputtypes.date) {
-            // If not native HTML5 support, fallback to jQuery datePicker
-            $('input[type=date]').datepicker({
-                // Consistent format with the HTML5 picker
-                    dateFormat : 'dd/mm/yy'
-                }
-            );
-        }
-        if (!Modernizr.inputtypes.time) {
-            // If not native HTML5 support, fallback to jQuery timepicker
-            $('input[type=time]').timepicker({ 'timeFormat': 'H:i' });
-        }
-        $('#revenueMonth').MonthPicker({
-            Button: false
-        });
-        get_revenues();
-
-        $('.view_callbacks').click(function(){
-            var type = $(this).data('type');
-            var data = {};
-            switch (type)
-            {
-                case "user_total":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.due_date = "<?php echo date('Y-m-d'); ?>";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_overdue":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.due_date_to = "<?php echo date('Y-m-d H:i:s'); ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_active": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_close": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.status = "close";
-                    break;
-
-                case "user_important":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.access = 'read_write'; 
-                    data.important = 1;
-                    break;
-
-                case "manager_active": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "manager_close":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.status = "close";
-                    break;
-            }
-            
-            view_callbacks(data,'post');
-
-        });
-
-        $("#refresh").click(function(){
-            $(".se-pre-con").show();
-            $.get("<?php echo base_url(); ?>dashboard/get_live_feed_back", function(response){
-                $("#live_feed_back_body").html(response);
-                $(".se-pre-con").hide("slow");
-            });
-        });
-
-        $("#overdue_lead_count").click(function(){
-            var form = document.createElement('form');
-            form.method = "POST";
-            form.action = "<?php echo base_url()."dashboard/generate_report" ?>";
-            
-            var input = document.createElement('input');
-            input.type = "text";
-            input.name = "toDate";
-            input.value = $(this).data('datetime');
-            form.appendChild(input);
-
-            input = document.createElement('input');
-            input.type = "text";
-            input.name = "reportType";
-            input.value = "due";
-            form.appendChild(input);
-
-            document.body.appendChild(form);
-            form.submit();
-        });
-
-        $('.emailSiteVisit').on('click', function(){
-            $(".se-pre-con").show();
-            $.ajax({
-                type : 'POST',
-                url : "<?= base_url('site-visit-report-mail');?>",
-                data:1,
-                success: function(res){
-                    $(".se-pre-con").hide("slow");
-                    if(res == 1)
-                        alert('Email Sent Successfully.');
-                    else
-                        alert('Email Sent fail!');
-                }
-            });
-        });
-
-    });
-    // $('#filter_revenue').click(get_revenues());
-    function get_revenues(){
-        $.get( "<?php echo base_url()."dashboard/get_revenue/" ?>"+$('#revenueMonth').val(), function( data ) {
-            $('#revenue_data').html(data);
-        });
-    }
-    function view_callbacks(data, method) {
-        var form = document.createElement('form');
-        form.method = method;
-        form.action = "<?php echo base_url()."view_callbacks?" ?>"+jQuery.param(data);
-        for (var i in data) {
-            var input = document.createElement('input');
-            input.type = "text";
-            input.name = i;
-            input.value = data[i];
-            form.appendChild(input);
-        }
-        //console.log(form);
-        document.body.appendChild(form);
-        form.submit();
-    }
-
-</script>
+ 
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
@@ -673,127 +532,11 @@
         }
         $('#revenueMonth').MonthPicker({
             Button: false
-        });
-        get_revenues();
+        }); 
 
-        $('.view_callbacks').click(function(){
-            var type = $(this).data('type');
-            var data = {};
-            switch (type)
-            {
-                case "user_total":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.due_date = "<?php echo date('Y-m-d'); ?>";
-                    data.access = 'read_write'; 
-                    break;
+         
 
-                case "user_overdue":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.due_date_to = "<?php echo date('Y-m-d H:i:s'); ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_active": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_close": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.status = "close";
-                    break;
-
-                case "user_important":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.access = 'read_write'; 
-                    data.important = 1;
-                    break;
-
-                case "manager_active": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "manager_close":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.status = "close";
-                    break;
-            }
-            
-            view_callbacks(data,'post');
-
-        });
-
-        $("#refresh").click(function(){
-            $(".se-pre-con").show();
-            $.get("<?php echo base_url(); ?>dashboard/get_live_feed_back", function(response){
-                $("#live_feed_back_body").html(response);
-                $(".se-pre-con").hide("slow");
-            });
-        });
-
-        $("#overdue_lead_count").click(function(){
-            var form = document.createElement('form');
-            form.method = "POST";
-            form.action = "<?php echo base_url()."dashboard/generate_report" ?>";
-            
-            var input = document.createElement('input');
-            input.type = "text";
-            input.name = "toDate";
-            input.value = $(this).data('datetime');
-            form.appendChild(input);
-
-            input = document.createElement('input');
-            input.type = "text";
-            input.name = "reportType";
-            input.value = "due";
-            form.appendChild(input);
-
-            document.body.appendChild(form);
-            form.submit();
-        });
-
-        $('.emailSiteVisit').on('click', function(){
-            $(".se-pre-con").show();
-            $.ajax({
-                type : 'POST',
-                url : "<?= base_url('site-visit-report-mail');?>",
-                data:1,
-                success: function(res){
-                    $(".se-pre-con").hide("slow");
-                    if(res == 1)
-                        alert('Email Sent Successfully.');
-                    else
-                        alert('Email Sent fail!');
-                }
-            });
-        });
-
-    });
-    // $('#filter_revenue').click(get_revenues());
-    function get_revenues(){
-        $.get( "<?php echo base_url()."dashboard/get_revenue/" ?>"+$('#revenueMonth').val(), function( data ) {
-            $('#revenue_data').html(data);
-        });
-    }
-    function view_callbacks(data, method) {
-        var form = document.createElement('form');
-        form.method = method;
-        form.action = "<?php echo base_url()."view_callbacks?" ?>"+jQuery.param(data);
-        for (var i in data) {
-            var input = document.createElement('input');
-            input.type = "text";
-            input.name = i;
-            input.value = data[i];
-            form.appendChild(input);
-        }
-        //console.log(form);
-        document.body.appendChild(form);
-        form.submit();
-    }
+    }); 
 
 </script>
 </body>
