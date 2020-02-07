@@ -2209,10 +2209,10 @@ class Admin extends CI_Controller {
 		$data = simplexml_load_string($leads);
 		//print_r($data);
 		//echo $data->ErrorDetail->Message;
-		$authentication='';
+	/*	$authentication='';
 		if($data->ErrorDetail->Message)
 		$authentication ='authentication fail';
-		$this->session->set_userdata('99acre_authenication_fail',$authentication);
+		$this->session->set_userdata('99acre_authenication_fail',$authentication);*/
 		$lead_data = array();
 		if(isset($data->Resp) && count($data->Resp)>0){
 			foreach ($data->Resp as $value) {
