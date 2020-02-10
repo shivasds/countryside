@@ -223,8 +223,7 @@
 		
 	</table>
 
-     <?php } ?>-->
-	
+     <?php } ?>--> 
 	<form method="POST" class="main-from" action="<?php echo base_url()?>admin/save_online_leads">
 	  <div class="container" style="overflow:auto;height: 27rem;overflow-y: scroll;"">
 		<table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="50%">
@@ -241,12 +240,15 @@
 					<th>Notes</th>
 					<th>Date</th>
 				</tr>
+				<tr>
+					<td colspan="8"><input type='checkbox' id="checkAll"  class='check'  >Select All</td>
+				</tr>
 			</thead>
 			<tbody id="table_body">
 				<?php if(count($leads)>0){
 					foreach ($leads as $lead) { ?>
 						<tr id="row_<?= $lead->id ?>">
-							<td><input type='checkbox' name='check[]' class='check' value="<?= $lead->id ?>"></td>
+							<td><input type='checkbox' name='check[]'  class='check' value="<?= $lead->id ?>"></td>
 							<td><button type="button" class="btn btn-success" onclick="window.location='<?php echo site_url("admin/delete_online_lead/".$lead->id.'/'.$lead_controller);?>'">Delete Lead</button></td>
 							<td><?= $lead->source ?></td>
 							<td><?= $lead->name ?></td>
@@ -399,6 +401,9 @@
 		$('#srxhtxt').val("");
         $("#search_form").submit();
     }
+    $("#checkAll").click(function(){
+    $('input:checkbox').not(this).prop('checked', this.checked);
+});
 	/*$(".main-from").submit(function(e){
 		e.preventDefault();
 		$(".se-pre-con").show();
