@@ -138,7 +138,7 @@
         	?>
         	<tr>
                 <th><?=$i?></th>
-                <th><?php if($q['answers']==5) {echo $q['answers']."  Stars";}else{echo $q['answers'];}?></th> 
+                <th><?php if($q['answers']==5 || $q['answers']==10) {echo $q['answers']."  Stars";}else{echo $q['answers'];}?></th> 
             </tr>
             <?php
             $i++;

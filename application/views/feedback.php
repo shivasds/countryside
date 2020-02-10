@@ -546,6 +546,9 @@ img.ribbon {
 <div class="content">
 	<h1><img src="<?=base_url('assets/img/logo.png');?>"></h1>
 	<h1>Feedback Form</h1>
+	<?php if($this->session->flashdata('msg')): ?> 
+    <?php echo "<script>alert('".$this->session->flashdata('msg')."')</script>"; ?>
+<?php endif; ?>
 	<div class="main">
 		<form action="" method="post">
 			<h5>Lead_id</h5>
@@ -566,11 +569,11 @@ img.ribbon {
 						<?php 
 						if($q['a1']==5 || $q['a1'] ==10)
 							{
-								echo '<div class="check_box"> <div class="radio"> <label><input class="shiva'.$i.'"type="radio" name="radio'.$i.'" value=" " checked><i></i>';
+								echo '<div class="check_box"> <div class="radio"> <label><input class="shiva'.$i.'"type="radio" name="radio'.$i.'" value=" " checked ><i></i>';
 			 
 							}
 							else {
-							echo '<div class="check_box"> <div class="radio"> <label><input type="radio" name="radio'.$i.'" value="'.$q['a_id1'].'" checked><i></i>'.$q['a1'];
+							echo '<div class="check_box"> <div class="radio"> <label><input type="radio" name="radio'.$i.'" value="'.$q['a_id1'].'" required><i></i>'.$q['a1'];
 							}?></label><?php if($q['a1']==5 || $q['a1'] ==10)
 							{
 			 echo "<div class='starrr' id='star".$i."'></div> ";
@@ -614,7 +617,7 @@ img.ribbon {
  
 		</form>
 	</div>
-	<p class="footer">&copy; 2016 Feedback Widget. All Rights Reserved | Design by <a href="http://secondsdigital.com"> seconds digital solutions</a></p>
+	<p class="footer">&copy; <?=date('Y');?> Countryside Groups. All Rights Reserved | Developed by <a href="http://secondsdigital.com"> seconds digital solutions</a></p>
 </div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>

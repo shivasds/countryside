@@ -389,6 +389,7 @@ td, th {
 	            ?>
 	</form>
 </div>
+<p class="footer">&copy; <?=date('Y');?> Countryside Groups. All Rights Reserved | Developed by <a href="http://secondsdigital.com"> seconds digital solutions</a></p>
 </div>
 
 </body>

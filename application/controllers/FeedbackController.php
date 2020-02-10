@@ -32,6 +32,7 @@ class FeedbackController extends CI_Controller {
                    /* echo "<script>var loc=".base_url('feedback');
                     echo "alert('Thanks for giving feedback');location.href=loc;</script>";*/
                 }
+                $this->session->set_flashdata('msg', 'Feedback Submitted Successfully');
         }
 
         $data['q_a'] = $this->feedback_model->all_qa();

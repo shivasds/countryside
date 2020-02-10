@@ -1932,7 +1932,7 @@ class Admin extends CI_Controller {
 			$count = 0;
 			$duplicate = 0;
 			$target = 'uploads/'.uniqid().'.xls';
-			if (move_uploaded_file($_FILES["file"]["tmp_name"], $target)){
+			if (move_uploaded_file($_FILES["upload_xl"]["tmp_name"], $target)){
 				$this->load->library('excel');
 				$objPHPExcel = PHPExcel_IOFactory::load($target);
 				foreach ($objPHPExcel->getWorksheetIterator() as $worksheet)
