@@ -605,9 +605,11 @@ class Common_model extends MY_Model {
             $source="Commonfloor";
            // print_r($datalead);
            // echo $numrows;echo $datalead[0]['contact_mobile'];
-            //die;
+          
             $numrows=$numrows-1;
-            $a=0;
+         //   echo $numrows;
+          //    die;
+            $a=1;
             while ($numrows>=$a) {
                
             foreach ($datalead as $data) {
@@ -644,7 +646,7 @@ class Common_model extends MY_Model {
                              }   
                     
                 }  
-                $a++;            }
+                          } $a++; 
             }
 
            

@@ -72,7 +72,7 @@
                                 <!--custom-widgets-->
                                                 <div class="custom-widgets">
                                                     <?php 
-                                                    
+                                                   // print_r($active_count);die; 
                                                     if ($this->session->userdata('user_type')=="admin") { 
                                                     ?>
                                                     
@@ -83,7 +83,7 @@
                                                                 <h4> Active Cp's</h4>
                                                             </div>
                                                             <div class="stats-right">
-                                                                <label><a href="#" class="view_callbacks" data-type="user_total"> 10</a></label>
+                                                                <label><a href="#" class="active_emp" data-type="active_user_total"><?=count($active_count); ?></a></label>
                                                             </div>
                                                             <div class="clearfix"> </div>   
                                                         </div>
@@ -134,7 +134,7 @@
                                                         <div class="col-md-3 widget states-mdl">
                                                             <div class="stats-left">
                                                                 <h5>Upcoming</h5>
-                                                                <h4>Tpabs</h4>
+                                                                <h4>Tabs</h4>
                                                             </div>
                                                             <div class="stats-right">
                                                                 <label>- </label>
@@ -144,7 +144,7 @@
                                                         <div class="col-md-3 widget states-thrd">
                                                             <div class="stats-left">
                                                                 <h5>Upcoming</h5>
-                                                                <h4>Tpabs</h4>
+                                                                <h4>Tabs</h4>
                                                             </div>
                                                             <div class="stats-right">
                                                                 <label>-</label>
@@ -154,7 +154,7 @@
                                                         <div class="col-md-3 widget states-last">
                                                             <div class="stats-left">
                                                                 <h5>Upcoming</h5>
-                                                                <h4>Tpabs</h4>
+                                                                <h4>Tabs</h4>
                                                             </div>
                                                             <div class="stats-right">
                                                                 <label>-</label>
@@ -264,6 +264,33 @@
         });
         get_revenues();
 
+        $('.active_emp').click(function(){
+            var type = $(this).data('type');
+            var data = {};
+            switch (type)
+            {
+                case "active_user_total":  
+                    break;
+            }
+            
+            admin_dashboard(data,'post');
+
+        });
+         function admin_dashboard(data, method) {
+        var form = document.createElement('form');
+        form.method = method;
+        form.action = "<?php echo base_url('admin/')."admin_dashboard" ?>";
+        for (var i in data) {
+            var input = document.createElement('input');
+            input.type = "text";
+            input.name = i;
+            input.value = data[i];
+            form.appendChild(input);
+        }
+        //console.log(form);
+        document.body.appendChild(form);
+        form.submit();
+    }
         $('.view_callbacks').click(function(){
             var type = $(this).data('type');
             var data = {};
@@ -314,7 +341,6 @@
             view_callbacks(data,'post');
 
         });
-
         $("#refresh").click(function(){
             $(".se-pre-con").show();
             $.get("<?php echo base_url(); ?>dashboard/get_live_feed_back", function(response){

@@ -69,6 +69,13 @@ label{
     letter-spacing: 1px;
 	font-family: 'Amaranth', sans-serif;
 }
+.content h2{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+	font-family: 'Amaranth', sans-serif;
+}
 .main{
 	width:50%;
 	margin:45px auto;
@@ -335,14 +342,23 @@ td, th {
 	width: 100%;
 	margin-bottom: 23px;
 	}
+	 .Currentdate{
+    	float: right;
+    margin-bottom: 20px;
+    }
 </style>
 </head>
 <body> 
 <div class="content">
 	<!-- <h1><img src='/assets/img/logo.png'></h1> -->
-	<h1>Print Feedback</h1> 
+	<h1>Countryside Group</h1> 
+	<br>
+	<h2>Feedback Form</h2>
 	<div class="main">
   <form id="printFeedback" >
+  	<div class="Currentdate">
+  	<h6>Date: <?=$feedbacks[0]['date_created'];?></h6>
+  </div>
 		<table>
 		<tr>
 			<th><h5>Lead_id</h5></th>

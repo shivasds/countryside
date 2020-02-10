@@ -30,6 +30,7 @@ class Admin extends CI_Controller {
 		$data['user_id'] = $this->session->userdata('user_id');
 		$data['profile_pic'] = $this->user_model->get_profile_pic_name($data['user_id']);
         $data['profile_pic'] = json_decode( json_encode($data['profile_pic']), true);
+        $data['active_count'] = $this->user_model->get_live_feed_back();
         $this->session->set_userdata('profile_pic',$data['profile_pic'][0]['profile_pic']);
 		$this->load->view('admin/home',$data);
 
@@ -2101,6 +2102,7 @@ class Admin extends CI_Controller {
 	{
 		$output=array(); 
 		$leadsdata_commonfloor=$this->commonfloor_leads_api();
+		//print_r($leadsdata_commonfloor);die;
 		function xml2array ( $xmlObject, $out = array () )
 		{
    		 foreach ( (array) $xmlObject as $index => $node )
@@ -2117,6 +2119,7 @@ class Admin extends CI_Controller {
 		}
 		}
 		$cdata = json_decode(json_encode($cdata), true);
+		//print_r($cdata);die;
 
 		$this->common_model->save_commonfloor_online_leads($cdata,count($output["cf_lead"]));
 
@@ -3036,6 +3039,37 @@ class Admin extends CI_Controller {
 		}
 
 
+	}
+		public function admin_dashboard(){
+			$data['name'] ="admin";
+		$data['heading'] ="Active Employees";
+			$data['last_login'] = $this->user_model->get_live_feed_back();
+			$this->load->view('reports/view_active_emp.php', $data);
+
+		/*$usrId 		= $this->input->get('userId');
+		$fromDate 	= $this->input->get('fromDate');
+		$toDate 	= $this->input->get('endDate');
+		if($usrId && $fromDate && $toDate) {
+			$data['name'] = "reports";
+			$advisorData = $this->user_model->get_user_data($usrId);
+			$data['heading']  = "Callback report for ".$advisorData['first_name']." ".$advisorData['last_name'];
+			$data['duration'] = "<strong>From</strong> <em>".$fromDate."</em> <strong>To</strong> <em>".$toDate."</em>";
+			
+			$clause = "ct.userId =".$usrId." AND ct.entryDate BETWEEN '".$fromDate."' AND '".$toDate."'";
+			
+
+			//------- pagination ------
+			$rowCount 				= $this->callback_model->countCallbackLists($clause);
+			$data["totalRecords"] 	= $rowCount;
+			$data["links"] 			= paginitaionWithQueryString(base_url().'admin/view_callbacks_lists/', 3, VIEW_PER_PAGE, $rowCount, $this->input->get());	
+			$page = $this->uri->segment(3);
+	        $offset = !$page ? 0 : $page;
+			//------ End --------------
+			$data['result'] = $this->callback_model->getCallbackLists($clause, $offset, VIEW_PER_PAGE);
+			$this->load->view('reports/view_callbacks_lists.php', $data);
+		}
+		else
+			show_404();*/
 	}
 
 
