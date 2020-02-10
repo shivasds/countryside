@@ -160,13 +160,13 @@
             if(lead_id!=''){
                 $.ajax({
                     type:"POST",
-                    url: "<?=base_url('admin/print_feedback/');?>?id="+id,
+                    url: "<?=base_url('admin/print_feedback/');?>",
                     dataType:'html',
                     data:{lead_id:lead_id},
                     success:function(data){ 
                  var printWindow = window.open('', '', 'height=500,width=800');
                  printWindow.document.write(data);
-                 console.log(data);
+                 //console.log(data);
                  printWindow.document.close();
                
                 //    $('#formdata').append(data);
