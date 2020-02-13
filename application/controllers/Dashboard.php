@@ -162,6 +162,10 @@ class Dashboard extends CI_Controller {
                   
            
         }
+        elseif ($this->session->userdata('user_type') == 'admin') {
+            redirect(base_url('admin'));
+            # code...
+        }
         else{
             $data['productivity_report'] = $this->callback_model->get_call_reports();
             $data['overdue_lead_count'] = $this->callback_model->get_overdue_lead_count();

@@ -55,13 +55,13 @@
     <form  action="<?php echo base_url()?>admin/bulk_upload_callback" method="POST" enctype="multipart/form-data">
         <div class="row">
             <div class="col-sm-6 form-group">
-                <input type="file" class="form-control" id="file" name="file" placeholder="File" required="required">
+                <input type="file" class="form-control" id="upload_xl" name="upload_xl" placeholder="File" required="required">
             </div>
             <div class="col-sm-3 form-group">
                 <button type="reset" class="btn btn-success btn-block" value="Reset">Reset</button>
             </div>
             <div class="col-sm-3 form-group">
-                <button type="submit" class="btn btn-success btn-block" name="submit">Read Data</button>
+                <button type="submit" id="excel_upload"class="btn btn-success btn-block" name="submit">Read Data</button>
             </div>
         </div>
     </form>

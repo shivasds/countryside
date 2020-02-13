@@ -93,7 +93,7 @@
 	if($source_name=='magicbricks_leads')
 		$source_name='Magicbricks';
 	elseif ($source_name=='acres99_leads') {
-		
+		$source_name='99acres';
 	}
 	elseif ($source_name=='commonfloor_leads') {
 		$source_name='commonfloor';
@@ -148,7 +148,7 @@
 	else
 	{
 	?>
-	<form method="POST" id="search_form" autocomplete="off">
+	<!--<form method="POST" id="search_form" autocomplete="off">
 		<div class="row">
 			<div class="col-md-3 form-group">
 					<label for="emp_code">Project:</label>
@@ -189,7 +189,7 @@
 				<button type="submit" id="admin-search" class="btn btn-success btn-block">Search</button>
 			</div>
 		</div>
-    </form>
+    </form>-->
     <br>
 	<table  class="table table-striped table-bordered dt-responsive" cellspacing="0" >
 		<tr>
@@ -223,8 +223,7 @@
 		
 	</table>
 
-     <?php } ?>-->
-	
+     <?php } ?>--> 
 	<form method="POST" class="main-from" action="<?php echo base_url()?>admin/save_online_leads">
 	  <div class="container" style="overflow:auto;height: 27rem;overflow-y: scroll;"">
 		<table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="50%">
@@ -241,12 +240,15 @@
 					<th>Notes</th>
 					<th>Date</th>
 				</tr>
+				<tr>
+					<td colspan="8"><input type='checkbox' id="checkAll"  class='check'  >Select All</td>
+				</tr>
 			</thead>
 			<tbody id="table_body">
 				<?php if(count($leads)>0){
 					foreach ($leads as $lead) { ?>
 						<tr id="row_<?= $lead->id ?>">
-							<td><input type='checkbox' name='check[]' class='check' value="<?= $lead->id ?>"></td>
+							<td><input type='checkbox' name='check[]'  class='check' value="<?= $lead->id ?>"></td>
 							<td><button type="button" class="btn btn-success" onclick="window.location='<?php echo site_url("admin/delete_online_lead/".$lead->id.'/'.$lead_controller);?>'">Delete Lead</button></td>
 							<td><?= $lead->source ?></td>
 							<td><?= $lead->name ?></td>
@@ -274,7 +276,7 @@
 			</tbody>
 		</table>
 		</div>
-	</form>
+	
 
 		<div class="row">
 			<div class="col-sm-6 col-sm-offset-3">
@@ -381,8 +383,8 @@
 					</div>
 			</div>
 		</div>
-	<!-- </div>
-	</form> -->
+	<!-- </div>-->
+	</form> 
 
 	</iframe>
 	<?php
@@ -399,6 +401,9 @@
 		$('#srxhtxt').val("");
         $("#search_form").submit();
     }
+    $("#checkAll").click(function(){
+    $('input:checkbox').not(this).prop('checked', this.checked);
+});
 	/*$(".main-from").submit(function(e){
 		e.preventDefault();
 		$(".se-pre-con").show();
@@ -508,154 +513,13 @@
 							</script>
 <!--js --
 <link rel="stylesheet" href="<?php echo base_url()?>assets/css/vroom.css">
-<script type="text/javascript" src="<?php echo base_url()?>assets/js/vroom.js"></script>-->
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/vroom.js"></script> 
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/TweenLite.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/CSSPlugin.min.js"></script>
-<script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js"></script>
+<script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js"></script>-->-->-->
 <script src="<?php echo base_url()?>assets/js/scripts.js"></script>
 
-<!-- Bootstrap Core JavaScript -->
-   
-   <script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-        if (!Modernizr.inputtypes.date) {
-            // If not native HTML5 support, fallback to jQuery datePicker
-            $('input[type=date]').datepicker({
-                // Consistent format with the HTML5 picker
-                    dateFormat : 'dd/mm/yy'
-                }
-            );
-        }
-        if (!Modernizr.inputtypes.time) {
-            // If not native HTML5 support, fallback to jQuery timepicker
-            $('input[type=time]').timepicker({ 'timeFormat': 'H:i' });
-        }
-        $('#revenueMonth').MonthPicker({
-            Button: false
-        });
-        get_revenues();
-
-        $('.view_callbacks').click(function(){
-            var type = $(this).data('type');
-            var data = {};
-            switch (type)
-            {
-                case "user_total":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.due_date = "<?php echo date('Y-m-d'); ?>";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_overdue":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.due_date_to = "<?php echo date('Y-m-d H:i:s'); ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_active": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_close": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.status = "close";
-                    break;
-
-                case "user_important":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.access = 'read_write'; 
-                    data.important = 1;
-                    break;
-
-                case "manager_active": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "manager_close":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.status = "close";
-                    break;
-            }
-            
-            view_callbacks(data,'post');
-
-        });
-
-        $("#refresh").click(function(){
-            $(".se-pre-con").show();
-            $.get("<?php echo base_url(); ?>dashboard/get_live_feed_back", function(response){
-                $("#live_feed_back_body").html(response);
-                $(".se-pre-con").hide("slow");
-            });
-        });
-
-        $("#overdue_lead_count").click(function(){
-            var form = document.createElement('form');
-            form.method = "POST";
-            form.action = "<?php echo base_url()."dashboard/generate_report" ?>";
-            
-            var input = document.createElement('input');
-            input.type = "text";
-            input.name = "toDate";
-            input.value = $(this).data('datetime');
-            form.appendChild(input);
-
-            input = document.createElement('input');
-            input.type = "text";
-            input.name = "reportType";
-            input.value = "due";
-            form.appendChild(input);
-
-            document.body.appendChild(form);
-            form.submit();
-        });
-
-        $('.emailSiteVisit').on('click', function(){
-            $(".se-pre-con").show();
-            $.ajax({
-                type : 'POST',
-                url : "<?= base_url('site-visit-report-mail');?>",
-                data:1,
-                success: function(res){
-                    $(".se-pre-con").hide("slow");
-                    if(res == 1)
-                        alert('Email Sent Successfully.');
-                    else
-                        alert('Email Sent fail!');
-                }
-            });
-        });
-
-    });
-    // $('#filter_revenue').click(get_revenues());
-    function get_revenues(){
-        $.get( "<?php echo base_url()."dashboard/get_revenue/" ?>"+$('#revenueMonth').val(), function( data ) {
-            $('#revenue_data').html(data);
-        });
-    }
-    function view_callbacks(data, method) {
-        var form = document.createElement('form');
-        form.method = method;
-        form.action = "<?php echo base_url()."view_callbacks?" ?>"+jQuery.param(data);
-        for (var i in data) {
-            var input = document.createElement('input');
-            input.type = "text";
-            input.name = i;
-            input.value = data[i];
-            form.appendChild(input);
-        }
-        //console.log(form);
-        document.body.appendChild(form);
-        form.submit();
-    }
-
-</script>
+ 
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
@@ -673,127 +537,11 @@
         }
         $('#revenueMonth').MonthPicker({
             Button: false
-        });
-        get_revenues();
+        }); 
 
-        $('.view_callbacks').click(function(){
-            var type = $(this).data('type');
-            var data = {};
-            switch (type)
-            {
-                case "user_total":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.due_date = "<?php echo date('Y-m-d'); ?>";
-                    data.access = 'read_write'; 
-                    break;
+         
 
-                case "user_overdue":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.due_date_to = "<?php echo date('Y-m-d H:i:s'); ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_active": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_close": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.status = "close";
-                    break;
-
-                case "user_important":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.access = 'read_write'; 
-                    data.important = 1;
-                    break;
-
-                case "manager_active": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "manager_close":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.status = "close";
-                    break;
-            }
-            
-            view_callbacks(data,'post');
-
-        });
-
-        $("#refresh").click(function(){
-            $(".se-pre-con").show();
-            $.get("<?php echo base_url(); ?>dashboard/get_live_feed_back", function(response){
-                $("#live_feed_back_body").html(response);
-                $(".se-pre-con").hide("slow");
-            });
-        });
-
-        $("#overdue_lead_count").click(function(){
-            var form = document.createElement('form');
-            form.method = "POST";
-            form.action = "<?php echo base_url()."dashboard/generate_report" ?>";
-            
-            var input = document.createElement('input');
-            input.type = "text";
-            input.name = "toDate";
-            input.value = $(this).data('datetime');
-            form.appendChild(input);
-
-            input = document.createElement('input');
-            input.type = "text";
-            input.name = "reportType";
-            input.value = "due";
-            form.appendChild(input);
-
-            document.body.appendChild(form);
-            form.submit();
-        });
-
-        $('.emailSiteVisit').on('click', function(){
-            $(".se-pre-con").show();
-            $.ajax({
-                type : 'POST',
-                url : "<?= base_url('site-visit-report-mail');?>",
-                data:1,
-                success: function(res){
-                    $(".se-pre-con").hide("slow");
-                    if(res == 1)
-                        alert('Email Sent Successfully.');
-                    else
-                        alert('Email Sent fail!');
-                }
-            });
-        });
-
-    });
-    // $('#filter_revenue').click(get_revenues());
-    function get_revenues(){
-        $.get( "<?php echo base_url()."dashboard/get_revenue/" ?>"+$('#revenueMonth').val(), function( data ) {
-            $('#revenue_data').html(data);
-        });
-    }
-    function view_callbacks(data, method) {
-        var form = document.createElement('form');
-        form.method = method;
-        form.action = "<?php echo base_url()."view_callbacks?" ?>"+jQuery.param(data);
-        for (var i in data) {
-            var input = document.createElement('input');
-            input.type = "text";
-            input.name = i;
-            input.value = data[i];
-            form.appendChild(input);
-        }
-        //console.log(form);
-        document.body.appendChild(form);
-        form.submit();
-    }
+    }); 
 
 </script>
 </body>
