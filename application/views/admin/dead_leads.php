@@ -1514,26 +1514,7 @@
   
 
     // $('#filter_revenue').click(get_revenues());
-    function get_revenues(){
-        $.get( "<?php echo base_url()."dashboard/get_revenue/" ?>"+$('#revenueMonth').val(), function( data ) {
-            $('#revenue_data').html(data);
-        });
-    }
-    function view_callbacks(data, method) {
-        var form = document.createElement('form');
-        form.method = method;
-        form.action = "<?php echo base_url()."view_callbacks?" ?>"+jQuery.param(data);
-        for (var i in data) {
-            var input = document.createElement('input');
-            input.type = "text";
-            input.name = i;
-            input.value = data[i];
-            form.appendChild(input);
-        }
-        //console.log(form);
-        document.body.appendChild(form);
-        form.submit();
-    }
+ 
 
 </script>
 
@@ -1606,26 +1587,7 @@
 
     });
     // $('#filter_revenue').click(get_revenues());
-    function get_revenues(){
-        $.get( "<?php echo base_url()."dashboard/get_revenue/" ?>"+$('#revenueMonth').val(), function( data ) {
-            $('#revenue_data').html(data);
-        });
-    }
-    function view_callbacks(data, method) {
-        var form = document.createElement('form');
-        form.method = method;
-        form.action = "<?php echo base_url()."view_callbacks?" ?>"+jQuery.param(data);
-        for (var i in data) {
-            var input = document.createElement('input');
-            input.type = "text";
-            input.name = i;
-            input.value = data[i];
-            form.appendChild(input);
-        }
-        //console.log(form);
-        document.body.appendChild(form);
-        form.submit();
-    }
+
 
 </script>
 </body>

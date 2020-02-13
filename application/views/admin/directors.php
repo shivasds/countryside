@@ -232,9 +232,115 @@
                         <div class="outter-wp">
                         
 <div class="container">
+
     <div class="page-header">
         <h1 style=" margin-left: 12px;"><?php echo $heading; ?></h1>
     </div>
+    <style>
+      .table-striped {
+	    border: #e1e0e0 1px solid;
+	}
+	.table-striped th {
+	    text-align: left;
+	    background: #f0F0F0;
+	    padding: 10px;
+	}
+	.table-striped td {
+	    border-bottom: #e1e0e0 1px solid;
+	    padding: 10px;
+	}
+	@media (max-width: 991px){
+        .priority-6,.priority-7,.priority-8{
+			display:none;
+		}
+        .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    /* padding: 10px 5px !important; */
+    font-size: 0.8em;
+    color: #999;
+    border-top: none !important;
+    width: 0%;
+}
+        .btn {
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 0;
+    text-decoration: none;
+    padding: 2px 2px;
+    font-size: 13px;
+}
+        }
+        @media (max-width:1150px){
+       .priority-6,.priority-7,.priority-8{
+			display:none;
+		}
+        }
+      
+	@media screen and (max-width: 900px) and (min-width: 550px) {
+		.priority-6, .priority-7,.priority-8{
+			display:none;
+		}
+        .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    /* padding: 10px 5px !important; */
+    font-size: 0.8em;
+    color: #999;
+    border-top: none !important;
+    width: 0%;
+}
+        .btn {
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 0;
+    text-decoration: none;
+    padding: 2px 2px;
+    font-size: 13px;
+}
+      
+	}
+	
+	@media screen and (max-width: 550px) {
+        .priority-2,.priority-4,.priority-6, .priority-7,.priority-8,{
+			display:none;
+		}
+        .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    /* padding: 10px 5px !important; */
+    font-size: 0.8em;
+    color: #999;
+    border-top: none !important;
+    width: 0%;
+}
+        .btn {
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 0;
+    text-decoration: none;
+    padding: 2px 2px;
+    font-size: 13px;
+}
+      
+	}
+	
+	@media screen and (max-width: 300px) {
+        .priority-2,.priority-4,.priority-6, .priority-7,.priority-8,{
+			display:none;
+		}
+        .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    /* padding: 10px 5px !important; */
+    font-size: 0.8em;
+    color: #999;
+    border-top: none !important;
+    width: 0%;
+}
+        .btn {
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 0;
+    text-decoration: none;
+    padding: 2px 2px;
+    font-size: 13px;
+}
+      
+	}
+    </style>
     <form name="save_seller_form" id="save_seller_form" method="POST" enctype="multipart/form-data">
         <div class="col-sm-3 form-group">
             <label for="director">Enter First Name:</label>
@@ -272,30 +378,30 @@
     <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Director Name</th>
-                <th>Director Email</th>
-                <th>Emp Code</th>
-                <th>Date Added</th>
-                <th>Status</th>
-                <th>Edit</th>
-                <th>Change Password</th> 
-                <th>Privilege</th>
+                <th class="priority-1">Id</th>
+                <th class="priority-2">Director Name</th>
+                <th class="priority-3">Director Email</th>
+                <th class="priority-4">Emp Code</th>
+                <th class="priority-5">Date Added</th>
+                <th class="priority-6">Status</th>
+                <th class="priority-7">Edit</th>
+                <th class="priority-8">Change Password</th> 
+                <th class="priority-9">Privilege</th>
             </tr>
         </thead> 
         <tbody>
             <?php if(isset($all_directors) && $all_directors){
                 foreach($all_directors as $Director){?>
                     <tr>
-                        <td><?php echo $Director->id; ?></td>
-                        <td><?php echo $Director->first_name." ".$Director->last_name; ?></td>
-                        <td><?php echo $Director->email; ?></td>
-                        <td><?php echo $Director->emp_code; ?></td>
-                        <td><?php echo $Director->date_added; ?></td>
-                        <td align="middle"><button type="button" id="b1<?php echo $Director->id; ?>" class="btn <?php echo $Director->active?'btn-info':'btn-danger'; ?>" onclick="change_state(<?php echo $Director->id; ?>)"><span id="stateus_sp_<?php echo $Director->id; ?>"><?php echo $Director->active?'Active':'Inactive'; ?></span></button></td>
-                        <td align="middle"><button type="button" class="btn btn-info" onclick="edit_user(<?php echo $Director->id; ?>)" data-toggle="modal" data-target="#modal_edit">Edit</button></td>
-                        <td align="middle"><button type="button" class="btn btn-info" onclick="reset_password(<?php echo $Director->id; ?>)">Reset Password</button></td>
-                        <td align="middle">
+                        <td class="priority-1"><?php echo $Director->id; ?></td>
+                        <td class="priority-2"><?php echo $Director->first_name." ".$Director->last_name; ?></td>
+                        <td class="priority-3"><?php echo $Director->email; ?></td>
+                        <td class="priority-4"><?php echo $Director->emp_code; ?></td>
+                        <td class="priority-5"><?php echo $Director->date_added; ?></td>
+                        <td class="priority-6" align="middle"><button type="button" id="b1<?php echo $Director->id; ?>" class="btn <?php echo $Director->active?'btn-info':'btn-danger'; ?>" onclick="change_state(<?php echo $Director->id; ?>)"><span id="stateus_sp_<?php echo $Director->id; ?>"><?php echo $Director->active?'Active':'Inactive'; ?></span></button></td>
+                        <td class="priority-7" align="middle"><button type="button" class="btn btn-info" onclick="edit_user(<?php echo $Director->id; ?>)" data-toggle="modal" data-target="#modal_edit">Edit</button></td>
+                        <td class="priority-8" align="middle"><button type="button" class="btn btn-info" onclick="reset_password(<?php echo $Director->id; ?>)">Reset Password</button></td>
+                        <td class="priority-9" align="middle">
                             <button type="button" class="btn btn-info" onclick="permissionModal(<?php echo $Director->id; ?>)" data-toggle="modal" data-target="#modalPermission">Permission</button>
                         </td>
                     </tr>

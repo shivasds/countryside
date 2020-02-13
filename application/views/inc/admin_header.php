@@ -36,7 +36,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
         <script type="text/javascript" src="<?php echo base_url()?>assets/js/dygraph-combined.js"></script>
         <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script> 
-         
+         <!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
+         <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
     
         <script src="<?php echo base_url()?>assets/js/css3clock.js"></script>

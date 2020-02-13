@@ -46,12 +46,51 @@
 				</div>
 					<!-- //header-ends -->
 						<div class="outter-wp">
+
+						
+ 
+    
 <style>
-	@media screen and (min-width: 768px) {
-		modal_
-		.modal-dialog  {
+
+	@media screen (min-width: 768px) {
+	
+		/* .modal-dialog  {
 			width:900px;
+		} */
+	}
+	@media (max-width: 1366px){
+		.priority-3,.priority-7,.priority-6{
+			display:none;
 		}
+	}
+
+	@media (max-width: 991px){
+		.priority-3,.priority-7,.priority-6{
+			display:none;
+		}
+        }
+        @media (max-width: 1150px){
+			.priority-3,.priority-7,.priority-6{
+			display:none;
+		}
+        }
+	@media screen and (max-width: 900px) and (min-width: 550px) {
+		.priority-3,.priority-7,.priority-6{
+			display:none;
+		}
+	}
+	
+	@media screen and (max-width: 550px) {
+		.priority-3,.priority-7,.priority-6{
+			display:none;
+		}
+	}
+	
+	@media screen and (max-width: 300px) {
+		.priority-7,.priority-6{
+			display:none;
+		}
+	
 	}
 	.form-group input[type="checkbox"] {
 		display: none;
@@ -222,23 +261,27 @@
 		</tr>
 		
 	</table>
+<br>
 
      <?php } ?>--> 
+	 <br>
+	 <br>
 	<form method="POST" class="main-from" action="<?php echo base_url()?>admin/save_online_leads">
-	  <div class="container" style="overflow:auto;height: 27rem;overflow-y: scroll;"">
-		<table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="50%">
+	<!-- <div class="container" style="overflow:auto;height: 27rem;overflow-y: scroll;"> -->
+	  <div>
+	  <table id="example" class="table table-striped table-bordered dt-responsive"  cellspacing="0" width="100%" >
 			<thead>
 				<tr>
-					<th>Select</th>
-					<th>Delete</th>
-					<th>Source</th>
-					<th>Contact Name</th>
-					<th>Contact No</th>
+					<th class="priority-1">Select</th>
+					<th class="priority-2">Delete</th>
+					<th class="priority-3">Source</th>
+					<th class="priority-4">Contact Name</th>
+					<th class="priority-5">Contact No</th>
 					<!--<th>Email</th>-->
-					<th><?php if($source_name=='commonfloor') echo'Project / Area';else echo 'Project'; ?></th>
+					<th class="priority-6"><?php if($source_name=='commonfloor') echo'Project / Area';else echo 'Project'; ?></th>
 					<!--<th>Lead Id</th>-->
-					<th>Notes</th>
-					<th>Date</th>
+					<th class="priority-7">Notes</th>
+					<th class="priority-8">Date</th>
 				</tr>
 				<tr>
 					<td colspan="8"><input type='checkbox' id="checkAll"  class='check'  >Select All</td>
@@ -248,13 +291,13 @@
 				<?php if(count($leads)>0){
 					foreach ($leads as $lead) { ?>
 						<tr id="row_<?= $lead->id ?>">
-							<td><input type='checkbox' name='check[]'  class='check' value="<?= $lead->id ?>"></td>
-							<td><button type="button" class="btn btn-success" onclick="window.location='<?php echo site_url("admin/delete_online_lead/".$lead->id.'/'.$lead_controller);?>'">Delete Lead</button></td>
-							<td><?= $lead->source ?></td>
-							<td><?= $lead->name ?></td>
-							<td><?= $lead->phone ?></td>
+							<td class="priority-1"><input type='checkbox' name='check[]'  class='check' value="<?= $lead->id ?>"></td>
+							<td class="priority-2"><button type="button" class="btn btn-success" onclick="window.location='<?php echo site_url("admin/delete_online_lead/".$lead->id.'/'.$lead_controller);?>'">Delete Lead</button></td>
+							<td class="priority-3"><?= $lead->source ?></td>
+							<td class="priority-4"><?= $lead->name ?></td>
+							<td class="priority-5"><?= $lead->phone ?></td>
 							<!--<td><?= $lead->email ?></td>-->
-							<td>
+							<td class="priority-6">
 								<!--<select name='project_<?= $lead->id ?>' required>
 									<?php foreach( $projects as $project){ ?>
 										<option value="<?= $project->id ?>"><?= $project->name ?></option>
@@ -263,8 +306,8 @@
 								<?= $lead->project ?>
 							</td>
 						<!--	<td><?= $lead->leadid ?></td>-->
-							<td><?= $lead->notes ?></td>
-							<td><?= $lead->lead_date ?></td>
+							<td class="priority-7"><?= $lead->notes ?></td>
+							<td class="priority-8"><?= $lead->lead_date ?></td>
 						</tr>
 					<?php }
 				}
