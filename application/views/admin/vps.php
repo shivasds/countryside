@@ -51,6 +51,111 @@
     <div class="page-header">
         <h1><?php echo $heading; ?></h1>
     </div>
+    <style>
+      .table-striped {
+	    border: #e1e0e0 1px solid;
+	}
+	.table-striped th {
+	    text-align: left;
+	    background: #f0F0F0;
+	    padding: 10px;
+	}
+	.table-striped td {
+	    border-bottom: #e1e0e0 1px solid;
+	    padding: 10px;
+	}
+	@media (max-width: 991px){
+        .priority-3,.priority-5,.priority-6,.priority-7,.priority-8{
+			display:none;
+		}
+        .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    /* padding: 10px 5px !important; */
+    font-size: 0.8em;
+    color: #999;
+    border-top: none !important;
+    width: 0%;
+}
+        .btn {
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 0;
+    text-decoration: none;
+    padding: 2px 2px;
+    font-size: 13px;
+    }
+        }
+        @media (max-width:1150px){
+        .priority-3,.priority-5,.priority-6,.priority-7,.priority-8{
+			display:none;
+		}
+        }
+       
+	@media screen and (max-width: 900px) and (min-width: 550px) {
+		.priority-3,.priority-4,.priority-5,.priority-6, .priority-7,.priority-8{
+			display:none;
+		}
+        .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    /* padding: 10px 5px !important; */
+    font-size: 0.8em;
+    color: #999;
+    border-top: none !important;
+    width: 0%;
+}
+        .btn {
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 0;
+    text-decoration: none;
+    padding: 2px 2px;
+    font-size: 13px;
+}
+	}
+	
+	@media screen and (max-width: 550px) {
+        .priority-3,.priority-4,.priority-5,.priority-6, .priority-7,.priority-8,{
+			display:none;
+		}
+        .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    /* padding: 10px 5px !important; */
+    font-size: 0.8em;
+    color: #999;
+    border-top: none !important;
+    width: 0%;
+}
+        .btn {
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 0;
+    text-decoration: none;
+    padding: 2px 2px;
+    font-size: 13px;
+}
+      
+	}
+	
+	@media screen and (max-width: 300px) {
+        .priority-3,.priority-4,.priority-5,.priority-6, .priority-7,.priority-8,{
+			display:none;
+		}
+        .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    /* padding: 10px 5px !important; */
+    font-size: 0.8em;
+    color: #999;
+    border-top: none !important;
+    width: 0%;
+}
+        .btn {
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 0;
+    text-decoration: none;
+    padding: 2px 2px;
+    font-size: 13px;
+}
+       
+	
+	}
+    </style>
     <form name="save_seller_form" id="save_seller_form" method="POST" enctype="multipart/form-data">
         <div class="col-sm-3 form-group">
             <label for="director">Enter First Name:</label>
@@ -120,36 +225,36 @@
     <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>VP Name</th>
-                <th>VP Email</th>
-                <th>City</th>
-                <th>Department</th>
-                <th>Emp Code</th>
-                <th>Reports to</th>
-                <th>Date Added</th>
-                <th>Status</th>
-                <th>Edit</th>
-                <th>Change Password</th> 
-                <th>Privilege</th>
+                <th class="priority-1">Id</th>
+                <th class="priority-2">VP Name</th>
+                <th class="priority-3">VP Email</th>
+                <th class="priority-4">City</th>
+                <th class="priority-5">Department</th>
+                <th class="priority-6">Emp Code</th>
+                <th class="priority-7">Reports to</th>
+                <th class="priority-8">Date Added</th>
+                <th class="priority-9">Status</th>
+                <th class="priority-10">Edit</th>
+                <th class="priority-11">Change Password</th> 
+                <th class="priority-12">Privilege</th>
             </tr>
         </thead> 
         <tbody>
             <?php if(isset($all_vps) && $all_vps){
                 foreach($all_vps as $vp){?>
                     <tr>
-                        <td><?php echo $vp->id; ?></td>
-                        <td><?php echo $vp->first_name." ".$vp->last_name; ?></td>
-                        <td><?php echo $vp->email; ?></td>
-                        <td><?php echo $vp->city_name; ?></td>
-                        <td><?php echo $vp->department_name; ?></td>
-                        <td><?php echo $vp->emp_code; ?></td>
-                        <td><?php echo $vp->reports_to; ?></td>
-                        <td><?php echo $vp->date_added; ?></td>
-                        <td align="middle"><button type="button" id="b1<?php echo $vp->id; ?>" class="btn <?php echo $vp->active?'btn-info':'btn-danger'; ?>" onclick="change_state(<?php echo $vp->id; ?>)"><span id="stateus_sp_<?php echo $vp->id; ?>"><?php echo $vp->active?'Active':'Inactive'; ?></span></button></td>
-                        <td align="middle"><button type="button" class="btn btn-info" onclick="edit_user(<?php echo $vp->id; ?>)" data-toggle="modal" data-target="#modal_edit">Edit</button></td>
-                        <td align="middle"><button type="button" class="btn btn-info" onclick="reset_password(<?php echo $vp->id; ?>)">Reset Password</button></td>
-                        <td align="middle">
+                        <td class="priority-1"><?php echo $vp->id; ?></td>
+                        <td class="priority-2"><?php echo $vp->first_name." ".$vp->last_name; ?></td>
+                        <td class="priority-3"><?php echo $vp->email; ?></td>
+                        <td class="priority-4"><?php echo $vp->city_name; ?></td>
+                        <td class="priority-5"><?php echo $vp->department_name; ?></td>
+                        <td class="priority-6"><?php echo $vp->emp_code; ?></td>
+                        <td class="priority-7"><?php echo $vp->reports_to; ?></td>
+                        <td class="priority-8"><?php echo $vp->date_added; ?></td>
+                        <td class="priority-9" align="middle"><button type="button" id="b1<?php echo $vp->id; ?>" class="btn <?php echo $vp->active?'btn-info':'btn-danger'; ?>" onclick="change_state(<?php echo $vp->id; ?>)"><span id="stateus_sp_<?php echo $vp->id; ?>"><?php echo $vp->active?'Active':'Inactive'; ?></span></button></td>
+                        <td class="priority-10" align="middle"><button type="button" class="btn btn-info" onclick="edit_user(<?php echo $vp->id; ?>)" data-toggle="modal" data-target="#modal_edit">Edit</button></td>
+                        <td class="priority-11" align="middle"><button type="button" class="btn btn-info" onclick="reset_password(<?php echo $vp->id; ?>)">Reset Password</button></td>
+                        <td class="priority-12" align="middle">
                             <button type="button" class="btn btn-info" onclick="permissionModal(<?php echo $vp->id; ?>)" data-toggle="modal" data-target="#modalPermission">Permission</button>
                         </td>
                     </tr>

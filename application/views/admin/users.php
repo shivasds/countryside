@@ -53,15 +53,118 @@
     </div>
     <style type="text/css">
         textarea {
-  width: 100%;
-  height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
-  resize: none;
+        width: 100%;
+        height: 150px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f8f8f8;
+        resize: none;
+      }
+      .table-striped {
+	    border: #e1e0e0 1px solid;
+	}
+	.table-striped th {
+	    text-align: left;
+	    background: #f0F0F0;
+	    padding: 10px;
+	}
+	.table-striped td {
+	    border-bottom: #e1e0e0 1px solid;
+	    padding: 10px;
+	}
+	@media (max-width: 991px){
+        .priority-2,.priority-5,.priority-6,.priority-7,.priority-8{
+			display:none;
+		}
+        .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    /* padding: 10px 5px !important; */
+    font-size: 0.8em;
+    color: #999;
+    border-top: none !important;
+    width: 0%;
 }
+        .btn {
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 0;
+    text-decoration: none;
+    padding: 2px 2px;
+    font-size: 13px;
+    }
+        }
+        @media (max-width:1150px){
+        .priority-2,.priority-5,.priority-6,.priority-7,.priority-8{
+			display:none;
+		}
+        }
+       
+	@media screen and (max-width: 900px) and (min-width: 550px) {
+		.priority-2,.priority-4,.priority-5,.priority-6, .priority-7,.priority-8{
+			display:none;
+		}
+        .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    /* padding: 10px 5px !important; */
+    font-size: 0.8em;
+    color: #999;
+    border-top: none !important;
+    width: 0%;
+}
+        .btn {
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 0;
+    text-decoration: none;
+    padding: 2px 2px;
+    font-size: 13px;
+}
+	}
+	
+	@media screen and (max-width: 550px) {
+        .priority-2,.priority-4,.priority-5,.priority-6, .priority-7,.priority-8,{
+			display:none;
+		}
+        .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    /* padding: 10px 5px !important; */
+    font-size: 0.8em;
+    color: #999;
+    border-top: none !important;
+    width: 0%;
+}
+        .btn {
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 0;
+    text-decoration: none;
+    padding: 2px 2px;
+    font-size: 13px;
+}
+      
+	}
+	
+	@media screen and (max-width: 300px) {
+        .priority-2,.priority-4,.priority-5,.priority-6, .priority-7,.priority-8,{
+			display:none;
+		}
+        .table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    /* padding: 10px 5px !important; */
+    font-size: 0.8em;
+    color: #999;
+    border-top: none !important;
+    width: 0%;
+}
+        .btn {
+    cursor: pointer;
+    margin: 10px;
+    border-radius: 0;
+    text-decoration: none;
+    padding: 2px 2px;
+    font-size: 13px;
+}
+       
+	
+	}
     </style>
 
     <form name="save_seller_form" id="save_seller_form" method="POST" enctype="multipart/form-data">
@@ -138,32 +241,32 @@
     <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%">
         <thead>
             <tr>
-                <th>No</th>
-                <th>Employee Code</th>
-                <th>First name</th>
-                <th>Last name</th>
-                <th>E-mail Id</th>
-                <th>Manager</th>
-                <th>Status</th>
-                <th>Edit</th>
-                <th>Change Password</th> 
-                <th>Privilege</th>
+                <th class="priority-1">No</th>
+                <th class="priority-2">Employee Code</th>
+                <th class="priority-3">First name</th>
+                <th class="priority-4">Last name</th>
+                <th class="priority-5">E-mail Id</th>
+                <th class="priority-6">Manager</th>
+                <th class="priority-7">Status</th>
+                <th class="priority-8">Edit</th>
+                <th class="priority-9">Change Password</th> 
+                <th class="priority-10">Privilege</th>
             </tr>
         </thead> 
         <tbody>
             <?php if(isset($all_user)){
                 foreach($all_user as $user){ ?>
                     <tr>
-                        <td><?php echo $user->id; ?></td>
-                        <td><?php echo $user->emp_code; ?></td>
-                        <td><?php echo $user->first_name; ?></td>
-                        <td><?php echo $user->last_name; ?></td>
-                        <td><?php echo $user->email; ?></td>
-                        <td><?php echo $user->reports_to; ?></td>
-                        <td align="middle"><button type="button" id="b1<?php echo $user->id; ?>" class="btn <?php echo $user->active?'btn-info':'btn-danger'; ?>" onclick="change_state(<?php echo $user->id; ?>)"><span id="stateus_sp_<?php echo $user->id; ?>"><?php echo $user->active?'Active':'Inactive';?></span></button></td>
-                        <td align="middle"><button type="button" class="btn btn-info" onclick="edit_user(<?php echo $user->id; ?>)" data-toggle="modal" data-target="#modal_edit">Edit</button></td>
-                        <td align="middle"><button type="button" class="btn btn-info" onclick="reset_password(<?php echo $user->id; ?>)">Reset Password</button></td>
-                        <td align="middle">
+                        <td class="priority-1"><?php echo $user->id; ?></td>
+                        <td class="priority-2"><?php echo $user->emp_code; ?></td>
+                        <td class="priority-3"><?php echo $user->first_name; ?></td>
+                        <td class="priority-4"><?php echo $user->last_name; ?></td>
+                        <td class="priority-5"><?php echo $user->email; ?></td>
+                        <td class="priority-6"><?php echo $user->reports_to; ?></td>
+                        <td class="priority-7" align="middle"><button type="button" id="b1<?php echo $user->id; ?>" class="btn <?php echo $user->active?'btn-info':'btn-danger'; ?>" onclick="change_state(<?php echo $user->id; ?>)"><span id="stateus_sp_<?php echo $user->id; ?>"><?php echo $user->active?'Active':'Inactive';?></span></button></td>
+                        <td class="priority-8" align="middle"><button type="button" class="btn btn-info" onclick="edit_user(<?php echo $user->id; ?>)" data-toggle="modal" data-target="#modal_edit">Edit</button></td>
+                        <td class="priority-9" align="middle"><button type="button" class="btn btn-info" onclick="reset_password(<?php echo $user->id; ?>)">Reset Password</button></td>
+                        <td class="priority-10" align="middle">
                             <button type="button" class="btn btn-info" onclick="permissionModal(<?php echo $user->id; ?>)" data-toggle="modal" data-target="#modalPermission">Permission</button>
                         </td>
                     </tr>

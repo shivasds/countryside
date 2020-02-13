@@ -296,11 +296,7 @@
         $('#revenueMonth').MonthPicker({
             Button: false
         });
-         
- 
- 
   
-
     }); 
    
 
