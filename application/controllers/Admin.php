@@ -2200,19 +2200,17 @@ class Admin extends CI_Controller {
 		$url =  "https://www.99acres.com/99api/v1/getmy99Response/OeAuXClO43hwseaXEQ/uid/";
 		$data = $this->common_model->load_l_s_credentials('99acre');
 		//print_r($data);die;
-		$username = $data[0]->username;
-		$password = $data[0]->password;
+		$username = 'city.99';
+		$password = 'Shashank1986';
 		$start_date = date("Y-m-d 00:00:00", strtotime('-1 days'));
 		$end_date = date("Y-m-d 23:59:59");
 		$request = "<?xml version='1.0'?><query><user_name>$username</user_name><pswd>$password</pswd><start_date>$start_date</start_date><end_date>$end_date</end_date></query>";
 		$allParams = array('xml'=>$request);
-		$leads = $this->get99AcresLeads( );
-		print_r($leads); 
+		$leads = $this->get99AcresLeads();
+		print_r($leads); die;
 		$data=array();
 		$i=0;
-		$data = simplexml_load_string($leads);
-		 print_r($data);
-		 die;
+		$data = simplexml_load_string($leads); 
 		 //print_r($data);
 		 //die;
 		//echo $data->ErrorDetail->Message;
@@ -2357,7 +2355,7 @@ class Admin extends CI_Controller {
 		//echo json_encode($return);
 	}
 
-	function get99AcresLeads( ){
+	function get99AcresLeads(){
 		$curl = curl_init();
  
 curl_setopt_array($curl, array(
@@ -2368,14 +2366,14 @@ curl_setopt_array($curl, array(
   CURLOPT_TIMEOUT => 30,
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
   CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => "xml=<?xml version='1.0'?><query><user_name>city.99</user_name><pswd>Shashank1986</pswd><start_date>2020-02-12 00:00:00</start_date><end_date>2020-02-13 23:59:59</end_date></query>",
-  CURLOPT_HTTPHEADER => array(
-    "cache-control: no-cache",
+  CURLOPT_POSTFIELDS => "xml=<?xml version='1.0'?><query><user_name>countryside99</user_name><pswd>ind123</pswd><start_date>2020-02-12 00:00:00</start_date><end_date>2020-02-13 23:59:59</end_date></query>",
+  CURLOPT_HTTPHEADER => array( 
     "content-type: application/x-www-form-urlencoded",
   ),
 ));
  
 $response = curl_exec($curl);
+		$info = curl_getinfo($curl);
 $err = curl_error($curl);
  
 curl_close($curl);
@@ -2386,7 +2384,7 @@ if ($err) {
   echo $response;
 	}
 
-	return $response;
+	return $info;
 }
 	function dead_leads_reassign(){
 		if($this->input->post('chkValues')) {
