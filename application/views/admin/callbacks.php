@@ -247,9 +247,9 @@
        </div>
     </form>
 
-    <div class="container">
+    <div class="container" >
         
-                <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="90%" >
+    <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%">
                     <thead>
                         <tr id="tableheading">
                             <th>No</th>
@@ -313,13 +313,13 @@
                         <?php $i++; } }?>
                     </tbody>
                 </table>
-        
-    </div>
-
-    <div style="margin-top: 20px">
+                <div style="margin-top: 20px">
     <span class="pull-left"><p>Showing <?php echo ($this->uri->segment(3)) ? $this->uri->segment(3)+1 : 1; ?> to <?= ($this->uri->segment(3)+count($result)); ?> of <?= $totalRecords; ?> entries</p></span>
     <ul class="pagination pull-right"><?php echo $links; ?></ul>
 </div>
+    </div>
+
+   
 </div>
 
 
@@ -1294,6 +1294,8 @@
 <link rel="stylesheet" href="<?php echo base_url()?>assets/css/vroom.css">
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/vroom.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/TweenLite.min.js"></script>
+
+
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/CSSPlugin.min.js"></script>
 <script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js"></script>
 <script src="<?php echo base_url()?>assets/js/scripts.js"></script>
@@ -1423,6 +1425,8 @@
     }
 
 </script>
+
+
 <script>
     $(document).ready(function() {
         $('#example').DataTable();
