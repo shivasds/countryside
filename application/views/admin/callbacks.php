@@ -3,7 +3,6 @@
     $this->load->view('inc/admin_header'); 
     if(!$this->session->userdata('permissions') && $this->session->userdata('permissions')=='' ) {
     ?>
-
     <style type="text/css">
     .alrtMsg{padding-top: 50px;}
     .alrtMsg i {
@@ -11,16 +10,12 @@
         color: #f1c836;
     }
     table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  border: 1px solid #ddd;
-}
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    }
 
-
-
-   
- 
     </style>
     <div class="container"> 
         <div class="row"> 
@@ -31,12 +26,10 @@
         </div>
     </div>
     <?php
-}
-
-
+   }
     ?>
 <body>
-	 <div class="se-pre-con"></div>
+ <div class="se-pre-con"></div>
    <div class="page-container">
    <!--/content-inner-->
 	<div class="left-content">
@@ -76,8 +69,8 @@
 				</div>
 					<!-- //header-ends -->
 						
-<style>
-  .table-striped {
+   <style>
+   .table-striped {
 	    border: #e1e0e0 1px solid;
 	}
 	.table-striped th {
@@ -298,7 +291,7 @@
        </div>
     </form>
 
-    <div class="container" style="overflow:auto;overflow-x:scroll;">
+    <div class="" style="overflow:auto;overflow-x:scroll;">
     <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%">
                     <thead>
                         <tr id="tableheading">
