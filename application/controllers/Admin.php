@@ -2197,20 +2197,22 @@ class Admin extends CI_Controller {
 	}
 
 		public function fetch_99acre_online_leads(){
-		$url =  "http://www.99acres.com/99api/v1/getmy99Response/OeAuXClO43hwseaXEQ/uid/";
+		$url =  "https://www.99acres.com/99api/v1/getmy99Response/OeAuXClO43hwseaXEQ/uid/";
 		$data = $this->common_model->load_l_s_credentials('99acre');
 		//print_r($data);die;
-		$username = $data[0]->username;
-		$password = $data[0]->password;
-		$start_date = date("Y-m-d 00:00:00", strtotime('-2 days'));
-		$end_date = date("Y-m-d 00:00:00", strtotime('-1 days'));
+		$username = 'city.99';
+		$password = 'Shashank1986';
+		$start_date = date("Y-m-d 00:00:00", strtotime('-1 days'));
+		$end_date = date("Y-m-d 23:59:59");
 		$request = "<?xml version='1.0'?><query><user_name>$username</user_name><pswd>$password</pswd><start_date>$start_date</start_date><end_date>$end_date</end_date></query>";
 		$allParams = array('xml'=>$request);
-		$leads = $this->get99AcresLeads($allParams,$url);
+		$leads = $this->get99AcresLeads();
+		print_r($leads); die;
 		$data=array();
 		$i=0;
-		$data = simplexml_load_string($leads);
-		//print_r($data);
+		$data = simplexml_load_string($leads); 
+		 //print_r($data);
+		 //die;
 		//echo $data->ErrorDetail->Message;
 	$authentication='';
 		/*	if($data->ErrorDetail->Message)
@@ -2353,14 +2355,37 @@ class Admin extends CI_Controller {
 		//echo json_encode($return);
 	}
 
-	function get99AcresLeads($allParams,$url){
-		$crl = curl_init($url);
-		curl_setopt ($crl, CURLOPT_POST, 1);
-		curl_setopt ($crl, CURLOPT_POSTFIELDS, $allParams);
-		curl_setopt ($crl, CURLOPT_RETURNTRANSFER,1);
-		return curl_exec ($crl);
+	function get99AcresLeads(){
+		$curl = curl_init();
+ 
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "http://www.99acres.com/99api/v1/getmy99Response/OeAuXClO43hwseaXEQ/uid/",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => "xml=<?xml version='1.0'?><query><user_name>countryside99</user_name><pswd>ind123</pswd><start_date>2020-02-12 00:00:00</start_date><end_date>2020-02-13 23:59:59</end_date></query>",
+  CURLOPT_HTTPHEADER => array( 
+    "content-type: application/x-www-form-urlencoded",
+  ),
+));
+ 
+$response = curl_exec($curl);
+		$info = curl_getinfo($curl);
+$err = curl_error($curl);
+ 
+curl_close($curl);
+ 
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
 	}
 
+	return $info;
+}
 	function dead_leads_reassign(){
 		if($this->input->post('chkValues')) {
 			$valuesArry = json_decode($this->input->post('chkValues'), true);
