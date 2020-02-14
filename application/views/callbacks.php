@@ -117,16 +117,13 @@
             display:none;
         }
         }
-        /* @media (max-width: 1150px){
+        @media (max-width: 1150px){
             .priority-9, .priority-7,.priority-8,.priority-11,.priority-12,.priority-13{
 			display:none;
 		}
 
-        } */
-
-       
-
-     
+        }
+ 
 	@media screen and (max-width: 900px) and (min-width: 550px) {
         #search_form{
             display:none;

@@ -20,37 +20,35 @@
     </div>
     <?php
 }
-
-
     ?>
     <style>
-  .fileDiv {
-  position: relative;
-  overflow: hidden;
-}
-.upload_attachmentfile {
-  position: absolute;
-  opacity: 0;
-  right: 0;
-  top: 0;
-}
-.btnFileOpen {margin-top: -50px; }
+      .fileDiv {
+      position: relative;
+      overflow: hidden;
+    }
+    .upload_attachmentfile {
+      position: absolute;
+      opacity: 0;
+      right: 0;
+      top: 0;
+    }
+    .btnFileOpen {margin-top: -50px; }
 
-.direct-chat-warning .right>.direct-chat-text {
-    background: #d2d6de;
-    border-color: #d2d6de;
-    color: #444;
-  text-align: right;
-}
-.direct-chat-primary .right>.direct-chat-text {
-    background: #3c8dbc;
-    border-color: #3c8dbc;
-    color: #fff;
-  text-align: right;
-}
-.spiner{}
-.spiner .fa-spin { font-size:24px;}
-.attachmentImgCls{ width:450px; margin-left: -25px; cursor:pointer; }
+    .direct-chat-warning .right>.direct-chat-text {
+        background: #d2d6de;
+        border-color: #d2d6de;
+        color: #444;
+      text-align: right;
+    }
+    .direct-chat-primary .right>.direct-chat-text {
+        background: #3c8dbc;
+        border-color: #3c8dbc;
+        color: #fff;
+      text-align: right;
+    }
+    .spiner{}
+    .spiner .fa-spin { font-size:24px;}
+    .attachmentImgCls{ width:450px; margin-left: -25px; cursor:pointer; }
 </style>
  
       <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">

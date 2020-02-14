@@ -421,7 +421,7 @@ class PHPExcel_Reader_Excel2003XML implements PHPExcel_Reader_IReader
 				PHPExcel_Style_Alignment::HORIZONTAL_JUSTIFY
 			);
 
-		$timezoneObj = new DateTimeZone('Europe/London');
+		$timezoneObj = new DateTimeZone('Asia/Kolkata');
 		$GMT = new DateTimeZone('UTC');
 
 
