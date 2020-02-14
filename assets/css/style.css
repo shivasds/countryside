@@ -7579,7 +7579,7 @@ footer  p a:hover ,.footer p a:hover{
 	.table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
 		padding: 10px 3px !important;
 		font-size: 0.7em;
-		color: #999;
+		color: #464343;
 		border-top: none !important;
 	}
 	.inner-grid-button button {

@@ -10,6 +10,8 @@
         font-size: 60px;
         color: #f1c836;
     }
+  
+
     </style>
     <div class="container"> 
         <div class="row"> 
@@ -69,6 +71,22 @@
     <div class="page-header">
         <h1 style=" margin-left: 20px;"><?php echo $heading; ?></h1>
     </div>
+    <!-- <style>
+          @media (max-width: 375px){
+        .container {
+    width: 300px;
+    margin-left: 20px;
+}
+ }
+    @media (max-width: 1540px){
+        .container {
+    width: 1286px;
+    margin-left: 32px;
+}
+    }
+
+    
+        </style> -->
     <form  action="<?php echo base_url()?>admin/generate_callback" method="POST" enctype="multipart/form-data">
     <div class="col-xs-12 col-sm-12 col-md-12">
     <div class="row">

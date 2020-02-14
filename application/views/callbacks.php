@@ -110,7 +110,7 @@
         padding: 5px
     }
     @media (max-width: 991px){
-        .priority-7,.priority-8,.priority-10,.priority-11,.priority-12{
+        .priority-7,.priority-8,.priority-10,.priority-11{
 			display:none;
 		}
         #search_form{
@@ -118,7 +118,7 @@
         }
         }
         @media (max-width: 1150px){
-            .priority-9, .priority-7,.priority-8,.priority-11,.priority-12,.priority-13{
+            .priority-9, .priority-7,.priority-8,.priority-11{
 			display:none;
 		}
 
@@ -131,9 +131,7 @@
 		.priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9,.priority-10,.priority-11{
 			display:none;
 		}
-        .priority-12{
-			display:none;
-		}
+       
 	}
 	
 	@media screen and (max-width: 550px) {
@@ -143,9 +141,7 @@
         #search_form{
             display:none;
         }
-        .priority-12{
-			display:none;
-		}
+       
 	}
 	
 	@media screen and (max-width: 300px) {
@@ -348,9 +344,9 @@
                     <?php } ?>
                     <th class="priority-9">Due date</th>
                     <th class="priority-10">Status</th>
-                    <th class="priority-11">Date Added</th>
+                    <th class="">Date Added</th>
                     <!-- <th>Last Update</th> -->
-                    <th class="priority-12">Action</th>
+                    <th class="">Action</th>
                 </tr>
             </thead> 
             <tbody id="main_body">
@@ -373,9 +369,9 @@
                         <?php if($this->session->userdata("user_type")!="user") { ?>
                             <td class="priority-9"><?php echo $data->broker_name; ?></td>
                         <?php } ?>
-                        <td class="priority-10 due_date"><?php echo $data->due_date; ?></td>
-                        <td class="priority-11"><?php echo $data->status_name; ?></td>
-                        <td class="priority-12"><?php echo $data->date_added; ?></td>
+                        <td class="due_date priority-9"><?php echo $data->due_date; ?></td>
+                        <td class="priority-10"><?php echo $data->status_name; ?></td>
+                        <td class=""><?php echo $data->date_added; ?></td>
                         <!-- <td><?php echo $data->last_update; ?></td> -->
                         <td>
                             <table>

@@ -69,6 +69,17 @@
     <div class="page-header">
         <h1><?php echo $heading; ?></h1>
     </div>
+
+    <style>
+        .inner-content{
+            margin-left: 12px;
+        }
+        .container {
+    /* margin-left: 20px; */
+        }
+
+    
+        </style>
     <form  action="<?php echo base_url()?>generate_callback" method="POST" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-3 form-group">
