@@ -110,7 +110,7 @@
         padding: 5px
     }
     @media (max-width: 991px){
-        .priority-7,.priority-8,.priority-10,.priority-11{
+        .priority-7,.priority-8{
 			display:none;
 		}
         #search_form{
@@ -118,7 +118,7 @@
         }
         }
         @media (max-width: 1150px){
-            .priority-9, .priority-7,.priority-8,.priority-11{
+            .priority-9, .priority-7,.priority-8{
 			display:none;
 		}
 
@@ -128,14 +128,14 @@
         #search_form{
             display:none;
         }
-		.priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9,.priority-10,.priority-11{
+		.priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9{
 			display:none;
 		}
        
 	}
 	
 	@media screen and (max-width: 550px) {
-        .priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9,.priority-10,.priority-11{
+        .priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9{
 			display:none;
 		}
         #search_form{
@@ -148,7 +148,7 @@
         #search_form{
             display:none;
         }
-        .priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9,.priority-10,.priority-11{
+        .priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9,.priority-11{
 			display:none;
 		}
    
@@ -335,18 +335,18 @@
                     <th class="priority-4">Email</th>
                     <th class="priority-5">Project</th>
                     <?php if($this->session->userdata("user_type")!="user") { ?>
-                        <th class="priority-6">Lead Source</th>
-                        <th class="priority-7">Lead Id</th> 
+                        <th class="">Lead Source</th>
+                        <th class="">Lead Id</th> 
                     <?php } ?>
-                    <th class="priority-8">Advisor</th>
+                    <th class="priority-6">Advisor</th>
                     <?php if($this->session->userdata("user_type")!="user") { ?> 
-                        <th>Sub-Source</th>
+                        <th class="priority-7">Sub-Source</th>
                     <?php } ?>
-                    <th class="priority-9">Due date</th>
-                    <th class="priority-10">Status</th>
-                    <th class="">Date Added</th>
+                    <th class="priority-8">Due date</th>
+                    <th class="priority-9">Status</th>
+                    <th class="priority-10">Date Added</th>
                     <!-- <th>Last Update</th> -->
-                    <th class="">Action</th>
+                    <th class="priority-11">Action</th>
                 </tr>
             </thead> 
             <tbody id="main_body">
@@ -362,18 +362,18 @@
                         <td class="priority-4"><?php echo $data->email1; ?></td>
                         <td class="priority-5"><?php echo $data->project_name; ?></td>
                         <?php if($this->session->userdata("user_type")!="user") { ?>
-                            <td class="priority-6"><?php echo $data->lead_source_name; ?></td>
-                            <td class="priority-7"><?php echo $data->leadid; ?></td>
+                            <td class=""><?php echo $data->lead_source_name; ?></td>
+                            <td class=""><?php echo $data->leadid; ?></td>
                         <?php } ?>
-                        <td class="priority-8"><?php echo $data->user_name; ?></td>
+                        <td class="priority-6"><?php echo $data->user_name; ?></td>
                         <?php if($this->session->userdata("user_type")!="user") { ?>
-                            <td class="priority-9"><?php echo $data->broker_name; ?></td>
+                            <td class="priority-7"><?php echo $data->broker_name; ?></td>
                         <?php } ?>
-                        <td class="due_date priority-9"><?php echo $data->due_date; ?></td>
-                        <td class="priority-10"><?php echo $data->status_name; ?></td>
-                        <td class=""><?php echo $data->date_added; ?></td>
+                        <td class="due_date priority-8"><?php echo $data->due_date; ?></td>
+                        <td class="priority-9"><?php echo $data->status_name; ?></td>
+                        <td class="priority-10"><?php echo $data->date_added; ?></td>
                         <!-- <td><?php echo $data->last_update; ?></td> -->
-                        <td>
+                        <td class="priority-11">
                             <table>
                                 <tr>
                                     <td>
@@ -396,11 +396,11 @@
         </table>
     
     
-<div style="margin-top: 20px">
-    <span class="pull-left"><p>Showing <?php echo ($this->uri->segment(2)) ? $this->uri->segment(2)+1 : 1; ?> to <?= ($this->uri->segment(2)+count($result)); ?> of <?= $totalRecords; ?> entries</p></span>
-    <ul class="pagination pull-right"><?php echo $links; ?></ul>
-</div>
-</div>
+        <div style="margin-top: 20px">
+            <span class="pull-left"><p>Showing <?php echo ($this->uri->segment(2)) ? $this->uri->segment(2)+1 : 1; ?> to <?= ($this->uri->segment(2)+count($result)); ?> of <?= $totalRecords; ?> entries</p></span>
+            <ul class="pagination pull-right"><?php echo $links; ?></ul>
+        </div>
+    </div>
 <br/><br/>
 </div>
 
