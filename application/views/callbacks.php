@@ -69,7 +69,7 @@
 <div class="container">
   
     <div class="page-header">
-        <h1><?php echo $heading; ?></h1>
+        <h1 style=" margin-left: 10px;"><?php echo $heading; ?></h1>
     </div>
     <style>
     @media screen and (min-width: 768px) {
@@ -110,7 +110,7 @@
         padding: 5px
     }
     @media (max-width: 991px){
-        .priority-7,.priority-8{
+        .priority-7,.priority-8,.priority-13,.priority-14{
 			display:none;
 		}
         #search_form{
@@ -118,7 +118,7 @@
         }
         }
         @media (max-width: 1150px){
-            .priority-9, .priority-7,.priority-8{
+            .priority-9, .priority-7,.priority-8,.priority-13,.priority-14{
 			display:none;
 		}
 
@@ -128,14 +128,14 @@
         #search_form{
             display:none;
         }
-		.priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9{
+		.priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9,.priority-13,.priority-14{
 			display:none;
 		}
        
 	}
 	
 	@media screen and (max-width: 550px) {
-        .priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9{
+        .priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9,.priority-13,.priority-14{
 			display:none;
 		}
         #search_form{
@@ -143,8 +143,7 @@
         }
        
 	}
-	
-	@media screen and (max-width: 300px) {
+	/* @media screen and (max-width: 384px) {
         #search_form{
             display:none;
         }
@@ -152,7 +151,15 @@
 			display:none;
 		}
    
-	
+	}  */
+	@media screen and (max-width: 300px) {
+        #search_form{
+            display:none;
+        }
+        .priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9,.priority-11,.priority-13,.priority-14{
+			display:none;
+		}
+   
 	}
 </style>
     <form method="POST" id="search_form">
@@ -335,8 +342,8 @@
                     <th class="priority-4">Email</th>
                     <th class="priority-5">Project</th>
                     <?php if($this->session->userdata("user_type")!="user") { ?>
-                        <th class="">Lead Source</th>
-                        <th class="">Lead Id</th> 
+                        <th class="priority-13">Lead Source</th>
+                        <th class="priority-14">Lead Id</th> 
                     <?php } ?>
                     <th class="priority-6">Advisor</th>
                     <?php if($this->session->userdata("user_type")!="user") { ?> 
@@ -362,8 +369,8 @@
                         <td class="priority-4"><?php echo $data->email1; ?></td>
                         <td class="priority-5"><?php echo $data->project_name; ?></td>
                         <?php if($this->session->userdata("user_type")!="user") { ?>
-                            <td class=""><?php echo $data->lead_source_name; ?></td>
-                            <td class=""><?php echo $data->leadid; ?></td>
+                            <td class="priority-13"><?php echo $data->lead_source_name; ?></td>
+                            <td class="priority-14"><?php echo $data->leadid; ?></td>
                         <?php } ?>
                         <td class="priority-6"><?php echo $data->user_name; ?></td>
                         <?php if($this->session->userdata("user_type")!="user") { ?>

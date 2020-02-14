@@ -6797,7 +6797,7 @@ footer  p a:hover ,.footer p a:hover{
 			left: 12%;
 		}
 	 .sidebar-menu {
-          position:absolute;
+          position:fixed;
 	  }
 	 .page-container.sidebar-collapsed .left-content .srch button {
 		cursor: pointer;
@@ -7577,8 +7577,9 @@ footer  p a:hover ,.footer p a:hover{
 		margin: 0px 0 8px 0;
 	}
 	.table td, .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
-		padding: 10px 3px !important;
+		padding: 8px 1px !important;
 		font-size: 0.7em;
+		text-align: center;
 		color: #464343;
 		border-top: none !important;
 	}
@@ -7654,6 +7655,7 @@ footer  p a:hover ,.footer p a:hover{
 @media (max-width:384px){
 	.container{
 		width:309px;
+		
 	}
 	.profile_details_left {
 		float: right;
@@ -7825,9 +7827,9 @@ footer  p a:hover ,.footer p a:hover{
 	}
 }
 @media (max-width:375px){
-	.container{
+	/* .container{
 		width:300px;
-	}
+	} */
 	ul.dropdown-menu.two {
 		padding: 0;
 		min-width: 234px;
@@ -8232,6 +8234,7 @@ footer  p a:hover ,.footer p a:hover{
 @media (max-width:320px){
 	.container{
 		width:250px;
+		margin-left: 5px;
 	}
 	footer p {
 		font-size: 0.8em;

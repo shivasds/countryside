@@ -67,7 +67,6 @@
                        <div>
 					   <style>
 	@media screen and (min-width: 768px) {
-		modal_
 		.modal-dialog  {
 			width:900px;
 		}
@@ -107,7 +106,7 @@
     
 </style>
 
-<div class="container">
+<div class="container" style="margin-left: 21px;">
 	<div class="page-header">
 		<h1><?php echo $heading; ?></h1>
 	</div>
