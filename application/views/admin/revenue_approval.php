@@ -54,8 +54,66 @@
     color: #fff;
     outline: none;
 }
+
+   .table-striped {
+	    border: #e1e0e0 1px solid;
+	}
+	.table-striped th {
+	    text-align: left;
+	    background: #f0F0F0;
+	    padding: 10px;
+	}
+	.table-striped td {
+	    border-bottom: #e1e0e0 1px solid;
+	    padding: 10px;
+	}
+	@media (max-width: 991px){
+   .priority-10,.priority-11,.priority-13{
+			display:none;
+		}
+        }
+        @media (max-width: 1150px){
+            .priority-11,.priority-13{
+			display:none;
+		}
+        }
+	@media screen and (max-width: 900px) and (min-width: 550px) {
+		.priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9,.priority-10,.priority-11{
+			display:none;
+		}
+        
+	}
+	
+	@media screen and (max-width: 550px) {
+        .priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9,.priority-10,.priority-11{
+			display:none;
+		}
+      
+	}
+	
+	@media screen and (max-width: 300px) {
+        .priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9,.priority-10,.priority-11{
+			display:none;
+		}
+       
+	
+    }
+    @media screen and (max-width: 384px) {
+        .priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9,.priority-10,.priority-11{
+			display:none;
+		}
+       
+	
+    }
+    table.dataTable thead th, table.dataTable thead td ,table.dataTable tbody tr td{
+    padding: 10px 18px;
+    border-bottom: 1px solid #11111140;
+   }
+    table.dataTable { 
+        border-collapse: collapse;   
+    }
+  
     @media screen and (min-width: 768px) {
-        modal_
         .modal-dialog  {
             width:900px;
         }
@@ -91,6 +149,7 @@
         border: 1px solid #aaa;
         padding: 5px
     }
+   
 </style>
 <div class="container">
   
@@ -99,23 +158,23 @@
     </div>
 </div>
 <div class="container">
-<table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%" >
+<table id="example" class="table table-bordered" cellspacing="0" width="100%" >
     <thead>
         <tr>
-            <th>No</th>
-            <th>Contact Name</th> 
-            <th>Contact No</th>
-            <th>Email</th>
-            <th>Project</th>
-            <th>Lead Source</th>
-            <th>Lead Id</th> 
-            <th>Advisor</th> 
-            <th>Sub-Source</th>
-            <th>Due date</th>
-            <th>Status</th>
-            <th>Date Added</th>
-            <th>Last Update</th>
-            <th>Action</th>
+            <th class="priority-1" width="15%">No</th>
+            <th class="priority-2" width="15%">Contact Name</th> 
+            <th class="priority-3" width="15%">Contact No</th>
+            <th class="priority-4" width="15%">Email</th>
+            <th class="priority-5" width="15%">Project</th>
+            <th class="priority-6" width="15%">Lead Source</th>
+            <th class="priority-7" width="15%">Lead Id</th> 
+            <th class="priority-8" width="15%">Advisor</th> 
+            <th class="priority-9" width="15%">Sub-Source</th>
+            <th class="priority-10" width="15%">Due date</th>
+            <th class="priority-11" width="15%">Status</th>
+            <th class="priority-12" width="15%">Date Added</th>
+            <th class="priority-13" width="15%">Last Update</th>
+            <th class="priority-14" width="15%">Action</th>
         </tr>
     </thead> 
     <tbody id="main_body">
@@ -125,20 +184,20 @@
             $duedate = explode(" ", $data->due_date);
             $duedate = $duedate[0]; ?>
             <tr id="row<?php echo $i ?>" <?php if(strtotime($duedate)<strtotime('today')){?> class="highlight_past" <?php }elseif(strtotime($duedate) == strtotime('today')) {?> class="highlight_now" <?php }elseif(strtotime($duedate)>strtotime('today')){ ?> class="highlight_future" <?php } ?>>
-                <td><?php echo $i; ?></td>
-                <td><?php echo $data->name; ?></td>
-                <td><?php echo $data->contact_no1 ?></td>
-                <td><?php echo $data->email1; ?></td>
-                <td><?php echo $data->project_name; ?></td>
-                <td><?php echo $data->lead_source_name; ?></td>
-                <td><?php echo $data->leadid; ?></td>
-                <td><?php echo $data->user_name; ?></td>
-                <td><?php echo $data->broker_name; ?></td>
-                <td class="due_date"><?php echo $data->due_date; ?></td>
-                <td><?php echo $data->status_name; ?></td>
-                <td><?php echo $data->date_added; ?></td>
-                <td><?php echo $data->last_update; ?></td>
-                <td>
+                <td class="priority-1"><?php echo $i; ?></td>
+                <td class="priority-2"><?php echo $data->name; ?></td>
+                <td class="priority-3"><?php echo $data->contact_no1 ?></td>
+                <td class="priority-4"><?php echo $data->email1; ?></td>
+                <td class="priority-5"><?php echo $data->project_name; ?></td>
+                <td class="priority-6"><?php echo $data->lead_source_name; ?></td>
+                <td class="priority-7"><?php echo $data->leadid; ?></td>
+                <td class="priority-8"><?php echo $data->user_name; ?></td>
+                <td class="priority-9"><?php echo $data->broker_name; ?></td>
+                <td class="priority-10 due_date"><?php echo $data->due_date; ?></td>
+                <td class="priority-11"><?php echo $data->status_name; ?></td>
+                <td class="priority-12"><?php echo $data->date_added; ?></td>
+                <td class="priority-13"><?php echo $data->last_update; ?></td>
+                <td class="priority-14">
                     <table>
                         <tr>
                             <td>
@@ -1144,38 +1203,19 @@
 										});
 							</script>
 <!--js -->
-<link rel="stylesheet" href="<?php echo base_url()?>assets/css/vroom.css">
-<script type="text/javascript" src="<?php echo base_url()?>assets/js/vroom.js"></script>
+<!-- <link rel="stylesheet" href="<?php echo base_url()?>assets/css/vroom.css">
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/vroom.js"></script> -->
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/TweenLite.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/CSSPlugin.min.js"></script>
 
-<script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js"></script>
-<script src="<?php echo base_url()?>assets/js/scripts.js"></script>
+<!-- <script src="<?php echo base_url()?>assets/js/jquery.nicescroll.js"></script> -->
+<!-- <script src="<?php echo base_url()?>assets/js/scripts.js"></script> -->
 
 <!-- Bootstrap Core JavaScript -->
    
    <script>
     // $('#filter_revenue').click(get_revenues());
-    function get_revenues(){
-        $.get( "<?php echo base_url()."dashboard/get_revenue/" ?>"+$('#revenueMonth').val(), function( data ) {
-            $('#revenue_data').html(data);
-        });
-    }
-    function view_callbacks(data, method) {
-        var form = document.createElement('form');
-        form.method = method;
-        form.action = "<?php echo base_url()."view_callbacks?" ?>"+jQuery.param(data);
-        for (var i in data) {
-            var input = document.createElement('input');
-            input.type = "text";
-            input.name = i;
-            input.value = data[i];
-            form.appendChild(input);
-        }
-        //console.log(form);
-        document.body.appendChild(form);
-        form.submit();
-    }
+  
 
 </script>
 <script>
@@ -1196,59 +1236,7 @@
         $('#revenueMonth').MonthPicker({
             Button: false
         });
-        get_revenues();
-
-        $('.view_callbacks').click(function(){
-            var type = $(this).data('type');
-            var data = {};
-            switch (type)
-            {
-                case "user_total":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.due_date = "<?php echo date('Y-m-d'); ?>";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_overdue":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.due_date_to = "<?php echo date('Y-m-d H:i:s'); ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_active": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_close": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.status = "close";
-                    break;
-
-                case "user_important":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.access = 'read_write'; 
-                    data.important = 1;
-                    break;
-
-                case "manager_active": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "manager_close":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.status = "close";
-                    break;
-            }
-            
-            view_callbacks(data,'post');
-
-        });
-
+       
         $("#refresh").click(function(){
             $(".se-pre-con").show();
             $.get("<?php echo base_url(); ?>dashboard/get_live_feed_back", function(response){
@@ -1296,26 +1284,7 @@
 
     });
     // $('#filter_revenue').click(get_revenues());
-    function get_revenues(){
-        $.get( "<?php echo base_url()."dashboard/get_revenue/" ?>"+$('#revenueMonth').val(), function( data ) {
-            $('#revenue_data').html(data);
-        });
-    }
-    function view_callbacks(data, method) {
-        var form = document.createElement('form');
-        form.method = method;
-        form.action = "<?php echo base_url()."view_callbacks?" ?>"+jQuery.param(data);
-        for (var i in data) {
-            var input = document.createElement('input');
-            input.type = "text";
-            input.name = i;
-            input.value = data[i];
-            form.appendChild(input);
-        }
-        //console.log(form);
-        document.body.appendChild(form);
-        form.submit();
-    }
+   
 
 </script>
 </body>

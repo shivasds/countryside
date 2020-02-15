@@ -59,12 +59,12 @@ $count =  $this->callback_model->get_notification_count();
                                             if($this->session->userdata('user_type')!='admin')
                                             
 
-echo '<a href="'. base_url('chat') .'" class="" data-toggle="" aria-expanded="false"><i class="fa fa-envelope-o"></i> <span class="badge"></span></a>';
+echo '<div class="tooltip"><a href="'. base_url('chat') .'" class="" ><i class="fa fa-commenting-o"></i></a> <span class="tooltiptext">Chat</span></div>';
                                           
                                           
 
                                           else
-echo '<a href="'. base_url('admin/chat') .'" class="" data-toggle="" aria-expanded="false"><i class="fa fa-envelope-o"></i> <span class="badge"></span></a>';
+echo '<div class="tooltip"><a href="'. base_url('admin/chat') .'" class="" ><i class="fa fa-commenting-o"></i></a> <span class="tooltiptext">Chat</span></div>';
                                           
                                             ?>
                                         </li>

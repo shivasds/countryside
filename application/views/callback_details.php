@@ -91,8 +91,42 @@
     }
 ?>
 <style>
-    @media screen and (min-width: 768px) {modal_ .modal-dialog  {width:900px; } } .form-group input[type="checkbox"] {display: none; } .form-group input[type="checkbox"] + .btn-group > label span {width: 20px; } .form-group input[type="checkbox"] + .btn-group > label span:first-child {display: none; } .form-group input[type="checkbox"] + .btn-group > label span:last-child {display: inline-block; } .form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {display: inline-block; } .form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {display: none; } tr.highlight_past td.due_date{background-color: #cc6666 !important; } tr.highlight_now td.due_date{background-color: #e4b13e !important; } tr.highlight_future td.due_date{background-color: #65dc68 !important; } #history_table td {border: 1px solid #aaa; padding: 5px } 
-
+    @media screen and (min-width: 768px) {
+     .modal-dialog  {width:900px; }
+     }
+     
+     .form-group input[type="checkbox"] {display: none; }
+     
+     .form-group input[type="checkbox"] + .btn-group > label span {width: 20px; } 
+     
+     .form-group input[type="checkbox"] + .btn-group > label span:first-child {display: none; } 
+     
+     .form-group input[type="checkbox"] + .btn-group > label span:last-child {display: inline-block; } 
+     
+     .form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {display: inline-block; }
+     
+     .form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {display: none; } tr.highlight_past td.due_date{background-color: #cc6666 !important; } tr.highlight_now td.due_date{background-color: #e4b13e !important; } tr.highlight_future td.due_date{background-color: #65dc68 !important; } #history_table td {border: 1px solid #aaa; padding: 5px } 
+     
+     
+        .page-header {
+            padding-bottom: 9px;
+            margin: 40px 0 20px;
+            border-bottom: 1px solid #eee0!important
+        }
+     
+     .form-control {
+    display: block;
+    width: 85%!important;
+    height: 30px;
+    padding: 0px 10px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #777;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ddd;
+    border-radius: 0;
+     }
     .modal {
       text-align: center;
       padding: 0!important;

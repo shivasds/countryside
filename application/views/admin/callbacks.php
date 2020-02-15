@@ -71,7 +71,7 @@
 						
   
 
-<div class="container">
+   <div class="container">
   
     <div class="page-header">
         <h1 style=" margin-left: 20px;"><?php echo $heading; ?></h1>
@@ -118,7 +118,7 @@
 	}
 	
 	@media screen and (max-width: 300px) {
-        .priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9,.priority-10,.priority-11{
+        .priority-4,.priority-5,.priority-6, .priority-7,.priority-8,.priority-9{
 			display:none;
 		}
         .priority-12,.priority-13{
@@ -127,7 +127,7 @@
 	
 	}
   
-    .form-group input[type="checkbox"] {
+    /* .form-group input[type="checkbox"] {
         display: none;
     }
     .form-group input[type="checkbox"] + .btn-group > label span {
@@ -157,9 +157,9 @@
     #history_table td {
         border: 1px solid #aaa;
         padding: 5px
-    }
+    } */
    
-</style>
+   </style>
     <form method="POST" id="search_form">
      <div class="col-xs-12 col-sm-12 col-md-12" style=" margin-left: 2px;">
         <div class="row">
@@ -293,7 +293,7 @@
     </form>
 
     <div class="" style="overflow:auto;overflow-x:scroll;">
-    <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%">
+    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                         <tr id="tableheading">
                             <th class="priority-1" width="15%">No</th>
@@ -364,7 +364,7 @@
     </div>
 
    
-</div>
+ </div>
 
 
 <div class="modal fade" id="modal_notes" role="dialog">
@@ -375,7 +375,7 @@
                 <h4 class="modal-title">Call back Notes</h4>
             </div>
             <div class="modal-body">
-                <table id="example" class="table table-striped table-bordered dt-responsive" cellspacing="0" width="100%" >
+                <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%" >
                     <thead>
                         <tr>
                             <th>S No.</th>
@@ -1296,7 +1296,7 @@
 					<!--<img id="logo" src="" alt="Logo"/>--> 
 				  </a> 
 				</header>
-			<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"></div>
+			<div style="border-top:1px solid rgba(69, 74, 84, 0.7)"> </div>
 			<!--/down-->
 							<div class="down">	
 									  <?php $this->load->view('profile_pic');?>
@@ -1342,56 +1342,56 @@
    <script>
     
 
-        $('.view_callbacks').click(function(){
-            var type = $(this).data('type');
-            var data = {};
-            switch (type)
-            {
-                case "user_total":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.due_date = "<?php echo date('Y-m-d'); ?>";
-                    data.access = 'read_write'; 
-                    break;
+        // $('.view_callbacks').click(function(){
+        //     var type = $(this).data('type');
+        //     var data = {};
+        //     switch (type)
+        //     {
+        //         case "user_total":
+        //             data.advisor = "<?php echo $user_id; ?>";
+        //             data.due_date = "<?php echo date('Y-m-d'); ?>";
+        //             data.access = 'read_write'; 
+        //             break;
 
-                case "user_overdue":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.due_date_to = "<?php echo date('Y-m-d H:i:s'); ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
+        //         case "user_overdue":
+        //             data.advisor = "<?php echo $user_id; ?>";
+        //             data.due_date_to = "<?php echo date('Y-m-d H:i:s'); ?>";
+        //             data.for = "dashboard";
+        //             data.access = 'read_write'; 
+        //             break;
 
-                case "user_active": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
+        //         case "user_active": 
+        //             data.advisor = "<?php echo $user_id; ?>";
+        //             data.for = "dashboard";
+        //             data.access = 'read_write'; 
+        //             break;
 
-                case "user_close": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.status = "close";
-                    break;
+        //         case "user_close": 
+        //             data.advisor = "<?php echo $user_id; ?>";
+        //             data.status = "close";
+        //             break;
 
-                case "user_important":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.access = 'read_write'; 
-                    data.important = 1;
-                    break;
+        //         case "user_important":
+        //             data.advisor = "<?php echo $user_id; ?>";
+        //             data.access = 'read_write'; 
+        //             data.important = 1;
+        //             break;
 
-                case "manager_active": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
+        //         case "manager_active": 
+        //             data.advisor = "<?php echo $user_id; ?>";
+        //             data.for = "dashboard";
+        //             data.access = 'read_write'; 
+        //             break;
 
-                case "manager_close":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.status = "close";
-                    break;
-            }
+        //         case "manager_close":
+        //             data.advisor = "<?php echo $user_id; ?>";
+        //             data.status = "close";
+        //             break;
+        //     }
             
-            view_callbacks(data,'post');
+        //     view_callbacks(data,'post');
 
-        });
+        // });
 
         $("#refresh").click(function(){
             $(".se-pre-con").show();
@@ -1439,27 +1439,7 @@
         });
 
     });
-    // $('#filter_revenue').click(get_revenues());
-    function get_revenues(){
-        $.get( "<?php echo base_url()."dashboard/get_revenue/" ?>"+$('#revenueMonth').val(), function( data ) {
-            $('#revenue_data').html(data);
-        });
-    }
-    function view_callbacks(data, method) {
-        var form = document.createElement('form');
-        form.method = method;
-        form.action = "<?php echo base_url()."view_callbacks?" ?>"+jQuery.param(data);
-        for (var i in data) {
-            var input = document.createElement('input');
-            input.type = "text";
-            input.name = i;
-            input.value = data[i];
-            form.appendChild(input);
-        }
-        //console.log(form);
-        document.body.appendChild(form);
-        form.submit();
-    }
+   
 
 </script>
 
@@ -1482,58 +1462,7 @@
         $('#revenueMonth').MonthPicker({
             Button: false
         });
-        get_revenues();
-
-        $('.view_callbacks').click(function(){
-            var type = $(this).data('type');
-            var data = {};
-            switch (type)
-            {
-                case "user_total":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.due_date = "<?php echo date('Y-m-d'); ?>";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_overdue":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.due_date_to = "<?php echo date('Y-m-d H:i:s'); ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_active": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "user_close": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.status = "close";
-                    break;
-
-                case "user_important":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.access = 'read_write'; 
-                    data.important = 1;
-                    break;
-
-                case "manager_active": 
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.for = "dashboard";
-                    data.access = 'read_write'; 
-                    break;
-
-                case "manager_close":
-                    data.advisor = "<?php echo $user_id; ?>";
-                    data.status = "close";
-                    break;
-            }
-            
-            view_callbacks(data,'post');
-
-        });
+       
 
         $("#refresh").click(function(){
             $(".se-pre-con").show();
@@ -1579,34 +1508,12 @@
                 }
             });
         });
-
     });
-    // $('#filter_revenue').click(get_revenues());
-    function get_revenues(){
-        $.get( "<?php echo base_url()."dashboard/get_revenue/" ?>"+$('#revenueMonth').val(), function( data ) {
-            $('#revenue_data').html(data);
-        });
-    }
-    function view_callbacks(data, method) {
-        var form = document.createElement('form');
-        form.method = method;
-        form.action = "<?php echo base_url()."view_callbacks?" ?>"+jQuery.param(data);
-        for (var i in data) {
-            var input = document.createElement('input');
-            input.type = "text";
-            input.name = i;
-            input.value = data[i];
-            form.appendChild(input);
-        }
-        //console.log(form);
-        document.body.appendChild(form);
-        form.submit();
-    }
-
+   
 </script>
 <!--js -->
-<link rel="stylesheet" href="<?php echo base_url()?>assets/css/vroom.css">
-<script type="text/javascript" src="<?php echo base_url()?>assets/js/vroom.js"></script>
+
+
 <script type="text/javascript" src="<?php echo base_url()?>assets/js/TweenLite.min.js"></script>
 
 

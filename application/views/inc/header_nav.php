@@ -1,4 +1,31 @@
-<?php
+<style>
+    .tooltip {
+		position: relative;
+    display: contents;
+    /* border-bottom: 1px dotted black; */
+    font-size: 15px;
+  }
+  
+  .tooltip .tooltiptext {
+	visibility: hidden;
+	width: 80px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    left: 50%;
+    margin-left: -35px;
+  }
+  
+  .tooltip:hover .tooltiptext {
+	visibility: visible;
+  }
+	</style>
+	<?php
 $baseURL = ($this->session->userdata('user_type') == 'admin') ? base_url('admin') : base_url();
 $i=1;
 ?>
